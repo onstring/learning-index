@@ -1,0 +1,16 @@
+# downloaded dataset (12 GB, untrusted data)
+dataset/
+# pipeline outputs
+data/
+site/
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.duckdb
+*.duckdb.wal
+.DS_Store

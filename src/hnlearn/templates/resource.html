@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ r.title }} · {{ site.name }}{% endblock %}
+{% block description %}{{ r.blurb or r.title }}{% endblock %}
+{% block content %}
+<article class="resource">
+  <p class="crumbs"><a href="{{ root }}index.html">Home</a> ›
+    <a href="{{ root }}topics/{{ r.topic }}.html">{{ r.topic_label }}</a></p>
+  <h1><a href="{{ r.url }}" rel="noopener">{{ r.title }}</a></h1>
+  <p class="url"><a href="{{ r.url }}" rel="noopener">{{ r.url }}</a></p>
+  {% if r.blurb %}<p class="blurb lead">{{ r.blurb }}</p>{% endif %}
+  <p class="meta">
+    <span class="badge">{{ r.type_label }}</span>
+    <span class="badge">{{ r.difficulty_label }}</span>
+    <span class="count">Recommended by {{ r.ppl }} different commenters across {{ r.yrs }}
+      year{{ 's' if r.yrs != 1 }} ({{ r.y0 }}–{{ r.y1 }})</span>
+  </p>
+  {% if r.unverified %}
+  <p class="note">The site blocked our link checker, so we could not verify this page is still
+  up. The link may still work.</p>
+  {% endif %}
+  {% if r.story %}
+  <p class="story">Discussed on Hacker News:
+    <a href="{{ r.story.url }}" rel="noopener">{{ r.story.title }}</a>
+    {% if r.story.score %}({{ r.story.score }} points){% endif %}</p>
+  {% endif %}
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    {% for e in r.evidence %}
+    <li>
+      <blockquote>{{ e.excerpt }}</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id={{ e.author }}" rel="noopener">{{ e.author }}</a>{% if e.date %}, {{ e.date[:4] }}{% endif %}
+        · <a href="{{ e.comment_url }}" rel="noopener">comment</a>
+        {% if e.root_title and e.root_url %}· in <a href="{{ e.root_url }}" rel="noopener">{{ e.root_title }}</a>{% endif %}
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
+{% endblock %}

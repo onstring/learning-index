@@ -1,0 +1,13 @@
+{% macro card(r, root) %}
+<article class="card">
+  <h3><a href="{{ root }}r/{{ r.slug }}.html">{{ r.title }}</a></h3>
+  {% if r.blurb %}<p class="blurb">{{ r.blurb }}</p>{% endif %}
+  <p class="meta">
+    <a class="topic" href="{{ root }}topics/{{ r.topic }}.html">{{ r.topic_label }}</a>
+    <span class="badge">{{ r.type_label }}</span>
+    <span class="badge">{{ r.difficulty_label }}</span>
+    <span class="host">{{ r.host }}</span>
+    <span class="count">{{ r.ppl }} recommenders, {{ r.y0 }}–{{ r.y1 }}</span>
+  </p>
+</article>
+{% endmacro %}

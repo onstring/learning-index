@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "_card.html" import card %}
+{% block title %}{{ topic.label }} · {{ site.name }}{% endblock %}
+{% block description %}{{ topic.count }} free {{ topic.label | lower }} resources recommended on Hacker News{% endblock %}
+{% block content %}
+<h1>{{ topic.label }}</h1>
+<p>{{ topic.count }} resources, most recommended first.</p>
+{% for r in resources %}
+{{ card(r, root) }}
+{% endfor %}
+{% endblock %}

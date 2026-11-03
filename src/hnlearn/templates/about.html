@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}About · {{ site.name }}{% endblock %}
+{% block content %}
+<article class="prose">
+<h1>About</h1>
+<p>{{ site.name }} lists free online learning resources that Hacker News commenters keep
+recommending: tutorials, courses, free books, reference documentation and single explanatory
+posts. It is built in the spirit of hackerbooks.org and hackertube.org, but for material you
+can read for free in your browser.</p>
+
+<h2>How a resource gets in</h2>
+<ol>
+  <li>Every Hacker News comment from 2006 to the dataset's last month is scanned for a link
+  together with a recommendation phrase such as "highly recommend", "great resource" or
+  "start with".</li>
+  <li>Links are normalised and counted by distinct commenters. A URL qualifies when at least
+  {{ site.min_people }} different people recommended it. Hosts that are never a resource in
+  their own right (video sites, shops, social networks, code hosting) are excluded.</li>
+  <li>Each page is fetched once to check it is still up and to read its title and opening
+  text.</li>
+  <li>A local decision model (Cloudflare's clef-flash, run with Ollama) answers a fixed
+  rubric for each URL: is it free to read in full, does it teach something, is it timeless,
+  is it video, a code repository or a page for a paid book? It also picks a topic, a
+  resource type and a difficulty. A URL is kept when the model's probability that it is a free
+  online learning resource is at least {{ site.keep_threshold }}.</li>
+  <li>A second local model (Qwen3 30B-A3B) writes the one-sentence description from the page
+  text and the comments.</li>
+</ol>
+<p>On a hand-labelled sample of 100 URLs the keep decision was right about 85 to 89 percent of
+the time, so expect some misses and some items that should not be here. Rankings are by number
+of distinct recommenders, then by the number of years over which the recommendations were
+made. Nothing here is paid placement.</p>
+
+<h2>Data and attribution</h2>
+<p>Comment and story data come from the
+<a href="https://huggingface.co/datasets/open-index/hacker-news" rel="noopener">open-index/hacker-news</a>
+dataset, which is made available under the
+<a href="https://opendatacommons.org/licenses/by/1-0/" rel="noopener">Open Data Commons Attribution License v1.0</a>.
+Quoted comment excerpts remain the work of their authors; each excerpt links to the original
+comment and thread on Hacker News. Hacker News is a trademark of Y Combinator; this site is not
+affiliated with Y Combinator.</p>
+<p>Site generated {{ generated_at[:10] }}. The pipeline is a small Python and DuckDB project;
+every stage is re-runnable, and the index is refreshed a few times a year when a new dataset
+dump is published.</p>
+</article>
+{% endblock %}

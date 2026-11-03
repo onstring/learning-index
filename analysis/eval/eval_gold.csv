@@ -1,0 +1,101 @@
+id,keep,borderline,topics,note
+0,0,0,systems,paid book landing page
+1,0,1,business,newsletter signup page not teaching material
+2,0,0,ml_ai,paid book catalogue page
+3,1,0,computer_science,free online textbook Software Foundations
+4,1,0,self_improvement,free-to-audit Coursera course
+5,1,0,business,free YC founder course
+6,1,0,programming,free online book Real World OCaml
+7,1,0,hardware,free online textbook Lessons in Electric Circuits
+8,0,1,programming,educational software download not written material
+9,1,0,web,Rails tutorial book free online
+10,1,0,programming|design,free online Book of Shaders
+11,0,0,self_improvement,product site selling notebooks
+12,0,0,science,primarily video lecture courses
+13,0,1,hardware,organisation and product homepage
+14,0,0,other,dead aggregator of paid books
+15,1,0,programming,site of free Emacs articles plus paid book
+16,0,0,computer_science,paid book page TAPL
+17,1,0,web,free Flask tutorial
+18,1,0,programming,free explainer post git branching
+19,1,0,web,Rails tutorial free online
+20,0,1,design|programming,personal homepage of essays and talks
+21,1,0,programming,free online book Dive Into Python 3
+22,1,0,web,Rails tutorial site
+23,0,0,programming,paid book site Land of Lisp
+24,1,0,programming,free reference documentation archive
+25,0,0,programming,video
+26,1,1,programming,manifesto text short primary document
+27,1,0,programming|systems,free Bash guide wiki
+28,0,0,other,Google Books homepage
+29,1,0,science|computer_science,free interactive quantum computing essays
+30,1,1,computer_science,freemium practice platform
+31,0,0,self_improvement,paid book page Deep Work
+32,1,0,programming,free interactive Tour of Go
+33,0,0,other,domain registrar product
+34,1,0,writing|programming,free documentation framework explainer
+35,1,0,programming,free git tutorial
+36,1,0,science|mathematics,collection of free scanned textbooks
+37,0,0,other,comic
+38,0,0,hardware,keyboard product
+39,0,0,systems|web,software product
+40,0,0,programming,software library homepage
+41,1,0,ml_ai,free course materials CS229
+42,0,0,other,software product
+43,1,1,humanities,satirical essay explaining deconstruction
+44,0,1,programming,language homepage primarily software
+45,0,0,programming,paid bootcamp
+46,0,0,humanities,podcast product page
+47,0,0,systems,software project homepage
+48,0,1,programming,library announcement blog post
+49,0,1,business|programming,anecdote essay not teaching
+50,1,0,mathematics,free textbook on arXiv
+51,1,0,web,free Redux tutorial
+52,1,0,ml_ai,free course syllabus CS231n
+53,1,0,ml_ai,free illustrated explainer
+54,0,0,other,software product
+55,1,1,self_improvement,practical RSI advice essay
+56,1,0,web,free MDN JavaScript course
+57,1,0,data,free explanatory article
+58,0,1,business|programming,anecdote essay not teaching
+59,1,0,hardware|systems,free reference manuals
+60,0,0,programming,product page Delphi
+61,1,1,programming,free programming puzzles interactive
+62,1,1,business|self_improvement|other,full book PDF free to read but likely unauthorised copy
+63,0,0,systems,load testing product
+64,1,1,computer_science|systems|business,free whitepaper explaining Bitcoin
+65,1,0,systems|programming,free reference manual
+66,0,1,programming,project homepage
+67,0,1,web|programming,dead spec wiki
+68,0,1,programming,classic opinion essay PDF
+69,0,0,other,browser extension software
+70,0,1,humanities|business,long-form news explainer tied to current issue
+71,0,0,humanities,paywalled news feature
+72,0,0,science,magazine journalism
+73,0,0,business,news
+74,0,0,business,product
+75,0,0,business,paywalled news site
+76,0,0,other,dead news article
+77,1,1,systems|computer_science|business,free essay explaining decentralisation concepts
+78,0,1,humanities|systems,narrative journalism classic
+79,0,0,humanities,paywalled news
+80,0,0,other,dead forum thread
+81,0,0,science,paywalled magazine article
+82,0,0,science|humanities,opinion piece
+83,0,0,humanities,paywalled essay
+84,1,1,humanities|hardware,free history article series
+85,0,0,science|humanities,paywalled journalism
+86,0,0,science,magazine journalism
+87,0,1,programming|hardware,journalism feature on emulation
+88,0,0,business,paywalled newsletter author page
+89,0,0,science,paywalled magazine article
+90,0,0,business,paywalled interactive calculator
+91,0,0,business|data,journalism
+92,0,1,design,opinion review article 2003
+93,0,1,humanities|computer_science,classic essay behind metered paywall
+94,0,0,business,paywalled journalism
+95,0,1,humanities|computer_science,journalism on Xanadu
+96,0,0,other,news site homepage
+97,0,0,self_improvement,dead journalism article
+98,0,1,humanities|systems,dead copy of narrative journalism
+99,1,0,web,free explainer post on Redux

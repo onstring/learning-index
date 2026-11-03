@@ -1,0 +1,301 @@
+nurl,ppl,yrs,y0,y1,mentions,hn_story_title,best_score,story_id,example_comment_id
+learnyouahaskell.com,46,16,2009,2025,54,Learn You a Haskell for Great Good,322,17812713,2369557
+eloquentjavascript.net,45,17,2009,2026,47,Eloquent JavaScript 4th edition (2024),1274,39629044,1764254
+nand2tetris.org,45,15,2012,2026,48,From Nand to Tetris (2017),667,38735066,42545539
+craftinginterpreters.com,38,10,2017,2026,41,Crafting Interpreters is available in print,623,27997167,48081092
+learnpythonthehardway.org,34,8,2010,2018,34,Learn Python The Hard Way 2nd Edition Released,243,2701504,1815699
+gigamonkeys.com/book,33,18,2007,2025,37,Practical Common Lisp (2005),296,13096576,5927555
+coursera.org/learn/machine-learning,32,7,2015,2022,36,Machine Learning Stanford University,3,11193172,23870868
+scratch.mit.edu,31,16,2009,2026,32,"MIT Scratch – Teach kids to program stories, games, and animations",88,8751969,4736146
+htdp.org,29,14,2009,2025,34,"How to Design Programs, second edition",256,16561815,3093168
+mitpress.mit.edu/sicp,28,10,2007,2017,30,,,,1798195
+coursera.org/learn/learning-how-to-learn,27,10,2015,2024,36,Learning How to Learn: Powerful mental tools to help you master tough subjects,12,22407765,41911143
+withouthotair.com,26,15,2009,2023,31,"""Sustainable Energy - Without the Hot Air"" by David JC MacKay",71,845446,4762425
+use-the-index-luke.com,26,15,2011,2026,28,SQL Indexing and Tuning E-Book for Developers,52,16144928,5068982
+course.fast.ai,26,7,2017,2026,30,Practical Deep Learning for Coders,683,13224588,35449960
+railstutorial.org,25,10,2010,2023,28,The Ruby on Rails 3 Tutorial book (with PDF downloads) is out,133,1555271,1762052
+teachyourselfcs.com,25,9,2018,2026,28,Teach Yourself Computer Science,1308,13862284,38897031
+xkcd.com/927,24,11,2012,2025,24,Xkcd: Standards,8,2784984,4810430
+projecteuler.net,24,11,2009,2024,24,Project Euler,792,15893911,1762923
+wiki.c2.com,24,8,2016,2025,25,Programs to Read,248,18559359,23723144
+deeplearningbook.org,24,7,2016,2025,26,The Deep Learning Book,41,11443521,35680641
+infoq.com/presentations/simple-made-easy,23,11,2012,2023,24,"Rich Hickey: ""Simple Made Easy"" from Strange Loop 2011 [video]",356,3135185,5916399
+neuralnetworksanddeeplearning.com,23,8,2014,2022,25,Neural Networks and Deep Learning: A Principle-Oriented Approach Free EBook,30,12305455,34179314
+paulgraham.com/avg.html,22,12,2009,2023,22,Beating the Averages (2001),58,32053575,3071827
+mitpress.mit.edu/sicp/full-text/book/book.html,22,10,2007,2018,23,Structure and Interpretation of Computer Programs,6,1903127,3153917
+codecademy.com,22,9,2011,2021,22,"Show HN: Codecademy.com, the easiest way to learn to code",787,2901156,3111590
+video.google.com/videoplay,22,6,2007,2012,23,Guy Steele: Growing a Language (video 53:30),103,2359174,132276
+norvig.com/21-days.html,21,13,2009,2024,26,Teach Yourself Programming in Ten Years (1998),586,39001755,1797934
+haskellbook.com,21,10,2015,2024,24,Haskell Programming,70,9602323,34188974
+aosabook.org/en/index.html,21,10,2013,2023,21,The Architecture of Open Source Applications,423,20731206,5074883
+dataintensive.net,20,11,2014,2024,20,Designing Data-Intensive Applications,598,15428526,35466859
+doc.rust-lang.org/book,20,10,2016,2025,20,Rust Programming Language Book,220,9593294,39120996
+slatestarcodex.com/2014/07/30/meditations-on-moloch,19,11,2014,2026,20,Meditations on Moloch (2014),226,19756487,8266778
+khanacademy.org,19,11,2009,2025,22,Need to refresh your math skills? From basic algebra to calculus and beyond.,344,1058359,755161
+ruby.railstutorial.org,19,4,2011,2014,21,Ask HN: Is rails tutorial unfair priced?,1,4694594,3173983
+cryptopals.com,18,10,2015,2024,55,The Matasano Crypto Challenges,404,8166064,8865780
+scottaaronson.com/blog,18,10,2009,2021,19,First they came for the Iranians,1000,13489156,5957742
+hup.harvard.edu/catalog.php,18,10,2013,2023,20,The End of Sex and the Future of Human Reproduction,98,11382015,6730068
+journals.plos.org/plosone/article,18,8,2015,2023,19,75% decline over 27 years in total flying insect biomass in protected areas,901,15502074,8921618
+railstutorial.org/book,18,7,2010,2020,19,Ruby on Rails Tutorial,189,12193426,1781796
+www-bcf.usc.edu/~gareth/isl,18,5,2015,2019,18,"Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani",4,13104884,12713980
+dl.acm.org/citation.cfm,17,12,2011,2025,26,Why Google stores billions of lines of code in a single repository (2016),489,15889148,17514405
+bitcoin.org/bitcoin.pdf,17,10,2012,2024,18,Bitcoin: A Peer-to-Peer Electronic Cash System (2008) [pdf],516,15883186,8910610
+marketplace.visualstudio.com/items,17,10,2017,2026,19,Claude Code for VSCode,203,44353490,42349319
+softwarefoundations.cis.upenn.edu,17,10,2017,2026,21,Software Foundations,138,15779539,31805845
+racket-lang.org,17,10,2010,2025,17,New Racket Language Website,326,24283478,1809544
+kalzumeus.com/2012/01/23/salary-negotiation,17,10,2013,2024,18,"Salary Negotiation: Make More Money, Be More Valued",596,3501366,8372628
+fast.ai,17,8,2017,2025,17,Fast.ai – making neural nets uncool again,1,38008704,35545413
+caniuse.com,16,10,2011,2024,17,CSS now has an if() conditional function,272,46092198,3162553
+engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying,16,8,2014,2023,16,The Log: Real-time data's unifying abstraction,271,6916557,8833774
+c2.com/cgi/wiki,16,8,2008,2016,18,Alan Kay's Reading List,201,7541829,1353620
+ycombinator.com/newsguidelines.html,16,6,2009,2014,17,Kind reminder: please (re)read the HN guidelines,353,1646871,751966
+ruby.railstutorial.org/ruby-on-rails-tutorial-book,16,3,2011,2013,17,"The Ruby on Rails Tutorial, 2nd Edition (full draft)",268,3568921,4783855
+erlang.org/download/armstrong_thesis_2003.pdf,15,11,2013,2025,17,Making reliable distributed systems in the presence of software errors (2003) [pdf],98,44860732,5009462
+givewell.org,15,11,2011,2025,15,Give Well: Make your dollar go further,3,14017898,20061197
+braveclojure.com,15,10,2014,2026,15,Clojure for the Brave and True (2015),244,13340841,36439289
+highscalability.com,15,10,2009,2022,16,"High Scalability - Building bigger, faster, more reliable websites",12,145620,770310
+queue.acm.org/detail.cfm,15,9,2013,2025,15,How to Get Things Done When You Don't Feel Like It,1165,18179972,8875742
+joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i,15,7,2017,2026,15,"Things You Should Never Do, Part I (2000)",157,39555598,42921729
+80000hours.org,15,6,2013,2023,17,What's it like being a non-profit in Y Combinator?,41,10011340,30504275
+landoflisp.com,14,11,2010,2026,15,The Land of Lisp,477,15417735,48033409
+jofreeman.com/joreen/tyranny.htm,14,10,2013,2025,15,The Tyranny of Structurelessness (1970),387,42793483,26907748
+paulgraham.com/say.html,14,10,2008,2023,14,What You Can't Say (2004),241,21229032,1755958
+pages.cs.wisc.edu/~remzi/ostep,14,10,2012,2025,16,Operating Systems: Three Easy Pieces,334,10182727,4833945
+plato.stanford.edu,14,9,2011,2025,16,Stanford Encyclopedia of Philosophy,160,8212709,2511952
+urbandharma.org/udharma4/mpe.html,14,9,2009,2017,15,Mindfulness In Plain English,10,5230711,1759707
+phptherightway.com,14,9,2013,2025,15,PHP: The Right Way,393,4212568,6919367
+guides.rubyonrails.org,14,8,2009,2024,14,,,,781328
+practicaltypography.com,14,8,2013,2026,14,Practical Typography,472,6094946,9121191
+fsharpforfunandprofit.com,14,8,2015,2023,16,"F# for Fun and Profit",47,43267355,33490788
+mrmoneymustache.com,14,7,2012,2020,14,,,,15328530
+railscasts.com,14,7,2008,2015,16,Railscasts is down,7,7506012,4730089
+ribbonfarm.com/2009/10/07/the-gervais-principle-or-the-office-according-to-the-office,13,12,2009,2026,14,"The Gervais Principle, or The Office According to ""The Office""",307,881296,21776064
+paulgraham.com/onlisp.html,13,11,2007,2023,13,On Lisp,125,6273692,4765360
+ansuz.sooke.bc.ca/entry/23,13,10,2011,2025,16,What colour are your bits? (2004),75,14015524,3605874
+processing.org,13,10,2009,2023,13,"'Processing' - programming language for animation, images and interactions",20,96358,7851276
+thinking-forth.sourceforge.net,13,10,2009,2024,14,Thinking Forth (1984),133,33679360,5910950
+catb.org/~esr/faqs/hacker-howto.html,13,10,2008,2025,13,How To Become A Hacker,70,1045844,135556
+marc.info,13,9,2014,2025,13,OpenBSD will shut down if we do not have the funding to keep the lights on,825,7069889,42427685
+flexboxfroggy.com,13,9,2016,2024,14,Flexbox Froggy – A game for learning CSS flexbox,317,30251054,17617683
+paulgraham.com/submarine.html,13,8,2011,2022,13,The Submarine (2005),19,40858844,4992031
+godotengine.org,13,8,2015,2025,13,Godot Engine – Free and open-source 2D and 3D game engine,593,15309989,39038668
+worrydream.com,13,8,2011,2022,13,A brief rant on the future of interaction design (2011),335,21116948,4841628
+pbrt.org,13,7,2015,2026,14,Physically Based Rendering: From Theory to Implementation,2,1438186,9990020
+languagelog.ldc.upenn.edu/nll,13,7,2010,2026,15,Professor suspended for saying 那个 nà ge,568,24397574,49064346
+learncodethehardway.org,13,6,2010,2015,13,Learn C The Hard Way,419,2722833,1793232
+indiehackers.com,13,6,2016,2022,15,Indie Hackers: Learn how developers are making money,971,12269425,14040673
+diveintopython.org,13,4,2008,2011,14,,,,242968
+compilers.iecc.com/crenshaw,12,12,2008,2025,15,Let’s Build a Compiler (1995),247,6641117,1822515
+developer.mozilla.org/en-us,12,10,2010,2023,12,MDN Web Docs Redesign,56,30515253,4803120
+learnyousomeerlang.com,12,10,2012,2024,14,Learn You Some Erlang For Great Good,184,771013,4818705
+w3schools.com,12,9,2007,2022,12,W3Schools website doesn't suck anymore,2,10718103,1813835
+stronglifts.com/5x5,12,9,2015,2023,12,,,,21647093
+beej.us/guide/bgnet,12,9,2013,2024,12,Beej's Guide to Network Programming,333,13983212,38939676
+eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design,12,8,2014,2025,12,PHP: a fractal of bad design (2012),23,7861721,8317538
+startupsfortherestofus.com,12,8,2011,2023,17,Startups For the Rest of Us,5,1928216,8317068
+book.realworldhaskell.org,12,7,2008,2020,13,Real World Haskell (public beta of the upcoming O'Reilly book on Haskell),5,115190,1767206
+metalevel.at/prolog,12,7,2020,2026,13,The Power of Prolog,480,17121028,41875855
+ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010,12,7,2011,2023,12,Linear Algebra course (MIT),1,3843924,23922158
+historyofenglishpodcast.com,12,7,2015,2026,13,History of English Podcast,1,37679562,26809217
+blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html,12,7,2010,2020,12,You Could Have Invented Monads (And Maybe You Already Have),34,958789,1344111
+r4ds.had.co.nz,12,6,2016,2022,12,R for Data Science,230,12513985,18841504
+godbolt.org,12,6,2018,2024,21,"GodBolt: Enter C, get Assembly",602,13182726,33888299
+joelonsoftware.com/articles/camelsandrubberduckies.html,12,6,2008,2014,12,How to Price Software - Economics vs. Pyschology,50,2455211,1798823
+karpathy.github.io/2015/05/21/rnn-effectiveness,12,5,2015,2024,13,The Unreasonable Effectiveness of Recurrent Neural Networks,913,9584325,36251573
+htmx.org,12,5,2020,2025,13,Htmx – high power tools for HTML,728,23330881,42295271
+ccs.neu.edu/home/matthias/htdp2e,12,5,2011,2017,14,"How to Design Programs, Second Edition",228,8778569,8862815
+syntorial.com,12,5,2016,2024,12,Syntorial: Video game-like training software for learning sound synthesis,3,38831331,42369695
+cs.cmu.edu/~dst/lispbook,11,10,2009,2025,11,A Gentle Introduction to Symbolic Computation,49,3036293,788265
+dhamma.org,11,10,2009,2022,14,,,,4852479
+shellcheck.net,11,10,2015,2025,14,ShellCheck: Finds bugs in your shell scripts,301,27030504,36398372
+randsinrepose.com,11,10,2008,2023,11,The Builder's High,1,7016182,23756816
+kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names,11,9,2016,2026,11,Falsehoods Programmers Believe About Names,176,1438472,15150143
+masteringemacs.org,11,9,2011,2026,11,Mastering Emacs,225,9592928,33524520
+elixir-lang.org,11,9,2012,2023,11,"Elixir, a functional metaprogramming-aware language built on the Erlang VM",138,5617423,4716130
+syncthing.net,11,9,2014,2025,11,Syncthing: Open Source Dropbox and BitTorrent Sync Replacement,623,7734114,8283055
+kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer,11,9,2014,2026,11,Don't Call Yourself a Programmer,1021,3170766,45772815
+mywiki.wooledge.org/bashguide,11,8,2011,2025,14,Bash Guide,3,13271290,26683228
+learnyouahaskell.com/chapters,11,8,2010,2021,11,Learn You a Haskell for Great Good,135,5688803,2592639
+angel.co,11,8,2011,2021,11,"Greengar, The Mobile Whiteboard, is trending on AngelList",3,5671529,2312649
+handmadehero.org,11,7,2014,2022,12,Handmade Hero – A complete game live-coded from scratch,536,15467854,8886963
+basecamp.com/shapeup,11,7,2019,2025,11,Shape Up: Product Development at Basecamp,49,20408514,43071267
+npr.org/templates/story/story.php,11,7,2008,2022,11,"Teen Suicide Spiked After Debut Of Netflix's '13 Reasons Why,' Study Says",252,19788773,7891622
+plaintextaccounting.org,11,6,2016,2025,13,Plain Text Accounting,473,25745615,23832689
+thebookofshaders.com,11,6,2017,2024,12,The Book of Shaders,245,15599935,35423244
+paulgraham.com/startupideas.html,11,6,2013,2022,11,How to Get Startup Ideas,914,4806852,5027379
+paulgraham.com/wealth.html,11,6,2011,2021,11,How to Make Wealth,155,3209385,2306827
+agner.org/optimize,11,6,2014,2026,11,"Software optimization resources for C++, assembly, Windows, Linux, BSD, Mac OS",172,22511446,39116404
+interpreterbook.com,11,6,2017,2022,13,Writing An Interpreter In Go (2016),305,21626972,34020058
+xkcd.com/1053,11,6,2017,2026,12,"Things ""Everyone Knows""",4,3947426,42527714
+momtestbook.com,11,5,2019,2025,11,How to talk to customers and learn if your business is a good idea,2,49167056,21605840
+karpathy.ai/zero-to-hero.html,11,3,2023,2025,12,Neural Networks: Zero to Hero,21,46485090,35577538
+hnsearch.com/search,11,3,2011,2013,13,What HN users don't mean to be,442,3658860,4760314
+scheme2006.cs.uchicago.edu/11-ghuloum.pdf,10,10,2010,2025,11,An Incremental Approach to Compiler Construction (2006) [pdf],111,10785164,46217250
+rifters.com/real/blindsight.htm,10,9,2010,2025,10,Blindsight (2006),73,18378221,12501115
+betterexplained.com,10,8,2010,2023,10,BetterExplained: Math Lessons That Explain Concepts,666,10777638,14162286
+books.google.co.uk/books,10,8,2014,2025,10,Hackers and Painters (on Google Books),5,90978,8447019
+ribbonfarm.com/the-gervais-principle,10,8,2011,2022,10,The Gervais Principle,8,42957444,3140017
+startupschool.org,10,8,2017,2025,13,2011 Startup School,282,2873865,31843099
+love2d.org,10,8,2011,2024,10,Create 2D games in Lua and LÖVE.,101,3745631,5125581
+csapp.cs.cmu.edu,10,8,2011,2024,10,"Computer Systems: A Programmer's Perspective, 3/E",1,36162808,40113764
+example.com,10,8,2009,2026,14,Example Domain,120,29623646,3631622
+journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function,10,7,2017,2026,10,What Color Is Your Function?,410,8984648,48019672
+bogleheads.org,10,7,2008,2021,11,Bogleheads,257,24023604,248494
+scottaaronson.com/democritus/lec9.html,10,7,2012,2026,10,Quantum mechanics as a generalization of probability (2007),209,8377680,7967780
+sjc.edu/academic-programs/undergraduate/great-books-reading-list,10,7,2019,2026,10,St. John’s Reading List: A Great Books Curriculum,11,31868396,20767088
+aima.cs.berkeley.edu,10,7,2007,2024,10,"Artificial Intelligence: A Modern Approach, 4th ed",44,40746841,1370777
+learnopengl.com,10,7,2017,2026,11,Welcome to OpenGL,170,9751666,38594243
+learnpythonthehardway.org/book,10,7,2011,2023,10,Learn Python the Hard Way,240,9275357,3166272
+paulgraham.com/bronze.html,10,7,2009,2020,10,Why Smart People Have Bad Ideas,26,46386,16208586
+cssgridgarden.com,10,7,2017,2023,10,CSS grid garden,426,18753358,30252433
+workflowy.com,10,7,2012,2021,10,WorkFlowy – A notebook for lists,11,12069395,5045794
+coursera.org/learn/programming-languages,10,6,2017,2023,17,Programming Languages,44,17826998,13783916
+openreview.net/forum,10,6,2016,2026,10,30% drop in O1-preview accuracy when Putnam problems are slightly variated,560,42565606,42937526
+cs.cmu.edu/~rdriley/487/papers/thompson_1984_reflectionsontrustingtrust.pdf,10,6,2020,2025,11,Reflections on Trusting Trust (1984) [pdf],75,23807168,26728406
+git-scm.com/book/en/v2,10,6,2016,2025,10,"Pro Git, 2nd Edition",411,8507957,33536322
+startupbook.net,10,6,2010,2020,11,Startup book for micro-entrepreneurs,5,1817288,3169256
+privacytools.io,10,6,2015,2023,11,Privacy Tools – Encryption Against Global Mass Surveillance,267,18873433,18909967
+marshallbrain.com/manna1.htm,10,6,2011,2019,10,Manna – AI Utopia or Dystopia? By Marshall Brain,4,10960119,7928895
+automatetheboringstuff.com,10,6,2015,2022,12,Automate the Boring Stuff with Python,282,9415891,15154578
+css-tricks.com/snippets/css/a-guide-to-flexbox,10,6,2015,2022,10,A Complete Guide to Flexbox,15,29778951,19027072
+linuxfromscratch.org,10,6,2010,2024,10,Linux from Scratch,376,30496018,8381705
+raytracing.github.io,10,6,2020,2026,12,Show HN: Ray Tracing in One Weekend v4.0.0,69,41082425,38783905
+elm-lang.org,10,5,2014,2019,10,Elm: a functional reactive programming language that compiles to JavaScript,132,3322082,10605679
+groups.csail.mit.edu/mac/classes/6.001/abelson-sussman-lectures,10,5,2008,2013,12,Structure and Interpretation of Computer Programs,43,319706,747245
+shadertoy.com,10,5,2017,2023,10,Build and share your best [WebGL] shaders with the world.,7,5280380,26932629
+javascript.info,10,5,2019,2024,10,A Modern JavaScript Tutorial,893,25333350,19219419
+teamtreehouse.com,10,5,2011,2018,11,"Learn Web Design, Web Development, and iOS Development - Treehouse",589,3206540,5947519
+raywenderlich.com,10,5,2012,2021,10,"Tutorials for iPhone, iOS Developers and Gamers",2,8312481,5022565
+youneedabudget.com,10,5,2013,2022,10,You Need a Budget,2,30427361,5073520
+vim.org/scripts/script.php,10,4,2009,2012,14,Dwm.vim : Tiled Window Management for Vim ,146,4419530,741901
+pouet.net/prod.php,9,8,2017,2026,23,The most advanced MySQL raytracer on the market,276,21218144,15188830
+cs.virginia.edu/~robins/youandyourresearch.html,9,8,2008,2024,9,You and Your Research (1986),88,18014209,31797409
+wired.com/1996/12/ffglass,9,7,2016,2025,11,Mother Earth Mother Board (1996),79,15635028,38500351
+calteches.library.caltech.edu/51/2/cargocult.htm,9,7,2016,2025,11,Cargo Cult Science (1974),142,21120637,38957705
+owasp.org/index.php/main_page,9,7,2010,2017,9,Open Web Application Security Project,4,15426225,13806234
+refactoringui.com,9,7,2019,2025,12,Rules for developers to design beautiful UIs without a designer,62,35529240,31789412
+hpbn.co,9,7,2019,2025,12,High Performance Browser Networking,192,11999649,38941078
+djangoproject.com,9,7,2008,2022,9,The Django project website is down after investigating security breach,6,8576727,1826710
+pine.fm/learntoprogram,9,7,2009,2021,9,A Place to Start for the Future Programmer,6,2500202,1798909
+kalzumeus.com,9,7,2009,2019,9,,,,750504
+worrydream.com/magicink,9,7,2008,2025,9,Magic Ink,109,600799,6796068
+translate.google.com/translate,9,7,2012,2021,9,Google employees are listening to Google Home conversations,872,20402070,8883019
+coursera.org/learn/build-a-computer,9,7,2017,2023,13,Build a Modern Computer from First Principles: From Nand to Tetris,94,13209452,36526973
+microcorruption.com,9,7,2014,2020,33,A game about hacking an imaginary device using a real assembly instruction set,4,11795705,9815210
+wiki.osdev.org/main_page,9,7,2013,2023,9,Operating System Development,141,4259781,26887433
+dspguide.com,9,7,2014,2024,9,The Scientist and Engineer's Guide to Digital Signal Processing (1997),238,13248862,39958938
+emacswiki.org,9,7,2009,2022,9,,,,1851888
+lobste.rs,9,6,2019,2026,9,Lobsters,297,4452384,30320534
+lazarus-ide.org,9,6,2015,2025,10,Lazarus – A Delphi-compatible cross-platform IDE,236,14973706,34163168
+senseis.xmp.net,9,6,2010,2025,9,Sensei's Library,114,28704767,1827104
+webtypography.net,9,6,2009,2018,9,The Elements of Typographic Style Applied to the Web (2005),152,16911850,1820353
+people.vcu.edu/~rhammack/bookofproof,9,6,2018,2023,11,Book of Proof – An introduction to the methods of proving mathematical theorems,208,12101328,18898745
+feynmanlectures.caltech.edu,9,6,2016,2022,9,Feynman Lectures on Physics now free online,749,8216546,15360411
+pomax.github.io/bezierinfo,9,6,2018,2025,9,A Primer on Bézier Curves,398,14191577,36481270
+urbandictionary.com/define.php,9,6,2010,2024,9,Urban Dictionary on Hacker News (2013),342,28259153,37416822
+natureofcode.com,9,6,2014,2026,9,"Daniel Shiffman launches ""The Nature of Code"" online for free",115,4709551,8283881
+spacemacs.org,9,6,2016,2024,11,Take off with SPACEMACS,16,10834716,40184399
+bash.org,9,6,2014,2023,13,Bash IRC Quote Database,263,23326177,8320066
+quantum.country,9,6,2020,2026,9,A free introduction to quantum computing and quantum mechanics,257,23561018,42368386
+passwordstore.org,9,6,2017,2022,9,Pass: The standard Unix password manager,411,26799021,17506895
+paulgraham.com/ambitious.html,9,5,2012,2017,9,Frighteningly Ambitious Startup Ideas,1032,3686840,4817325
+addyosmani.com/resources/essentialjsdesignpatterns/book,9,5,2012,2017,9,Essential JavaScript Design Patterns For Beginners,336,3603712,8597060
+wiki.osdev.org/expanded_main_page,9,5,2014,2024,9,Osdev.org,50,38773104,35618005
+coursera.org/specializations/deep-learning,9,4,2017,2020,11,Andrew Ng Is Back with a Deep Learning Course,9,14974082,23870868
+railsforzombies.org,9,4,2010,2013,10,Rails for Zombies - Learn Rails from the comfort of your browser,336,1918545,2329844
+www1.idc.ac.il/tecs,9,4,2009,2012,11,Building a Modern Computer from First Principles,34,205322,1477755
+cs231n.github.io,9,4,2015,2019,9,Stanford CS231n – Convolutional Neural Networks for Visual Recognition,125,9019645,12713395
+fullstackopen.com/en,9,3,2021,2024,9,Full Stack Open 2022,29,30718743,31858365
+jalammar.github.io/illustrated-transformer,9,3,2021,2025,9,The Illustrated Transformer,475,46357675,35577538
+nutritionfacts.org,8,9,2015,2026,11,,,,30421017
+bunniestudios.com/blog,8,8,2008,2023,9,Why I’m Suing the US Government,1855,12136578,8255193
+cis.upenn.edu/~bcpierce/tapl,8,8,2011,2025,8,Types and Programming Languages,41,42600648,18975172
+redblobgames.com,8,8,2014,2026,10,Red Blob Games: Interactive visual explanations of math and algorithms,25,37703291,10089446
+arduino.cc,8,8,2008,2022,8,"Arduino, open-source electronics prototyping platform",39,748843,17594591
+"adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html",8,8,2013,2023,11,"Functors, applicatives, and monads in pictures",200,5731164,6856121
+lispcookbook.github.io/cl-cookbook,8,7,2019,2025,10,The Common Lisp Cookbook,264,14661239,23936409
+destroyallsoftware.com/screencasts,8,7,2012,2023,8,Destroy All Software screencasts free this week,277,16770655,14219543
+bogleheads.org/wiki/getting_started,8,7,2018,2024,9,Bogleheads getting started,3,14279693,16597902
+lamport.azurewebsites.net/video/videos.html,8,7,2018,2025,9,The TLA+ Video Course by Leslie Lamport,219,16956778,19029500
+kapeli.com/dash,8,7,2012,2023,8,Dash – Beautiful instant offline docs for almost everything,404,7857064,7832745
+rr-project.org,8,7,2015,2023,9,What rr does,880,31617600,21652573
+forth.com/starting-forth,8,7,2011,2023,11,Starting FORTH (1981),100,33674486,34186281
+xkcd.com/538,8,7,2013,2026,8,Relevant in these crypto days – $5 wrench attack,12,15915026,5881522
+rubyonrails.org,8,7,2009,2025,8,Did rubyonrails.org get hijacked?,68,1280294,4751593
+folklore.org/storyview.py,8,7,2007,2022,8,-2000 Lines of Code,646,26387179,1772651
+man7.org/tlpi,8,6,2015,2023,9,,,,23983645
+guides.rubyonrails.org/getting_started.html,8,6,2009,2024,9,Getting Started with Rails,5,605812,781932
+bitcointalk.org/index.php,8,6,2012,2020,8,Mt. Gox Dwolla account frozen by DHS,380,5707936,6687615
+docs.google.com/viewer,8,6,2010,2021,8,"""I've got nothing to hide"" and other misunderstandings of privacy",131,4957864,1782366
+bogleheads.org/wiki/main_page,8,6,2011,2026,8,Bogleheads Wiki,5,36364507,12161743
+work.caltech.edu/telecourse.html,8,6,2012,2018,8,Learning From Data - Online Course,175,3703782,12713406
+meetup.com,8,6,2010,2016,8,"""Meetup is currently under DDoS attack""",7,7315558,7899147
+paulgraham.com/articles.html,8,6,2009,2022,9,Paul Graham essays,2,8207729,5890223
+mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement,8,6,2015,2025,8,The Simple Math Behind Early Retirement,196,5078702,15349793
+realworldocaml.org,8,6,2013,2020,9,Real World OCaml,183,6711348,5937097
+justgetflux.com,8,6,2013,2021,8,f.lux,486,30626803,6787827
+gutenberg.org,8,6,2010,2026,8,Project Gutenberg – Library of over 60k free eBooks,200,31141257,4688262
+bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface,8,6,2018,2024,8,Category Theory for Programmers (2014),267,14026360,18272748
+hpmor.com,8,6,2012,2020,8,Harry Potter and the Methods of Rationality,163,8053606,4770509
+matrix.org,8,6,2017,2023,9,"Matrix – An open network for secure, decentralized communication",269,24239564,26720430
+smashingmagazine.com,8,6,2009,2021,9,"Smashing Magazine redesigns their site, reinvents UI",5,3457201,23876482
+tldp.org/ldp/abs/html,8,6,2011,2021,8,Advanced Bash-Scripting Guide (2014),172,32523067,26787355
+talks.golang.org/2012/splash.article,8,6,2012,2022,8,Go at Google: Language Design in the Service of Software Engineering,168,4873471,8841377
+web.stanford.edu/~jurafsky/slp3,8,6,2016,2024,10,"Speech and Language Processing, 3rd ed. draft (2017)",219,16104868,39998935
+yosefk.com/c++fqa,8,6,2009,2025,8,C++ Frequently Questioned Answers (2009),54,30035294,791728
+cs.cmu.edu/~rwh/theses/okasaki.pdf,8,6,2009,2020,8,Purely Functional Data Structures (1996) [pdf],83,10486481,857254
+xkcd.com/386,8,6,2012,2025,8,xkcd - Duty Calls,26,119584,8576053
+egghead.io,8,5,2013,2023,8,Egghead.io - short screencasts about AngularJS,269,5150589,5209287
+rust-unofficial.github.io/too-many-lists,8,5,2020,2024,12,Learn Rust with entirely too many linked lists (2019),388,22390662,33474540
+ncase.me/trust,8,5,2017,2023,9,Game theory illustrated by an animated cartoon game,449,44031535,36219600
+hackernewsbooks.com,8,5,2016,2023,10,Show HN: Top books mentioned in comments on Hacker News,463,12365693,38804636
+flask.pocoo.org,8,5,2010,2018,8,Flask: a micro web framework for Python,114,1259024,1781982
+webhostingtalk.com,8,5,2007,2025,8,,,,4808359
+yudkowsky.net/rational/bayes,8,5,2009,2016,8,An Intuitive Explanation of Bayes' Theorem,100,4304165,10288189
+xkcd.com/936,8,5,2014,2022,8,Password Strength,52,2866754,8444110
+buildyourownlisp.com,8,5,2014,2022,8,Learn C and build your own Lisp,641,7530427,12042208
+gobyexample.com,8,5,2013,2022,8,Go by Example,392,11223096,5807421
+techempower.com/benchmarks,8,5,2013,2022,11,Web Framework Benchmarks Round 7,227,6649606,21485749
+alice.org,8,5,2009,2017,8,Alice: block-based programming and 3D interactive animation environment,3,17807461,3116454
+enterpriseready.io,8,5,2016,2024,9,Enterprise Ready SaaS Feature Guides,290,13015544,21669578
+ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures,8,5,2012,2020,9,SICP Video Lectures by Hal Abelman and Gerald Sussman,48,2276056,9842709
+slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup,8,5,2015,2025,9,I Can Tolerate Anything Except the Outgroup (2014),282,20183001,12753348
+vimeo.com/36579366,8,5,2012,2020,8,Bret Victor: Inventing on Principle,233,3591298,3713712
+ghost.org,8,4,2014,2024,10,Ghost 4.0 Released,20,26477173,36206184
+learngitbranching.js.org,8,4,2018,2024,8,Visual and interactive way to learn Git,342,24586436,38999334
+book.realworldhaskell.org/read,8,4,2009,2024,8,Real World Haskell,67,423540,491263
+apps.ankiweb.net,8,4,2017,2020,8,Anki: Memorization with Spaced Learning,636,17846356,23889683
+gabrielweinberg.com/startupswiki/ask_yc_archive,8,4,2008,2011,8,Ask YC/HN Archive,254,1126993,767297
+lexaloffle.com/pico-8.php,8,4,2021,2026,8,PICO-8 – Fantasy Console,188,28726621,33022608
+tour.golang.org/welcome/1,8,4,2015,2020,9,A Tour of Go,1,9568078,12727943
+qntm.org/mmacevedo,8,4,2021,2024,8,Lena,620,26224835,34026426
+karpathy.github.io/neuralnets,8,3,2015,2017,10,Hacker's Guide to Neural Networks,450,8553307,8964879
+developer.apple.com/library/mac,8,3,2011,2013,9,Apple deprecates Java,386,1814613,4837536
+learnpythonthehardway.org/index,8,2,2010,2011,8,Learn Python the Hard Way (Book by Zed Shaw),3,1552786,1767206
+cglab.ca/~abeinges/blah/too-many-lists/book,8,2,2017,2018,9,Learning Rust with Entirely Too Many Linked Lists,13,9948832,15146644
+every-layout.dev,7,8,2019,2026,19,Relearn CSS layout,985,20196061,23883048
+lowendbox.com,7,7,2012,2025,7,Bare Minimum VPS/Dedicated Servers,8,6556407,5908056
+norvig.com/lispy.html,7,7,2012,2024,7,(How to Write a (Lisp) Interpreter (in Python)),222,1745322,3707319
+cl.cam.ac.uk/~rja14/book.html,7,7,2009,2024,8,Security Engineering – A Guide to Building Dependable Distributed Systems,205,22785498,895679
+jsoftware.com/papers/tot.htm,7,7,2014,2023,8,Notation as a Tool of Thought (1979),322,43789593,8536266
+defmacro.org/ramblings/lisp.html,7,7,2010,2020,10,The Nature of Lisp,202,4765067,9811709
+martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html,7,7,2011,2024,7,Accounting for Computer Scientists,520,2298471,11851602
+laracasts.com,7,7,2014,2022,8,Jeffrey Way's Laracasts.com is live,3,6492354,10070161
+redbook.io,7,7,2016,2023,8,"Readings in Database Systems, 5th Edition (2015)",247,15436647,38806057
+orwell.ru/library/essays/politics/english/e_polit,7,7,2012,2022,7,George Orwell: Politics and the English Language,110,38981522,21480792
+biblegateway.com/passage,7,7,2012,2026,21,Founder At Work :),3,3914,31832159
+dreamsongs.com/riseofworseisbetter.html,7,7,2015,2026,8,The Rise of Worse Is Better (1991),265,41766293,35491835
+golang.org/doc/effective_go.html,7,7,2011,2018,7,Effective Go,108,4285461,5807421
+economist.com,7,7,2009,2025,7,No Way to Run a Country,1,40874668,21894737
+erowid.org,7,6,2008,2023,8,Erowid - Documenting the Complex Relationship Between Humans and Psychoactives,215,45661306,21644609
+informit.com/articles/article.aspx,7,6,2014,2024,7,Rob Pike: The Best Programming Advice I Ever Got.,427,4390118,19463183
+hammerspoon.org,7,6,2014,2022,7,Hammerspoon – macOS automation with Lua,319,21801178,10069814
+inference.org.uk/mackay/itila/book.html,7,6,2020,2026,8,"Information Theory, Inference, and Learning Algorithms (2003)",1,27723959,27414260
+vim-adventures.com,7,6,2013,2025,7,Learning VIM while playing a game,497,3877880,9896723
+nvie.com/posts/a-successful-git-branching-model,7,6,2010,2019,7,A note of reflection after 10 years of “A successful Git branching model”,199,22496724,21435074
+paulgraham.com/start.html,7,6,2007,2018,7,How to Start a Startup (2005),60,1563858,4799324
+catb.org/~esr/faqs/smart-questions.html,7,6,2008,2023,8,How To Ask Questions The Smart Way,79,2911381,135556
+redblobgames.com/grids/hexagons,7,6,2014,2023,7,Hexagonal grids for games,709,5809724,7868742
+ssllabs.com/ssltest/analyze.html,7,6,2013,2019,7,SSL Report: duckduckgo.com ,122,5947704,8472901
+4clojure.com,7,6,2012,2020,8,4Clojure hits 100K solved problems.,75,3421095,19875790

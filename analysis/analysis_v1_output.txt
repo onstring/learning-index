@@ -1,0 +1,429 @@
+
+### A. per-year story score reliability
+y | stories | max_score | ge100 | ge500 | avg_desc | max_desc | with_url | dead
+2006 | 50 | 57 | 0 | 0 | 0.3 | 15 | 50 | 5
+2007 | 22845 | 262 | 17 | 0 | 3.0 | 1590 | 20123 | 843
+2008 | 72165 | 532 | 210 | 1 | 3.2 | 418 | 64887 | 8795
+2009 | 115330 | 928 | 1156 | 7 | 3.8 | 554 | 103609 | 23676
+2010 | 186828 | 1297 | 3463 | 41 | 4.1 | 505 | 165013 | 39446
+2011 | 304449 | 4338 | 6480 | 233 | 2.9 | 680 | 275043 | 95138
+2012 | 327056 | 3531 | 7410 | 303 | 3.4 | 794 | 295906 | 80910
+2013 | 329251 | 2744 | 8999 | 446 | 4.7 | 986 | 291105 | 51268
+2014 | 309765 | 3086 | 8800 | 398 | 4.7 | 1171 | 274307 | 46445
+2015 | 343354 | 2228 | 9031 | 457 | 4.6 | 1269 | 310167 | 64643
+2016 | 377258 | 5771 | 12091 | 790 | 5.3 | 2530 | 344488 | 82278
+2017 | 386244 | 4107 | 13482 | 1012 | 5.8 | 2373 | 349070 | 87899
+2018 | 368303 | 6015 | 13691 | 994 | 6.2 | 1766 | 332793 | 81387
+2019 | 371222 | 3287 | 15036 | 1260 | 7.1 | 2180 | 334438 | 58864
+2020 | 428688 | 4240 | 15787 | 1493 | 7.2 | 4576 | 385923 | 74746
+2021 | 386869 | 4103 | 16584 | 1578 | 9.2 | 3676 | 350310 | 86647
+2022 | 383523 | 4298 | 15198 | 1266 | 9.1 | 3678 | 277532 | 76531
+2023 | 399894 | 1776 | 634 | 45 | 0.7 | 1123 | 296621 | 73877
+2024 | 392868 | 4549 | 14096 | 1193 | 7.9 | 9275 | 281604 | 87669
+2025 | 394335 | 3406 | 13868 | 1599 | 8.1 | 5044 | 286538 | 84385
+2026 | 336444 | 569 | 198 | 1 | 0.4 | 334 | 229197 | 89257
+
+### B1. tutorial-title stories by score threshold
+all_matches | ge20 | ge50 | ge100 | ge100_with_url
+126591 | 12855 | 8815 | 5532 | 5299
+
+### B2. tutorial-title stories score>=50 per year
+y | n
+2007 | 6
+2008 | 30
+2009 | 102
+2010 | 243
+2011 | 365
+2012 | 438
+2013 | 405
+2014 | 462
+2015 | 528
+2016 | 731
+2017 | 812
+2018 | 814
+2019 | 721
+2020 | 728
+2021 | 686
+2022 | 624
+2023 | 23
+2024 | 576
+2025 | 517
+2026 | 4
+
+### B3. news-domain exclusion effect on b1 score>=50
+before_excl | after_excl | dated_or_versioned
+8815 | 8507 | 1040
+
+### B4. top hosts in b1 score>=50
+host | n
+github.com | 530
+arxiv.org | 142
+medium.com | 119
+youtube.com | 107
+nytimes.com | 45
+techcrunch.com | 42
+arstechnica.com | 27
+theatlantic.com | 25
+wired.com | 25
+ai.googleblog.com | 23
+jvns.ca | 22
+spectrum.ieee.org | 22
+startupclass.samaltman.com | 21
+theguardian.com | 20
+stackoverflow.com | 20
+newyorker.com | 19
+nature.com | 19
+nautil.us | 18
+lwn.net | 18
+beej.us | 17
+theparisreview.org | 17
+docs.google.com | 17
+betterexplained.com | 16
+towardsdatascience.com | 15
+quantamagazine.org | 15
+gist.github.com | 15
+catonmat.net | 15
+hackernoon.com | 14
+learnxinyminutes.com | 14
+bloomberg.com | 14
+
+### B5. SAMPLE 40 random b1 stories score>=100 (precision eyeball)
+id | y | score | d | title | host
+3538093 | 2012 | 183 | 24 | Free course on developing iPad applications from CMU's HCI institute | cmu.edu
+9111216 | 2015 | 174 | 16 | Richard Hamming: Learning to Learn | youtube.com
+4070018 | 2012 | 152 | 44 | Ruby on Rails Tutorial screencasts, 2nd edition | news.railstutorial.org
+2730359 | 2011 | 101 | 19 | A git Primer | danielmiessler.com
+22561373 | 2020 | 135 | 110 | Yes, I am still learning Rust | llogiq.github.io
+18835324 | 2019 | 187 | 12 | A Primer on Database Replication (2017) | brianstorti.com
+13202610 | 2016 | 190 | 63 | Show HN: Learn how to build a small Twitter clone in 7 days | trysparkschool.com
+16321760 | 2018 | 271 | 69 | A Developer’s Guide to Responding to National Security Letters | twilio.com
+31506054 | 2022 | 143 | 43 | A Pragmatic Guide to Getting Things Done | hamberg.no
+18638248 | 2018 | 266 | 126 | TSA’s Roadmap for Airport Surveillance Moves in a Dangerous Direction | eff.org
+22649291 | 2020 | 147 | 109 | Ask HN: How can a intermediate-beginner learn Unix/Linux and programming? | 
+44050269 | 2025 | 213 | 174 | A South Korean grand master on the art of the perfect soy sauce | theguardian.com
+18884040 | 2019 | 268 | 70 | PHP Apprentice – An online, open-source book for learning PHP | phpapprentice.com
+45236479 | 2025 | 103 | 3 | Writing an operating system kernel from scratch – RISC-V/OpenSBI/Zig | popovicu.com
+20562890 | 2019 | 167 | 7 | Introduction to Bayesian Filter | leimao.github.io
+39816152 | 2024 | 212 | 194 | How do MRI Headphones work? (2022) | tomlingham.com
+15776995 | 2017 | 267 | 96 | A minimalist guide to tmux | medium.com
+39080003 | 2024 | 191 | 52 | Learn Datalog Today | learndatalogtoday.org
+16239839 | 2018 | 102 | 77 | What gig workers can learn from romance writers | bbc.com
+4202941 | 2012 | 276 | 99 | Show HN: Iorad - the tutorial builder | iorad.com
+14928767 | 2017 | 109 | 66 | Vermont Medical School Says Goodbye to Lectures | npr.org
+10246484 | 2015 | 103 | 10 | MLDB – Machine Learning Database | mldb.ai
+12146479 | 2016 | 347 | 33 | Approaching Almost Any Machine Learning Problem | blog.kaggle.com
+22341140 | 2020 | 199 | 14 | The Art of Powerful Questions (2003) [pdf] | umanitoba.ca
+12590478 | 2016 | 214 | 195 | Cracking the Coding Interview Tutorial | hackerrank.com
+3294840 | 2011 | 400 | 51 | Learning Modern 3D Graphics Programming | arcsynthesis.org
+8556056 | 2014 | 163 | 64 | Show HN: Balls – Game I’ve made while I was learning Swift | gameofballs.co
+16821334 | 2018 | 135 | 122 | Mark Zuckerberg Refuses to Admit How Facebook Works | bloomberg.com
+17355611 | 2018 | 108 | 59 | The software engineer’s guide to asserting dominance in the workplace | medium.com
+6738734 | 2013 | 310 | 72 | How I Learned to Work a Room | onethingnew.com
+14538086 | 2017 | 131 | 27 | Benchmarking CNTK on Keras: Is It Better at Deep Learning Than TensorFlow? | minimaxir.com
+13819830 | 2017 | 253 | 65 | ANTLR Mega Tutorial | tomassetti.me
+18240171 | 2018 | 177 | 16 | Algorithms tutorial series for beginners | adrianmejia.com
+18608158 | 2018 | 664 | 139 | Guide to scaling engineering organizations | stripe.com
+43257583 | 2025 | 179 | 54 | Learn How to Break AES | davidwong.fr
+16952222 | 2018 | 594 | 121 | Competitive Programmer's Handbook (2017) [pdf] | cses.fi
+22152633 | 2020 | 215 | 64 | Distri: 20x faster initramfs (initrd) from scratch | michael.stapelberg.ch
+19512922 | 2019 | 264 | 25 | Tone.js – A framework for making interactive music in the browser | github.com
+16630520 | 2018 | 198 | 61 | Lightning on Stellar: Technical Spec and Roadmap | stellar.org
+8040170 | 2014 | 163 | 35 | Machine Learning frameworks, libraries and software | github.com
+
+### C1. Ask HN resource threads by descendants threshold
+all_matches | ge10 | ge20 | ge50 | ge100
+18035 | 3182 | 1729 | 815 | 321
+
+### C2. per year (descendants>=20)
+y | n
+2008 | 14
+2009 | 66
+2010 | 108
+2011 | 45
+2012 | 43
+2013 | 48
+2014 | 67
+2015 | 88
+2016 | 92
+2017 | 158
+2018 | 172
+2019 | 117
+2020 | 167
+2021 | 133
+2022 | 213
+2023 | 5
+2024 | 133
+2025 | 60
+
+### C3. SAMPLE 40 random Ask HN resource threads descendants>=20
+id | y | score | d | title
+21513950 | 2019 | 68 | 22 | Ask HN: Whats the best book on your favorite programming language or topic?
+27394502 | 2021 | 31 | 45 | Ask HN: Have you stopped reading books?
+41954667 | 2024 | 26 | 34 | Ask HN: Learning to interact correctly in online communities as a neurodivergent
+40878040 | 2024 | 49 | 68 | Ask HN: What book bit, stung and shook you deeply?
+25731025 | 2021 | 3 | 23 | Ask HN: As a teacher, how could I convince my 12 yo pupils to get vaccinated?
+456275 | 2009 | 70 | 65 | Ask HN: good books about military strategy?
+13970051 | 2017 | 60 | 41 | Ask HN: Is Facebook dying?
+17909694 | 2018 | 134 | 86 | Ask HN: What are your favorite non-fiction books of all time?
+1026296 | 2010 | 125 | 138 | Ask HN: Great books you read in 2009?
+648622 | 2009 | 8 | 25 | ASK HN: Illegal Book/Mp3/* Downloads.
+4181822 | 2012 | 25 | 23 | Ask HN: How can I learn "advanced" data modelling for Rails?
+25443330 | 2020 | 76 | 55 | Ask HN: Facebook engineers, what keeps you at Facebook?
+18501197 | 2018 | 38 | 32 | Ask HN: Recent sci-fi recommendations
+44605312 | 2025 | 30 | 62 | Ask HN: Where do you guys find audiobooks?
+33567460 | 2022 | 25 | 25 | Ask HN: Should I learn more languages?
+1654936 | 2010 | 26 | 41 | Ask HN: How do I teach myself better writing skills?
+29609345 | 2021 | 53 | 58 | Ask HN: Are there any good “coding for kids” books?
+13396521 | 2017 | 69 | 58 | Ask HN: Why do coding bootcamps teach Ruby on Rails and JavaScript?
+5229185 | 2013 | 49 | 77 | Ask HN: How do you manage your bookmarks?
+20252926 | 2019 | 179 | 68 | Ask HN: Resources for getting started with bare-metal coding?
+9321375 | 2015 | 45 | 48 | Ask HN: How much do you remember from books you read only once?
+31582270 | 2022 | 37 | 26 | Ask HN: Where do you go for discourse?
+14064096 | 2017 | 441 | 445 | Ask HN: Do you still use browser bookmarks?
+15119591 | 2017 | 178 | 127 | Ask HN: How does Facebook know what I buy on Amazon or vice versa?
+1665131 | 2010 | 23 | 32 | Ask HN: Best way to prevent UX arguments with non-UX designers?
+22313041 | 2020 | 60 | 49 | Ask HN: What is the most underrated skill software engineers should learn?
+32802474 | 2022 | 36 | 53 | Ask HN: What did you learn last week?
+16679307 | 2018 | 27 | 20 | Ask HN: Whats the best way for a Software Engineer to learn finance?
+22709843 | 2020 | 107 | 36 | Ask HN: Introductory Books on the Stock Market?
+41401540 | 2024 | 6 | 20 | Ask HN: Would you use (or recommend) Windows as a developer laptop?
+14770521 | 2017 | 153 | 93 | Ask HN: Any “bootcamps” or courses for intermediate/advanced people?
+27273706 | 2021 | 358 | 120 | Ask HN: How to get started with audio programming?
+21311302 | 2019 | 474 | 192 | Ask HN: What are the most fundamental books on computer science?
+43169715 | 2025 | 182 | 140 | Ask HN: Recommend resources that helped your game dev journey?
+15981575 | 2017 | 102 | 27 | Ask HN: Resources for learning about boot loaders?
+29528305 | 2021 | 53 | 92 | Ask HN: What programming tutorial/course/article/blog would you like to see?
+8005661 | 2014 | 11 | 25 | Ask HN: Please help me teach CS to a HS student from a very different background
+18829691 | 2019 | 160 | 48 | Ask HN: Fastest way to get started with freelancing?
+40828379 | 2024 | 29 | 21 | Ask HN: Best books/courses to learn Java core+advanced?
+24212469 | 2020 | 29 | 57 | Ask HN: What's some “one sentence” wisdom you've learned or created?
+
+### C4. top 15 Ask HN resource threads by descendants
+id | y | score | d | title
+19087418 | 2019 | 2009 | 1165 | Ask HN: What books changed the way you think about almost everything?
+21581361 | 2019 | 1460 | 1076 | Ask HN: What's the most valuable thing you can learn in an hour?
+41756432 | 2024 | 376 | 940 | Ask HN: What's the "best" book you've ever read?
+22786287 | 2020 | 865 | 876 | Ask HN: What are you learning?
+28957573 | 2021 | 666 | 787 | Ask HN: Best way to host a website for 500 years?
+31204611 | 2022 | 416 | 762 | Ask HN: Teach me something new
+23151144 | 2020 | 961 | 719 | Ask HN: Mind bending books to read and never be the same as before?
+40555435 | 2024 | 532 | 680 | Ask HN: What was your most humbling learning moment?
+44789068 | 2025 | 387 | 670 | Ask HN: What trick of the trade took you too long to learn?
+29668228 | 2021 | 515 | 631 | Ask HN: What's the best book you read in 2021?
+16465762 | 2018 | 542 | 615 | Ask HN: I'm writing a book about white-collar drug use, including tech sector
+18745763 | 2018 | 629 | 601 | Ask HN: What technologies did you learn in 2018?
+21302412 | 2019 | 563 | 601 | Ask HN: Feasible Alternative to the MacBook Pro?
+22718592 | 2020 | 679 | 584 | Ask HN: Great fiction books that have had a positive impact on your life?
+30734709 | 2022 | 393 | 522 | Ask HN: What book changed your life?
+
+### D1. link stats in top-level replies of Ask HN resource threads
+hrefs | distinct_urls | distinct_hosts | comments | threads
+25124 | 3937 | 2132 | 15950 | 1612
+
+### D2. top 40 URLs by distinct commenters (threads, year span)
+nurl | ppl | threads | y0 | y1
+https:& | 8255 | 1198 | 2015 | 2025
+http:& | 2235 | 684 | 2013 | 2025
+youtube.com/watch | 37 | 33 | 2009 | 2015
+scratch.mit.edu | 11 | 9 | 2009 | 2015
+projecteuler.net | 10 | 11 | 2008 | 2014
+learnpythonthehardway.org | 9 | 6 | 2010 | 2013
+mitpress.mit.edu/sicp | 7 | 5 | 2008 | 2014
+processing.org | 7 | 7 | 2008 | 2014
+khanacademy.org | 7 | 6 | 2009 | 2014
+stackoverflow.com | 6 | 4 | 2010 | 2013
+hackdesign.org | 6 | 3 | 2013 | 2014
+books.google.com/books | 6 | 7 | 2009 | 2015
+pine.fm/learntoprogram | 5 | 5 | 2009 | 2011
+startupbook.net | 5 | 2 | 2010 | 2010
+railstutorial.org | 5 | 5 | 2010 | 2014
+google.com/search | 5 | 5 | 2009 | 2013
+c2.com/cgi/wiki | 5 | 5 | 2008 | 2014
+sivers.org/book | 4 | 4 | 2010 | 2012
+iterm2.com | 4 | 3 | 2012 | 2014
+amazon.com/how-win-friends-influence-people/dp/0671723650 | 4 | 3 | 2009 | 2011
+norvig.com/21-days.html | 4 | 4 | 2009 | 2012
+paulgraham.com/avg.html | 4 | 5 | 2010 | 2014
+youtube.com/playlist | 4 | 3 | 2014 | 2014
+learnyouahaskell.com | 4 | 4 | 2009 | 2014
+smashingmagazine.com | 4 | 4 | 2010 | 2013
+htdp.org | 4 | 3 | 2008 | 2014
+alice.org | 4 | 4 | 2009 | 2010
+codecademy.com | 4 | 4 | 2013 | 2014
+worrydream.com | 4 | 4 | 2012 | 2014
+inference.phy.cam.ac.uk/mackay/itila | 3 | 3 | 2009 | 2014
+amazon.com/mathematics-content-methods-meaning-dover/dp/0486409163 | 3 | 2 | 2014 | 2014
+namecheap.com | 3 | 2 | 2010 | 2014
+htmldog.com | 3 | 2 | 2010 | 2010
+eloquentjavascript.net | 3 | 3 | 2010 | 2014
+railscasts.com | 3 | 3 | 2008 | 2010
+marginalrevolution.com | 3 | 2 | 2010 | 2011
+video.google.com/videoplay | 3 | 3 | 2008 | 2011
+designforhackers.com | 3 | 2 | 2012 | 2014
+npr.org/blogs/money | 3 | 2 | 2010 | 2011
+techzinglive.com | 3 | 1 | 2010 | 2010
+
+### D3. top 30 hosts by distinct commenters
+host | ppl | urls
+https:& | 8255 | 1
+http:& | 2235 | 1
+amazon.com | 412 | 610
+en.wikipedia.org | 146 | 205
+news.ycombinator.com | 95 | 7
+github.com | 83 | 102
+youtube.com | 49 | 12
+ocw.mit.edu | 20 | 22
+reddit.com | 20 | 31
+stackoverflow.com | 19 | 15
+amazon.co.uk | 19 | 28
+pragprog.com | 17 | 15
+google.com | 16 | 11
+quora.com | 16 | 21
+amzn.to | 16 | 39
+goodreads.com | 16 | 19
+code.google.com | 16 | 21
+mitpress.mit.edu | 15 | 8
+coursera.org | 13 | 21
+learnpythonthehardway.org | 12 | 4
+paulgraham.com | 12 | 14
+scratch.mit.edu | 11 | 1
+projecteuler.net | 11 | 2
+oreilly.com | 11 | 11
+amzn.com | 11 | 21
+itunes.apple.com | 10 | 12
+bit.ly | 10 | 10
+processing.org | 9 | 3
+edx.org | 9 | 9
+ycombinator.com | 9 | 6
+
+### D4. URL distribution: how many URLs have >=N distinct commenters
+ge2 | ge3 | ge5 | ge10
+242 | 72 | 18 | 6
+
+### E1. corpus-wide link stats
+hrefs | urls | hosts
+6700349 | 712133 | 179736
+
+### E2. top 40 URLs corpus-wide by distinct commenters, excluding HN/wikipedia/youtube/twitter/github root
+nurl | ppl | yrs | y0 | y1
+https:& | 253071 | 15 | 2012 | 2026
+http:& | 82351 | 20 | 2007 | 2026
+webcache.googleusercontent.com/search | 1741 | 6 | 2010 | 2015
+play.google.com/store/apps/details | 1017 | 4 | 2012 | 2015
+groups.google.com/forum | 781 | 6 | 2010 | 2015
+wolframalpha.com/input | 759 | 7 | 2009 | 2015
+ycombinator.com/newsguidelines.html | 745 | 8 | 2007 | 2014
+books.google.com/books | 590 | 9 | 2007 | 2015
+bugzilla.mozilla.org/show_bug.cgi | 560 | 9 | 2007 | 2015
+ | 520 | 9 | 2007 | 2015
+c2.com/cgi/wiki | 391 | 9 | 2007 | 2015
+translate.google.com/translate | 390 | 9 | 2007 | 2015
+code.google.com/p/chromium/issues/detail | 361 | 7 | 2009 | 2015
+duckduckgo.com | 347 | 8 | 2008 | 2015
+urbandictionary.com/define.php | 334 | 9 | 2007 | 2015
+maps.google.com/maps | 326 | 9 | 2007 | 2015
+hnsearch.com/search | 324 | 4 | 2011 | 2014
+video.google.com/videoplay | 309 | 6 | 2007 | 2012
+bitcointalk.org/index.php | 293 | 5 | 2011 | 2015
+lmgtfy.com | 265 | 7 | 2009 | 2015
+npr.org/templates/story/story.php | 238 | 9 | 2007 | 2015
+papers.ssrn.com/sol3/papers.cfm | 238 | 9 | 2007 | 2015
+xkcd.com/927 | 222 | 5 | 2011 | 2015
+vim.org/scripts/script.php | 207 | 9 | 2007 | 2015
+<a href= | 194 | 7 | 2007 | 2013
+mailhide.recaptcha.net/d | 193 | 2 | 2007 | 2009
+scientificamerican.com/article.cfm | 191 | 6 | 2009 | 2014
+dl.acm.org/citation.cfm | 191 | 5 | 2011 | 2015
+market.android.com/details | 183 | 3 | 2010 | 2012
+caniuse.com | 180 | 6 | 2010 | 2015
+folklore.org/storyview.py | 179 | 9 | 2007 | 2015
+citeseerx.ist.psu.edu/viewdoc/download | 176 | 7 | 2009 | 2015
+paulgraham.com/submarine.html | 175 | 9 | 2007 | 2015
+scholar.google.com/scholar | 171 | 9 | 2007 | 2015
+docs.google.com/spreadsheet/ccc | 171 | 5 | 2011 | 2015
+gs.statcounter.com | 161 | 7 | 2009 | 2015
+google.co.uk/search | 158 | 8 | 2008 | 2015
+code.google.com/p/android/issues/detail | 157 | 7 | 2009 | 2015
+newegg.com/product/product.aspx | 155 | 9 | 2007 | 2015
+marc.info | 155 | 9 | 2007 | 2015
+
+### E3. evergreen: URLs with >=5 distinct commenters AND mentioned in >=3 distinct years (count by band)
+yrs3 | yrs5 | yrs8
+14498 | 5418 | 470
+
+### E4. SAMPLE 40 evergreen URLs (>=5 people, >=4 years), random
+nurl | ppl | yrs | y0 | y1
+python.org/dev/peps/pep-3104 | 9 | 5 | 2008 | 2012
+linuxjournal.com/article/3882 | 6 | 5 | 2008 | 2013
+code.google.com/p/googleappengine/issues/detail | 40 | 7 | 2009 | 2015
+worrydream.com/killmath | 12 | 4 | 2011 | 2015
+postsecret.com | 5 | 4 | 2010 | 2015
+science.slashdot.org/comments.pl | 10 | 7 | 2007 | 2014
+arxiv.org/abs/0706.1062 | 5 | 4 | 2009 | 2014
+eclipse.org/orion | 6 | 4 | 2011 | 2015
+infoq.com/presentations/value-values | 14 | 4 | 2012 | 2015
+mitpress.mit.edu/sicp/front/node3.html | 5 | 5 | 2009 | 2015
+tryhaskell.org | 12 | 4 | 2010 | 2013
+cappuccino.org | 34 | 5 | 2008 | 2012
+docs.google.com/support/bin/answer.py | 15 | 4 | 2009 | 2013
+paulgraham.com/road.html | 11 | 6 | 2007 | 2014
+dailymail.co.uk | 5 | 4 | 2009 | 2013
+no-www.org | 12 | 6 | 2009 | 2014
+tldp.org/ldp/abs/html | 13 | 6 | 2009 | 2015
+archiveteam.org | 11 | 4 | 2009 | 2014
+amazon.com/little-schemer-daniel-p-friedman/dp/0262560992 | 5 | 4 | 2009 | 2013
+eloquentjavascript.net/contents.html | 11 | 5 | 2010 | 2014
+highscalability.com/youtube-architecture | 6 | 4 | 2007 | 2012
+blindsearch.fejus.com | 12 | 5 | 2009 | 2013
+code.google.com/p/nativeclient | 30 | 6 | 2008 | 2014
+gladwell.com/2002/2002_07_22_a_talent.htm | 6 | 5 | 2008 | 2013
+homepages.inf.ed.ac.uk/wadler/papers/marktoberdorf/baastad.pdf | 6 | 4 | 2010 | 2015
+adam.chlipala.net/cpdt | 6 | 4 | 2011 | 2015
+cr.yp.to | 11 | 6 | 2008 | 2014
+newsblur.com | 35 | 6 | 2010 | 2015
+debian.org/security/2008/dsa-1571 | 7 | 4 | 2009 | 2013
+cocoacontrols.com | 12 | 5 | 2011 | 2015
+cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html | 6 | 4 | 2011 | 2014
+google.com/apps/intl/en/terms/premier_terms.html | 5 | 4 | 2011 | 2014
+developer.github.com/v3/oauth | 16 | 4 | 2012 | 2015
+status.heroku.com | 35 | 5 | 2010 | 2014
+berkshirehathaway.com | 14 | 7 | 2009 | 2015
+foodspotting.com | 6 | 4 | 2009 | 2012
+infoq.com/presentations/are-we-there-yet-rich-hickey | 24 | 7 | 2009 | 2015
+atomontage.com | 5 | 4 | 2011 | 2015
+hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited | 8 | 5 | 2010 | 2014
+pages.github.com | 56 | 7 | 2009 | 2015
+
+### E5. story URLs resubmitted in >=2 distinct years with a score>=20 submission (count, top 25)
+nurl | yrs | best | y0 | y1 | title
+youtube.com/watch | 20 | 2164 | 2007 | 2026 | Vint Cerf's Tripping Penguin
+google.com/search | 20 | 692 | 2007 | 2026 | New startup uses referring urls from google searches (click first resu
+papers.ssrn.com/sol3/papers.cfm | 20 | 573 | 2007 | 2026 | Demographics of Tech Entrepreneurship
+pagetable.com | 20 | 250 | 2007 | 2026 | Michael Steil's excellent C64 talk at 25C3
+hackerfactor.com/blog/index.php | 19 | 1484 | 2008 | 2026 | Forensic analysis of recent Victoria's Secret photo
+bugzilla.mozilla.org/show_bug.cgi | 19 | 1336 | 2008 | 2026 | How not to log a Bugzilla Ticket (or ask for help on an open source pr
+queue.acm.org/detail.cfm | 19 | 1165 | 2008 | 2026 | Software Transactional Memory: why is it only a research toy?
+marc.info | 19 | 825 | 2008 | 2026 | The GNU C library dynamic linker expands $ORIGIN in setuid library sea
+undeadly.org/cgi | 19 | 617 | 2008 | 2026 | OpenBSD Hardware Hackathon h2k9 Summary  
+languagelog.ldc.upenn.edu/nll | 19 | 568 | 2008 | 2026 | The Linguistic Diversity of Aboriginal Europe
+google.com | 19 | 393 | 2007 | 2026 | Google changed favicon
+esr.ibiblio.org | 19 | 217 | 2008 | 2026 | Master Foo and the Nervous Novice
+youtube.com | 19 | 144 | 2007 | 2026 | Google Techtalk: How Ant Colonies Get Things Done
+google.com/url | 19 | 103 | 2008 | 2026 | After 20 Years, Missing ComputerLand CEO Reappears 
+bunniestudios.com/blog | 18 | 1855 | 2007 | 2024 | Bunnie looks at OLED TV
+github.com | 18 | 525 | 2009 | 2026 | GitHub Down : 404 Not Found
+informit.com/articles/article.aspx | 18 | 427 | 2007 | 2025 | C++ GUI Programming with Qt4: Getting Started
+math.columbia.edu/~woit/wordpress | 18 | 412 | 2008 | 2026 | So what will you do if string theory is wrong?
+duckduckgo.com | 18 | 348 | 2008 | 2026 | Duckduckgo: I want to use but things like this put me off
+facebook.com | 18 | 325 | 2008 | 2026 | Tell HN: Entrepreneur meetup in Barcelona tomorrow - Sun, Sand and Sta
+alarmingdevelopment.org | 18 | 276 | 2008 | 2025 | Observations of programmers in the wild
+news.ycombinator.com | 18 | 252 | 2007 | 2026 | ASK HN - Good worksheet for estimating startup costs?
+loper-os.org | 18 | 206 | 2008 | 2026 | How to Recognize a Dark Age
+artima.com/weblogs/viewpost.jsp | 18 | 193 | 2007 | 2025 | Flex UI On Your Application (Bruce Eckel: xmlrpc sevices with Flex, py
+en.wikipedia.org/wiki/list_of_common_misconceptions | 18 | 94 | 2008 | 2026 | List of common misconceptions
+
+### E6. count of resubmitted-story URLs by year-span band
+yrs2 | yrs3 | yrs5
+52790 | 20019 | 5827
+
+wrote 40 urls for link-rot check to ./rot_urls.txt

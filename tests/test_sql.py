@@ -8,6 +8,7 @@ SAMPLES = [
     "http://example.com///",
     "https:&#x2F;&#x2F;a.com&#x2F;x?a=1&amp;b=2",
     "https://teachyourselfcs.com/",
+    "https://a.com/x&amp;lt;y",  # must not double-decode to "<"
     "",
 ]
 
@@ -24,6 +25,12 @@ def test_sql_host_matches_python():
     con = duckdb.connect()
     got = con.execute(f"SELECT {sql.HOST.format(n='?')}", ["example.com/a/b"]).fetchone()[0]
     assert got == text.host_of("example.com/a/b") == "example.com"
+
+
+def test_unescape_does_not_double_decode():
+    con = duckdb.connect()
+    got = con.execute(f"SELECT {sql.UNESC.format(h='?')}", ["x&amp;lt;y &#38;amp; z"]).fetchone()[0]
+    assert got == "x&lt;y &amp; z" == text.unescape_hn("x&amp;lt;y &#38;amp; z")
 
 
 def test_recommendation_regex_matches_and_rejects():

@@ -10,6 +10,7 @@ from collections.abc import Callable
 from hnlearn import assemble, build_db, candidates, classify, config, describe, fetch, site
 
 Stage = Callable[[argparse.Namespace], None]
+log = logging.getLogger(__name__)
 
 
 def _build_db(_: argparse.Namespace) -> None:
@@ -20,6 +21,7 @@ def _build_db(_: argparse.Namespace) -> None:
 def _candidates(args: argparse.Namespace) -> None:
     n = candidates.mine(config.DB_PATH, config.CANDIDATES_PATH, min_people=args.min_people,
                         limit=args.limit)
+    log.info("candidates written; downstream stages pick up new URLs on their next run")
     print(f"{n:,} candidates -> {config.CANDIDATES_PATH}")
 
 

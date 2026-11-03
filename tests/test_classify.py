@@ -79,6 +79,26 @@ def test_run_records_failures_separately_and_retries_them(tmp_path):
     assert classify.run(c, f, o, transport=Transport([reply()]))["classified"] == 1
 
 
+def test_flatten_validates_and_coerces():
+    good = classify.flatten_answers(reply(topic="programming")["answers"])
+    assert good["topic"] == "programming"
+    unknown = classify.flatten_answers(reply(topic="astrology")["answers"])
+    assert unknown["topic"] == "other"
+    for bad in (float("nan"), 1.5, -0.1, "abc"):
+        try:
+            classify.flatten_answers(reply(composite=bad)["answers"])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError(f"expected ValueError for {bad!r}")
+
+
+def test_run_records_bad_model_output_as_failure(tmp_path):
+    c, f, o = _files(tmp_path, [CAND], [FETCHED])
+    stats = classify.run(c, f, o, transport=Transport([reply(composite=float("nan"))]))
+    assert stats["failed"] == 1 and list(jsonl.read(o)) == []
+
+
 def test_run_rejects_malformed_candidate(tmp_path):
     c, f, o = _files(tmp_path, [{"nurl": "a.com"}], [FETCHED])
     try:

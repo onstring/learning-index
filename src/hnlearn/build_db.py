@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import contextlib
 import logging
 from pathlib import Path
 
 import duckdb
+
+from hnlearn import sql
 
 log = logging.getLogger(__name__)
 
@@ -17,9 +20,13 @@ def build(dataset_dir: Path, db_path: Path) -> dict[str, int]:
     """Create stories, link_comments, comment_parents and comment_root. Returns row counts."""
     if not list(dataset_dir.glob(PARQUET_GLOB)):
         raise FileNotFoundError(f"no parquet files under {dataset_dir / PARQUET_GLOB}")
-    src = f"read_parquet('{dataset_dir / PARQUET_GLOB}')"
+    src = f"read_parquet({sql.literal(str(dataset_dir / PARQUET_GLOB))})"
     db_path.parent.mkdir(parents=True, exist_ok=True)
-    con = duckdb.connect(str(db_path))
+    with contextlib.closing(duckdb.connect(str(db_path))) as con:
+        return _build_tables(con, src)
+
+
+def _build_tables(con: duckdb.DuckDBPyConnection, src: str) -> dict[str, int]:
     con.execute("SET preserve_insertion_order=false")
     tables = {
         "stories": f"""SELECT id, "by" AS author, time, title, url, score, descendants, text,
@@ -36,7 +43,6 @@ def build(dataset_dir: Path, db_path: Path) -> dict[str, int]:
         stats[name] = con.execute(f"SELECT count(*) FROM {name}").fetchone()[0]
         log.info("%s: %s rows", name, f"{stats[name]:,}")
     stats["comment_root"] = resolve_roots(con)
-    con.close()
     return stats
 
 

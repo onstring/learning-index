@@ -59,7 +59,7 @@ def run(candidates_path: Path, fetch_path: Path, clef_path: Path, blurbs_path: P
 def build_resource(cand: dict[str, Any], page: dict[str, Any], clef: dict[str, Any],
                    blurb: dict[str, Any] | None) -> dict[str, Any]:
     """One site-ready record from the four stage rows."""
-    difficulty = min(len(rubric.DIFFICULTY) - 1, max(0, round(clef["difficulty"])))
+    difficulty = min(len(rubric.DIFFICULTY) - 1, max(0, int(clef["difficulty"] + 0.5)))
     story = None
     if cand.get("story_id"):
         story = {"id": cand["story_id"], "title": cand["story_title"],
@@ -89,12 +89,24 @@ def evidence_entry(ev: dict[str, Any]) -> dict[str, Any]:
 
 
 def link_target(nurl: str, page: dict[str, Any]) -> str:
-    """Where the resource link points: the live final URL when the fetch worked."""
-    if page.get("status") == 200 and text.is_http_url(page.get("final_url") or ""):
-        return page["final_url"]
+    """Where the resource link points.
+
+    The post-redirect URL is used only when it stays on the same site, so a lapsed domain
+    that now redirects to a parked page is not published as the live link.
+    """
+    final = page.get("final_url") or ""
+    if page.get("status") == 200 and text.is_http_url(final) and same_site(nurl, final):
+        return final
     if text.is_http_url(page.get("url") or ""):
         return page["url"]
     return f"https://{nurl}"
+
+
+def same_site(nurl: str, url: str) -> bool:
+    """True when ``url``'s host is the candidate's host, a subdomain of it, or its parent."""
+    a = text.host_of(nurl)
+    b = text.host_of(text.normalise_url(url))
+    return bool(a and b) and (a == b or b.endswith("." + a) or a.endswith("." + b))
 
 
 def display_title(cand: dict[str, Any], page: dict[str, Any], blurb: dict[str, Any] | None) -> str:

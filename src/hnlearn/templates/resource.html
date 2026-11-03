@@ -29,7 +29,7 @@
     <li>
       <blockquote>{{ e.excerpt }}</blockquote>
       <p class="attrib">
-        <a href="https://news.ycombinator.com/user?id={{ e.author }}" rel="noopener">{{ e.author }}</a>{% if e.date %}, {{ e.date[:4] }}{% endif %}
+        <a href="https://news.ycombinator.com/user?id={{ e.author | urlencode }}" rel="noopener">{{ e.author }}</a>{% if e.date %}, {{ e.date[:4] }}{% endif %}
         · <a href="{{ e.comment_url }}" rel="noopener">comment</a>
         {% if e.root_title and e.root_url %}· in <a href="{{ e.root_url }}" rel="noopener">{{ e.root_title }}</a>{% endif %}
       </p>

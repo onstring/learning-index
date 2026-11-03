@@ -41,6 +41,36 @@ def test_mine_limit_and_overwrite(dataset_dir, tmp_path):
     assert len(list(jsonl.read(out))) == 2
 
 
+def test_mine_limit_zero_and_negative(dataset_dir, tmp_path):
+    db = tmp_path / "hn.duckdb"
+    build_db.build(dataset_dir, db)
+    out = tmp_path / "c.jsonl"
+    assert candidates.mine(db, out, min_people=2, limit=0) == 0
+    try:
+        candidates.mine(db, out, min_people=2, limit=-1)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("expected ValueError")
+
+
+def test_recommendation_regex_sees_unescaped_apostrophes(dataset_dir, tmp_path):
+    import duckdb
+    db = tmp_path / "hn.duckdb"
+    build_db.build(dataset_dir, db)
+    con = duckdb.connect(str(db))
+    for i, author in enumerate(("p", "q", "r")):
+        con.execute("INSERT INTO link_comments VALUES (?, ?, ?, ?, ?, false, false)",
+                    [900 + i, author, f"202{i}-01-01 00:00:00", 100,
+                     'I&#x27;d recommend <a href="https://apostrophe.example/x">this</a>'])
+        con.execute("INSERT INTO comment_parents VALUES (?, 100)", [900 + i])
+        con.execute("INSERT INTO comment_root VALUES (?, 100, 1)", [900 + i])
+    con.close()
+    out = tmp_path / "c.jsonl"
+    candidates.mine(db, out, min_people=3)
+    assert "apostrophe.example/x" in {r["nurl"] for r in jsonl.read(out)}
+
+
 def test_dedupe_evidence_keeps_one_per_author():
     ev = [{"author": "a", "excerpt": "long long"}, {"author": "a", "excerpt": "short"},
           {"author": "b", "excerpt": "x"}, {"author": "c", "excerpt": "y"},

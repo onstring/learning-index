@@ -58,7 +58,7 @@ def _classify_one(cand: dict[str, Any], page: dict[str, Any], questions: dict[st
         decision = ollama.systemone(model, state, questions, transport=transport)
         row = {"nurl": cand["nurl"], "model": model, "latency": round(time.monotonic() - t0, 2),
                **flatten_answers(decision.answers), "usage": decision.usage}
-    except (ollama.OllamaError, KeyError, TypeError) as e:
+    except (ollama.OllamaError, KeyError, TypeError, ValueError) as e:
         stats["failed"] += 1
         jsonl.append(errors_path(out_path), {"nurl": cand["nurl"], "error": str(e)[:300]})
         log.warning("classify %s failed: %s", cand["nurl"], e)
@@ -68,14 +68,28 @@ def _classify_one(cand: dict[str, Any], page: dict[str, Any], questions: dict[st
 
 
 def flatten_answers(answers: dict[str, Any]) -> dict[str, Any]:
-    """One flat row from clef's answer object: probabilities, choices and scores."""
+    """One flat row from clef's answer object: probabilities, choices and scores.
+
+    Raises ValueError on a probability outside [0, 1] or NaN; unknown choices become "other".
+    """
     row: dict[str, Any] = {}
     for name, *_ in (*rubric.BOOLS, rubric.COMPOSITE):
-        row[name] = float(answers[name]["noul"])
-    for name in ("topic", "resource_type"):
-        row[name] = answers[name]["choice"]
+        row[name] = _probability(name, answers[name]["noul"])
+    for name, known in (("topic", rubric.TOPICS), ("resource_type", rubric.TYPES)):
+        choice = answers[name]["choice"]
+        row[name] = choice if choice in known else "other"
         row[name + "_probs"] = answers[name]["probabilities"]
         row[name + "_confidence"] = answers[name].get("confidence")
-    row["difficulty"] = float(answers["difficulty"]["score"])
+    score = float(answers["difficulty"]["score"])
+    if not 0 <= score <= len(rubric.DIFFICULTY) - 1:
+        raise ValueError(f"difficulty score out of range: {score}")
+    row["difficulty"] = score
     row["difficulty_probs"] = answers["difficulty"].get("probabilities")
     return row
+
+
+def _probability(name: str, value: Any) -> float:
+    p = float(value)
+    if not 0.0 <= p <= 1.0:  # also rejects NaN
+        raise ValueError(f"{name}: probability out of range: {value!r}")
+    return p

@@ -64,6 +64,16 @@ def test_http_error_becomes_ollama_error():
         ollama.systemone("m", "s", {"q": {"type": "noul", "instructions": "?"}}, transport=t)
 
 
+def test_truncated_reply_and_non_object_become_ollama_error():
+    import http.client
+    t = FakeTransport([http.client.IncompleteRead(b"partial")])
+    with pytest.raises(ollama.OllamaError, match="IncompleteRead"):
+        ollama.chat_json("m", "s", "u", {}, transport=t)
+    t = FakeTransport([{"message": {"content": "[1, 2]"}}])
+    with pytest.raises(ollama.OllamaError, match="not an object"):
+        ollama.chat_json("m", "s", "u", {}, transport=t)
+
+
 def test_connection_error_becomes_ollama_error():
     t = FakeTransport([urllib.error.URLError("Connection refused")])
     with pytest.raises(ollama.OllamaError, match="Connection refused"):

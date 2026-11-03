@@ -6,6 +6,7 @@ it per row and move on. The transport is injectable for tests.
 
 from __future__ import annotations
 
+import http.client
 import json
 import urllib.error
 import urllib.request
@@ -39,7 +40,10 @@ def post(path: str, body: dict[str, Any], timeout: float) -> dict[str, Any]:
     req = urllib.request.Request(config.OLLAMA_URL + path, data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310 - fixed local URL
-        return json.loads(resp.read())
+        reply = json.loads(resp.read())
+    if not isinstance(reply, dict):
+        raise ValueError(f"{path}: reply is not a JSON object")
+    return reply
 
 
 def _call(transport: Transport | None, path: str, body: dict[str, Any]) -> dict[str, Any]:
@@ -51,8 +55,8 @@ def _call(transport: Transport | None, path: str, body: dict[str, Any]) -> dict[
         raise OllamaError(f"HTTP {e.code} from {path}: {detail}") from e
     except urllib.error.URLError as e:
         raise OllamaError(f"cannot reach Ollama at {config.OLLAMA_URL}: {e.reason}") from e
-    except (json.JSONDecodeError, TimeoutError, OSError) as e:
-        raise OllamaError(f"{path}: {e}") from e
+    except (http.client.HTTPException, ValueError, TimeoutError, OSError) as e:
+        raise OllamaError(f"{path}: {type(e).__name__}: {e}") from e
 
 
 def systemone(model: str, state: str, questions: dict[str, Any], *, keep_alive: str = "10m",

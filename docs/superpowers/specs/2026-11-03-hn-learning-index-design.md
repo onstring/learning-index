@@ -138,7 +138,13 @@ state: stages read files and write new files.
 - Dataset and fetched pages are untrusted. Scripts run with `python -I`; no code is
   loaded from `dataset/` or `data/`. All page content is rendered through Jinja2
   autoescape; no `|safe` on data. Link targets must start with `http://` or `https://`.
-- Fetch failures are recorded per row, never raised; a failed fetch is a data point.
+- Fetch targets and every redirect must be http or https to a public address (loopback,
+  private, link-local and `localhost` names are refused after DNS resolution), with no
+  credentials in the URL. This stops a crafted href in the dataset from reaching the local
+  Ollama server or anything else on the network.
+- Fetch failures are recorded per row, never raised; a failed fetch is a data point. Rows
+  with no HTTP answer or a 5xx are fetched again on the next run; later rows for the same
+  URL supersede earlier ones.
 - Ollama failures (connection refused, HTTP error, invalid JSON from qwen) are
   recorded per row with the error text and the row is retried on the next run.
 - Every stage validates its input rows (required keys, types) and stops with a clear

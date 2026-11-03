@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import contextlib
 import logging
 from pathlib import Path
 from typing import Any
@@ -12,33 +13,36 @@ from hnlearn import config, jsonl, sql
 
 log = logging.getLogger(__name__)
 
-EVIDENCE_FETCH = 8  # evidence rows pulled per URL before de-duplicating by author
+EVIDENCE_FETCH = 24  # evidence rows pulled per URL before de-duplicating by author
 
 
 def mine(db_path: Path, out_path: Path, *, min_people: int = config.MIN_PEOPLE,
          limit: int | None = None) -> int:
-    """Write one JSONL row per qualifying URL (overwrites). Returns the row count."""
-    con = duckdb.connect(str(db_path), read_only=True)
-    _build_mentions(con)
-    _build_recs(con)
-    _build_submissions(con)
-    rows = con.execute(f"""
-        SELECT r.nurl, r.host, r.ppl, r.yrs, r.y0, r.y1, r.mentions, r.evidence,
-               s.id AS story_id, s.title AS story_title, s.score AS story_score
-        FROM rec r LEFT JOIN sub s USING (nurl)
-        WHERE r.ppl >= ? AND {sql.noise_filter('r.host')} AND r.host LIKE '%.%'
-        ORDER BY r.ppl DESC, r.yrs DESC, r.nurl
-        {'LIMIT ' + str(int(limit)) if limit else ''}""", [min_people]).fetchall()
+    """Write one JSONL row per qualifying URL (atomic overwrite). Returns the row count."""
+    if limit is not None and limit < 0:
+        raise ValueError("limit must be zero or more")
+    with contextlib.closing(duckdb.connect(str(db_path), read_only=True)) as con:
+        _build_mentions(con)
+        _build_recs(con)
+        _build_submissions(con)
+        rows = con.execute(f"""
+            SELECT r.nurl, r.host, r.ppl, r.yrs, r.y0, r.y1, r.mentions, r.evidence,
+                   s.id AS story_id, s.title AS story_title, s.score AS story_score
+            FROM rec r LEFT JOIN sub s USING (nurl)
+            WHERE r.ppl >= ? AND {sql.noise_filter('r.host')} AND r.host LIKE '%.%'
+            ORDER BY r.ppl DESC, r.yrs DESC, r.nurl
+            {'LIMIT ' + str(int(limit)) if limit is not None else ''}""",
+                           [min_people]).fetchall()
     cols = ["nurl", "host", "ppl", "yrs", "y0", "y1", "mentions", "evidence",
             "story_id", "story_title", "story_score"]
-    if out_path.exists():
-        out_path.unlink()
-    for raw in rows:
-        row: dict[str, Any] = dict(zip(cols, raw, strict=True))
-        row["evidence"] = dedupe_evidence(row["evidence"], config.MAX_EXCERPTS)
-        jsonl.append(out_path, row)
-    log.info("candidates: %d URLs with %d+ recommenders", len(rows), min_people)
-    return len(rows)
+    n = jsonl.replace_with(out_path, (_row(cols, raw) for raw in rows))
+    log.info("candidates: %d URLs with %d+ recommenders", n, min_people)
+    return n
+
+
+def _row(cols: list[str], raw: tuple[Any, ...]) -> dict[str, Any]:
+    row: dict[str, Any] = dict(zip(cols, raw, strict=True))
+    return {**row, "evidence": dedupe_evidence(row["evidence"], config.MAX_EXCERPTS)}
 
 
 def dedupe_evidence(evidence: list[dict[str, Any]], limit: int) -> list[dict[str, Any]]:
@@ -57,6 +61,7 @@ def dedupe_evidence(evidence: list[dict[str, Any]], limit: int) -> list[dict[str
 
 def _build_mentions(con: duckdb.DuckDBPyConnection) -> None:
     excerpt = sql.UNESC.format(h=sql.STRIP.format(t="c.text"))
+    unescaped = sql.UNESC.format(h="c.text")
     con.execute(f"""CREATE TEMP TABLE mention AS
         SELECT c.id, c.author, strftime(c.time, '%Y-%m-%d') AS date, year(c.time) AS yr,
                {sql.NORM.format(u=sql.UNESC.format(h='t.h'))} AS nurl,
@@ -67,7 +72,7 @@ def _build_mentions(con: duckdb.DuckDBPyConnection) -> None:
         LEFT JOIN stories st ON st.id = cr.root,
         unnest(regexp_extract_all(c.text, {sql.HREF}, 1)) AS t(h)
         WHERE NOT c.dead AND NOT c.deleted
-          AND regexp_matches(c.text, {sql.literal(sql.REC_REGEX)})""")
+          AND regexp_matches({unescaped}, {sql.literal(sql.REC_REGEX)})""")
 
 
 def _build_recs(con: duckdb.DuckDBPyConnection) -> None:

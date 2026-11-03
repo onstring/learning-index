@@ -7,11 +7,13 @@ from __future__ import annotations
 
 from hnlearn import config
 
-# HN escapes entities in comment text; undo the common ones so hrefs parse
+# HN escapes entities in comment text; undo the common ones so hrefs parse.
+# Ampersand forms go through a sentinel first so that "&amp;lt;" decodes to "&lt;" and
+# "&#38;amp;" to "&amp;", exactly as html.unescape does (single pass, no double decode).
 UNESC = (
-    "replace(replace(replace(replace(replace(replace(replace(replace(replace({h},"
-    "'&#x2F;','/'),'&#38;','&'),'&amp;','&'),'&#x27;',''''),'&quot;','\"'),"
-    "'&#62;','>'),'&#60;','<'),'&gt;','>'),'&lt;','<')"
+    "replace(replace(replace(replace(replace(replace(replace(replace(replace(replace({h},"
+    "'&amp;',chr(1)),'&#38;',chr(1)),'&#x2F;','/'),'&#x27;',''''),'&quot;','\"'),"
+    "'&#62;','>'),'&#60;','<'),'&gt;','>'),'&lt;','<'),chr(1),'&')"
 )
 # canonical URL key; keep in step with text.normalise_url
 NORM = (

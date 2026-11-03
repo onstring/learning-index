@@ -96,6 +96,24 @@ def test_junk_titles_fall_through():
     assert assemble.display_title(c, {"title": "Real Page"}, junk_blurb) == "Real Page"
 
 
+def test_link_target_ignores_cross_site_redirects():
+    page = {"status": 200, "url": "https://old.com/x", "final_url": "https://parked-domains.biz/"}
+    assert assemble.link_target("old.com/x", page) == "https://old.com/x"
+    page["final_url"] = "https://www.old.com/x/"
+    assert assemble.link_target("old.com/x", page) == "https://www.old.com/x/"
+    assert assemble.same_site("docs.a.com/x", "https://a.com/y")
+    assert not assemble.same_site("a.com", "https://evil-a.com")
+
+
+def test_difficulty_rounds_half_up(tmp_path):
+    p = write(tmp_path, [cand("a.com"), cand("b.com")], [fetched("a.com"), fetched("b.com")],
+              [clef("a.com", difficulty=0.5), clef("b.com", difficulty=1.5)], [])
+    assemble.run(p["c"], p["f"], p["k"], p["b"], tmp_path / "r.json")
+    doc = json.loads((tmp_path / "r.json").read_text())
+    by = {r["nurl"]: r["difficulty"] for r in doc["resources"]}
+    assert by == {"a.com": 1, "b.com": 2}
+
+
 def test_slug_collisions_get_suffix():
     slugs = assemble.unique_slugs(["a.com/x", "a.com/x/", "a.com-x", "b.com"])
     assert slugs["b.com"] == "b-com"

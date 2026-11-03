@@ -165,6 +165,27 @@ production rule and the comparison below covers the 87 in common.
 The snippet helps slightly and costs 0.3 s per URL. Five URLs flipped at 0.7, three
 of them in the right direction. The production run keeps the snippet.
 
+### 4c. Full production run
+
+Run on 2026-11-03 over every candidate with 3 or more recommenders.
+
+| Measure | Value |
+|---|---|
+| candidates | 2,522 |
+| classified (live pages only) | 2,179 in 1 h 55 min, 0 failures, 3.2 s and 2,460 input tokens per URL |
+| kept at composite 0.7 | 1,193 (55 percent); 1,010 would pass at 0.8 |
+| kept rows with `is_video` above 0.5 | 38, mostly MOOCs with lecture video; the 6 above 0.8 were screencast or lecture-video sites and are excluded |
+| kept rows with `is_paid_book` above 0.5 | 17, about 10 of them real paid-book pages; no exclusion applied because a 0.6 cut would also drop free books such as the Google SRE book |
+| blurbs (qwen3, thinking off) | 1,193 in 37 min, 0 failures, 1.6 s per URL |
+| final resources on the site | 1,186 |
+
+Spot check: 30 resources drawn at random from the built site (`analysis/spot_check.py`,
+seed 7) were judged against the rubric by Claude Code. 23 were clear keeps, 4 were
+borderline (an experience report, an essay series, an audio talk series, a business
+blog), 3 were clear misses (the MongoDB product site, the paid Garbage Collection
+Handbook homepage, the NHS website). That is a precision of about 0.77 to 0.90
+depending on how the borderline items are counted, in line with the evaluation.
+
 ## 5. Results: topic
 
 Accuracy on the 39 gold-keep URLs, counting a hit when the model's topic is in the

@@ -127,9 +127,15 @@ def clef_questions() -> dict[str, dict[str, Any]]:
     return q
 
 
-def keep(composite_prob: float, threshold: float = config.KEEP_THRESHOLD) -> bool:
-    """The keep rule: composite probability at or above the threshold."""
-    return composite_prob >= threshold
+def keep(composite_prob: float, threshold: float = config.KEEP_THRESHOLD,
+         video_prob: float = 0.0) -> bool:
+    """The keep rule: composite probability at or above the threshold, and not clearly video."""
+    return composite_prob >= threshold and video_prob < config.VIDEO_EXCLUDE
+
+
+def keep_row(clef: dict[str, Any], threshold: float = config.KEEP_THRESHOLD) -> bool:
+    """Apply the keep rule to a classify output row."""
+    return keep(clef[COMPOSITE[0]], threshold, clef.get("is_video", 0.0))
 
 
 def state_text(cand: dict[str, Any], fetched: dict[str, Any] | None) -> str:

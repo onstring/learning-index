@@ -25,7 +25,7 @@ Decisions made here, changeable by editing `config.py`:
 |---|---|---|
 | Working name | "HN Learning Index" | neutral; one constant to rename |
 | Candidate threshold | 3 or more distinct recommenders | the evaluated population; 2 is a later experiment |
-| Keep rule | clef composite question at or above 0.7 | as evaluated (accuracy 0.85, recall 0.95). Adding hard exclusions on `is_video`, `is_code_repo`, `is_paid_book` was scored on the same eval outputs and only lost recall (0.92), so they are stored for audit but not applied. 0.8 scored higher on the same 100 items but was not adopted, to avoid tuning on the evaluation set |
+| Keep rule | clef composite question at or above 0.7, and `is_video` below 0.8 | as evaluated (accuracy 0.85, recall 0.95). Hard exclusions at 0.5 on `is_video`, `is_code_repo`, `is_paid_book` were scored on the same eval outputs and only lost recall (0.92), so they are not applied at that level. The full run showed 38 kept rows with `is_video` above 0.5; the six above 0.8 were all screencast or lecture-video sites, so that one exclusion is applied. 0.8 for the composite scored higher on the same 100 items but was not adopted, to avoid tuning on the evaluation set |
 | Topics, types, difficulty | the 15 / 8 / 3 lists from `analysis/eval/eval_rubric.py` | evaluated |
 | Dead links | 404, 410, DNS failure or timeout excluded; 403 and 429 kept and marked unverified | bot blocks are common on good sites |
 | Ranking | distinct recommenders descending, then years spanned descending | explainable |

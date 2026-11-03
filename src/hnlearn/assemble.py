@@ -23,15 +23,16 @@ def run(candidates_path: Path, fetch_path: Path, clef_path: Path, blurbs_path: P
     fetched = {r["nurl"]: r for r in jsonl.read(fetch_path)}
     blurbs = {r["nurl"]: r for r in jsonl.read(blurbs_path)}
     stats = {"candidates": len(cands), "classified": 0, "kept": 0, "dropped": 0, "dead": 0,
-             "missing_blurb": 0}
+             "stale": 0, "missing_blurb": 0}
     kept: list[dict[str, Any]] = []
     for clef in jsonl.read(clef_path):
         stats["classified"] += 1
         nurl = clef["nurl"]
-        if nurl not in cands:
-            raise ValueError(f"clef row for unknown candidate {nurl}; rerun candidates first")
+        if nurl not in cands:  # dropped by a later candidates run (for example a new noise host)
+            stats["stale"] += 1
+            continue
         page = fetched.get(nurl) or {}
-        if not rubric.keep(clef[rubric.COMPOSITE[0]], threshold):
+        if not rubric.keep_row(clef, threshold):
             stats["dropped"] += 1
             continue
         if page.get("status") not in config.ELIGIBLE_STATUSES:

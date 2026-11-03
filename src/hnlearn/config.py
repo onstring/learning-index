@@ -36,6 +36,8 @@ OLLAMA_TIMEOUT_S = 600
 CLEF_MODEL = "clef-flash"
 BLURB_MODEL = "qwen3:30b-a3b"
 KEEP_THRESHOLD = 0.7
+# a kept row whose is_video probability reaches this is dropped (screencasts, lecture videos)
+VIDEO_EXCLUDE = 0.8
 BLURB_MAX_WORDS = 25
 
 # site
@@ -52,7 +54,7 @@ NOISE_HOSTS = (
     "google.com", "duckduckgo.com", "bing.com", "scholar.google.com", "groups.google.com",
     "play.google.com", "books.google.com", "books.google.co.uk", "news.google.com",
     "amazon.com", "amzn.to", "amzn.com", "amazon.co.uk", "goodreads.com",
-    "reddit.com", "old.reddit.com",
+    "reddit.com", "old.reddit.com", "quora.com",
     "github.com", "gist.github.com", "gitlab.com", "bitbucket.org",
     "npmjs.com", "pypi.org", "crates.io",
     "archive.org", "web.archive.org", "webcache.googleusercontent.com",

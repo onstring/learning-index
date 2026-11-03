@@ -52,7 +52,7 @@ def test_assemble_joins_and_ranks(tmp_path):
     out = tmp_path / "resources.json"
     stats = assemble.run(p["c"], p["f"], p["k"], p["b"], out)
     assert stats == {"candidates": 5, "classified": 4, "kept": 2, "dropped": 1,
-                     "dead": 1, "missing_blurb": 0}
+                     "dead": 1, "stale": 0, "missing_blurb": 0}
     doc = json.loads(out.read_text())
     assert [r["nurl"] for r in doc["resources"]] == ["b.com/x", "a.com"]
     b = doc["resources"][0]
@@ -122,11 +122,10 @@ def test_slug_collisions_get_suffix():
     assert len(set(slugs.values())) == 4
 
 
-def test_assemble_rejects_missing_candidate_for_clef_row(tmp_path):
-    p = write(tmp_path, [], [fetched("a.com")], [clef("a.com")], [])
-    try:
-        assemble.run(p["c"], p["f"], p["k"], p["b"], tmp_path / "r.json")
-    except ValueError as e:
-        assert "a.com" in str(e)
-    else:
-        raise AssertionError("expected ValueError")
+def test_assemble_skips_stale_clef_rows_and_videos(tmp_path):
+    video = clef("v.com")
+    video["is_video"] = 0.9
+    p = write(tmp_path, [cand("v.com")], [fetched("a.com"), fetched("v.com")],
+              [clef("a.com"), video], [])
+    stats = assemble.run(p["c"], p["f"], p["k"], p["b"], tmp_path / "r.json")
+    assert stats["stale"] == 1 and stats["dropped"] == 1 and stats["kept"] == 0

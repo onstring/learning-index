@@ -27,18 +27,19 @@ def run(candidates_path: Path, fetch_path: Path, clef_path: Path, out_path: Path
     cands = {row["nurl"]: row for row in jsonl.read(candidates_path)}
     fetched = {row["nurl"]: row for row in jsonl.read(fetch_path)}
     done = jsonl.done_keys(out_path, "nurl")
-    stats = {"described": 0, "skipped_dropped": 0, "failed": 0}
+    stats = {"described": 0, "skipped_dropped": 0, "stale": 0, "failed": 0}
     for clef in jsonl.read(clef_path):
         nurl = clef["nurl"]
         if nurl in done:
             continue
-        if not rubric.keep(clef[rubric.COMPOSITE[0]], threshold):
+        if not rubric.keep_row(clef, threshold):
             stats["skipped_dropped"] += 1
+            continue
+        if nurl not in cands:  # dropped by a later candidates run (for example a new noise host)
+            stats["stale"] += 1
             continue
         if limit is not None and stats["described"] + stats["failed"] >= limit:
             break
-        if nurl not in cands:
-            raise ValueError(f"clef row for unknown candidate {nurl}; rerun candidates first")
         _describe_one(cands[nurl], fetched.get(nurl), model, out_path, transport, stats)
         if (stats["described"] + stats["failed"]) % 50 == 0:
             log.info("describe: %s", stats)

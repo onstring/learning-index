@@ -37,7 +37,7 @@ def test_run_describes_kept_rows_only(tmp_path):
                         [clef_row("a.com", 0.9), clef_row("b.com", 0.2)])
     t = Transport([{"title": "A page", "blurb": "Learn A."}])
     stats = describe.run(c, f, k, o, transport=t)
-    assert stats == {"described": 1, "skipped_dropped": 1, "failed": 0}
+    assert stats == {"described": 1, "skipped_dropped": 1, "stale": 0, "failed": 0}
     rows = list(jsonl.read(o))
     assert rows[0]["nurl"] == "a.com" and rows[0]["title"] == "A page"
     assert rows[0]["blurb"] == "Learn A." and rows[0]["usage"]["input_tokens"] == 10
@@ -66,14 +66,10 @@ def test_run_rejects_bad_reply_and_retries(tmp_path):
     assert ok["described"] == 1
 
 
-def test_run_rejects_clef_row_without_candidate(tmp_path):
+def test_run_skips_clef_row_without_candidate(tmp_path):
     c, f, k, o = _files(tmp_path, [], [FETCHED], [clef_row("a.com", 0.9)])
-    try:
-        describe.run(c, f, k, o, transport=Transport([{"title": "T", "blurb": "B"}]))
-    except ValueError as e:
-        assert "a.com" in str(e)
-    else:
-        raise AssertionError("expected ValueError")
+    stats = describe.run(c, f, k, o, transport=Transport([]))
+    assert stats["stale"] == 1 and stats["described"] == 0
 
 
 def test_clean_reply_trims_and_limits():

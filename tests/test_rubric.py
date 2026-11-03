@@ -13,9 +13,13 @@ def test_clef_questions_shape():
             assert set(spec["criteria"]) == {"true", "false"}
 
 
-def test_keep_rule_uses_threshold():
+def test_keep_rule_uses_threshold_and_video_exclusion():
     assert rubric.keep(0.7, threshold=0.7)
     assert not rubric.keep(0.69, threshold=0.7)
+    assert rubric.keep(0.9, threshold=0.7, video_prob=0.79)
+    assert not rubric.keep(0.9, threshold=0.7, video_prob=0.8)
+    assert rubric.keep_row({rubric.COMPOSITE[0]: 0.9, "is_video": 0.1})
+    assert not rubric.keep_row({rubric.COMPOSITE[0]: 0.9, "is_video": 0.95})
 
 
 def test_state_text_includes_context_and_omits_missing():

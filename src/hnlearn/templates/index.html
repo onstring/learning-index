@@ -1,30 +1,23 @@
 {% extends "base.html" %}
-{% from "_card.html" import card %}
+{% from "_card.html" import card, filters %}
 {% block content %}
 <section class="hero">
   <h1>{{ site.tagline }}</h1>
   <p>{{ total }} free tutorials, courses, books and explainers that at least {{ site.min_people }}
   different Hacker News commenters recommended, often years apart. No videos, no paid books,
-  no news.</p>
+  no news. Browse by topic, type or level in the sidebar, or search.</p>
   <form class="search" role="search" onsubmit="return false">
     <label for="q" class="visually-hidden">Search resources</label>
     <input id="q" type="search" placeholder="Search titles, descriptions and sites" autocomplete="off">
   </form>
   <ul id="results" class="results" hidden></ul>
 </section>
-<section id="topics">
-  <h2>Topics</h2>
-  <ul class="topics">
-    {% for t in topics %}
-    <li><a href="topics/{{ t.key }}.html">{{ t.label }}</a> <span class="count">{{ t.count }}</span></li>
-    {% endfor %}
-  </ul>
-</section>
 <section>
   <h2>Most recommended</h2>
+  {{ filters(root, true, true, true) }}
   {% for r in resources %}
   {{ card(r, root) }}
   {% endfor %}
+  <p class="more"><a href="all.html">All {{ total }} resources</a></p>
 </section>
 {% endblock %}
-{% block scripts %}<script src="{{ root }}search.js" defer></script>{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from "_card.html" import card, filters %}
+{% block title %}{{ heading }} · {{ site.name }}{% endblock %}
+{% block description %}{{ intro }}{% endblock %}
+{% block content %}
+<h1>{{ heading }}</h1>
+<p>{{ intro }}</p>
+{{ filters(root, not (active and active[0] == "topics"), not (active and active[0] == "types"), not (active and active[0] == "levels")) }}
+{% for r in resources %}
+{{ card(r, root) }}
+{% endfor %}
+{% endblock %}

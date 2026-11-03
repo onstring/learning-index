@@ -1,6 +1,35 @@
-// Client-side search over search.json. Builds DOM nodes with textContent only.
+// Client-side search (search.json) and on-page card filters. DOM is built with
+// textContent only; no HTML is injected from data.
 (function () {
   "use strict";
+
+  // ---- filters: narrow the cards already on the page by topic, type and level ----
+  var form = document.querySelector("[data-filters]");
+  if (form) {
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+    var shown = form.querySelector("[data-shown]");
+    var selects = Array.prototype.slice.call(form.querySelectorAll("select"));
+
+    function applyFilters() {
+      var want = {};
+      selects.forEach(function (s) { if (s.value) { want[s.name] = s.value; } });
+      var visible = 0;
+      cards.forEach(function (c) {
+        var ok = Object.keys(want).every(function (k) {
+          return c.getAttribute("data-" + k) === want[k];
+        });
+        c.hidden = !ok;
+        if (ok) { visible += 1; }
+      });
+      if (shown) {
+        shown.textContent = Object.keys(want).length
+          ? visible + " of " + cards.length + " shown" : "";
+      }
+    }
+    selects.forEach(function (s) { s.addEventListener("change", applyFilters); });
+  }
+
+  // ---- search: filter search.json by terms, render a result list ----
   var input = document.getElementById("q");
   var list = document.getElementById("results");
   if (!input || !list) { return; }

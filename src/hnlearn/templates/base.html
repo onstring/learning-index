@@ -8,23 +8,40 @@
 <link rel="stylesheet" href="{{ root }}style.css">
 </head>
 <body>
-<header class="top">
+<div class="layout">
+<aside class="side">
   <a class="brand" href="{{ root }}index.html">{{ site.name }}</a>
-  <nav>
-    <a href="{{ root }}index.html#topics">Topics</a>
-    <a href="{{ root }}about.html">About</a>
-  </nav>
-</header>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="{{ root }}all.html">All resources <span class="count">{{ total }}</span></a>
+        <a href="{{ root }}about.html">About</a>
+      </p>
+      {% for group, title, folder in (("topics", "Topics", "topics"), ("types", "Type", "types"), ("levels", "Level", "levels")) %}
+      <h2>{{ title }}</h2>
+      <ul>
+        {% for f in facets[group] %}
+        <li{% if active and active[0] == folder and active[1] == f.key %} class="active"{% endif %}>
+          <a href="{{ root }}{{ folder }}/{{ f.key }}.html">{{ f.label }}</a>
+          <span class="count">{{ f.count }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </nav>
+  </details>
+</aside>
 <main>
 {% block content %}{% endblock %}
-</main>
 <footer>
-  <p>{{ site.name }}: resources recommended by at least {{ site.min_people }} different Hacker News
-  commenters, classified by a local model. Built {{ generated_at[:10] }}.
-  Comment excerpts belong to their authors and link to the original threads.
-  Contains information from the open-index/hacker-news dataset (ODC-By 1.0).
-  <a href="{{ root }}about.html">How this works</a>.</p>
+  <p>{{ site.name }}: free learning resources recommended by at least {{ site.min_people }}
+  different Hacker News commenters. Built {{ generated_at[:10] }}. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="{{ root }}about.html">About</a>.</p>
 </footer>
-{% block scripts %}{% endblock %}
+</main>
+</div>
+<script src="{{ root }}site.js" defer></script>
 </body>
 </html>

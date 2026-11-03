@@ -9,8 +9,8 @@
   <p class="url"><a href="{{ r.url }}" rel="noopener">{{ r.url }}</a></p>
   {% if r.blurb %}<p class="blurb lead">{{ r.blurb }}</p>{% endif %}
   <p class="meta">
-    <span class="badge">{{ r.type_label }}</span>
-    <span class="badge">{{ r.difficulty_label }}</span>
+    <a class="badge" href="{{ root }}types/{{ r.resource_type }}.html">{{ r.type_label }}</a>
+    <a class="badge" href="{{ root }}levels/{{ r.level }}.html">{{ r.difficulty_label }}</a>
     <span class="count">Recommended by {{ r.ppl }} different commenters across {{ r.yrs }}
       year{{ 's' if r.yrs != 1 }} ({{ r.y0 }}–{{ r.y1 }})</span>
   </p>

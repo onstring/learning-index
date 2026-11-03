@@ -1,13 +1,37 @@
 {% macro card(r, root) %}
-<article class="card">
+<article class="card" data-topic="{{ r.topic }}" data-type="{{ r.resource_type }}" data-level="{{ r.level }}">
   <h3><a href="{{ root }}r/{{ r.slug }}.html">{{ r.title }}</a></h3>
   {% if r.blurb %}<p class="blurb">{{ r.blurb }}</p>{% endif %}
   <p class="meta">
     <a class="topic" href="{{ root }}topics/{{ r.topic }}.html">{{ r.topic_label }}</a>
-    <span class="badge">{{ r.type_label }}</span>
-    <span class="badge">{{ r.difficulty_label }}</span>
+    <a class="badge" href="{{ root }}types/{{ r.resource_type }}.html">{{ r.type_label }}</a>
+    <a class="badge" href="{{ root }}levels/{{ r.level }}.html">{{ r.difficulty_label }}</a>
     <span class="host">{{ r.host }}</span>
     <span class="count">{{ r.ppl }} recommenders, {{ r.y0 }}–{{ r.y1 }}</span>
   </p>
 </article>
+{% endmacro %}
+
+{% macro filters(root, show_topic, show_type, show_level) %}
+<form class="filters" onsubmit="return false" data-filters>
+  {% if show_topic %}
+  <label>Topic
+    <select name="topic"><option value="">All</option>
+      {% for f in facets.topics %}<option value="{{ f.key }}">{{ f.label }}</option>{% endfor %}
+    </select></label>
+  {% endif %}
+  {% if show_type %}
+  <label>Type
+    <select name="type"><option value="">All</option>
+      {% for f in facets.types %}<option value="{{ f.key }}">{{ f.label }}</option>{% endfor %}
+    </select></label>
+  {% endif %}
+  {% if show_level %}
+  <label>Level
+    <select name="level"><option value="">All</option>
+      {% for f in facets.levels %}<option value="{{ f.key }}">{{ f.label }}</option>{% endfor %}
+    </select></label>
+  {% endif %}
+  <span class="shown" data-shown></span>
+</form>
 {% endmacro %}

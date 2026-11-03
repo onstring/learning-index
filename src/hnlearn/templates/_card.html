@@ -7,6 +7,8 @@
     <a class="badge" href="{{ root }}types/{{ r.resource_type }}.html">{{ r.type_label }}</a>
     <a class="badge" href="{{ root }}levels/{{ r.level }}.html">{{ r.difficulty_label }}</a>
     <span class="host">{{ r.host }}</span>
+    <a class="translate" href="{{ translate_url(r.url) }}" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">{{ site.translate_label }}</a>
     <span class="count">{{ r.ppl }} recommenders, {{ r.y0 }}–{{ r.y1 }}</span>
   </p>
 </article>

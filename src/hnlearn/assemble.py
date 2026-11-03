@@ -49,7 +49,8 @@ def run(candidates_path: Path, fetch_path: Path, clef_path: Path, blurbs_path: P
     jsonl.write_json(out_path, {
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "site": {"name": config.SITE_NAME, "tagline": config.SITE_TAGLINE,
-                 "keep_threshold": threshold, "min_people": config.MIN_PEOPLE},
+                 "keep_threshold": threshold, "min_people": config.MIN_PEOPLE,
+                 "translate_label": config.TRANSLATE_LABEL},
         "topics": topic_counts(resources),
         "resources": resources,
     })

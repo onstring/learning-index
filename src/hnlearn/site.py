@@ -8,6 +8,7 @@ import shutil
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -32,7 +33,8 @@ def render(resources_path: Path, out_dir: Path, *,
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=True,
                       trim_blocks=True, lstrip_blocks=True)
     env.globals.update(site=model["site"], facets=facets, generated_at=model["generated_at"],
-                       total=len(resources))
+                       total=len(resources), build_id=build_id(model["generated_at"]),
+                       translate_url=translate_url)
     for stale in ("r", "topics", "types", "levels"):
         shutil.rmtree(out_dir / stale, ignore_errors=True)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -83,6 +85,16 @@ def level_facet(resources: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [{"key": k, "label": label, "count": counts[k]}
             for k, label in zip(LEVEL_KEYS, rubric.DIFFICULTY_LABELS, strict=True)
             if counts.get(k)]
+
+
+def build_id(generated_at: str) -> str:
+    """Digits of the build timestamp, used to cache-bust the stylesheet and script."""
+    return "".join(ch for ch in generated_at if ch.isdigit())[:14]
+
+
+def translate_url(url: str, target: str = config.TRANSLATE_TARGET) -> str:
+    """Google Translate link for a page, rendered in ``target`` (default Simplified Chinese)."""
+    return f"https://translate.google.com/translate?sl=auto&tl={target}&u={quote(url, safe='')}"
 
 
 def search_index(resources: list[dict[str, Any]]) -> list[dict[str, Any]]:

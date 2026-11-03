@@ -42,6 +42,8 @@ BLURB_MAX_WORDS = 25
 
 # site
 HOME_LIMIT = 100
+TRANSLATE_TARGET = "zh-CN"  # Google Translate target language for the "translated" links
+TRANSLATE_LABEL = "中文"
 
 # hosts that are never a learning resource in their own right
 NOISE_HOSTS = (

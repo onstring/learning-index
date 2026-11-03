@@ -6,7 +6,9 @@
   <p class="crumbs"><a href="{{ root }}index.html">Home</a> ›
     <a href="{{ root }}topics/{{ r.topic }}.html">{{ r.topic_label }}</a></p>
   <h1><a href="{{ r.url }}" rel="noopener">{{ r.title }}</a></h1>
-  <p class="url"><a href="{{ r.url }}" rel="noopener">{{ r.url }}</a></p>
+  <p class="url"><a href="{{ r.url }}" rel="noopener">{{ r.url }}</a>
+    · <a class="translate" href="{{ translate_url(r.url) }}" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">{{ site.translate_label }} (Google 翻译)</a></p>
   {% if r.blurb %}<p class="blurb lead">{{ r.blurb }}</p>{% endif %}
   <p class="meta">
     <a class="badge" href="{{ root }}types/{{ r.resource_type }}.html">{{ r.type_label }}</a>

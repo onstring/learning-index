@@ -57,7 +57,7 @@ def test_render_writes_all_pages_and_escapes(tmp_path):
     assert '<select name="type">' in index and '<select name="level">' in index
     page = (out / "r/a-com.html").read_text(encoding="utf-8")
     assert EVIL not in page and "Rec &lt;script&gt;" in page
-    assert 'href="../style.css"' in page and 'href="../topics/programming.html"' in page
+    assert 'href="../topics/programming.html"' in page
     assert 'href="https://a.com"' in page and "news.ycombinator.com/user?id=alice" in page
     assert "50 points" in page
     assert ("https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fa.com"

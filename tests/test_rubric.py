@@ -44,6 +44,15 @@ def test_state_text_reports_failed_fetch():
     assert "Fetch status" not in s
 
 
+def test_state_text_drops_bot_check_pages():
+    cand = {"nurl": "a.com", "host": "a.com", "ppl": 3, "yrs": 1, "y0": 2020, "y1": 2020,
+            "story_title": "Real Name", "story_score": 5, "evidence": []}
+    s = rubric.state_text(cand, {"status": 200, "title": "Just a moment...",
+                                 "description": "x", "snippet": "Enable JavaScript and cookies"})
+    assert "Just a moment" not in s and "Page text" not in s
+    assert "bot-check" in s and "Hacker News story title: Real Name" in s
+
+
 def test_blurb_schema_and_prompt():
     schema = rubric.blurb_schema()
     assert schema["required"] == ["title", "blurb"]

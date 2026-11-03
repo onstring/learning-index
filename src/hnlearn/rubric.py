@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from hnlearn import config
+from hnlearn import config, text
 
 # (name, instructions, true description, false description)
 BOOLS: tuple[tuple[str, str, str, str], ...] = (
@@ -135,6 +135,9 @@ def keep(composite_prob: float, threshold: float = config.KEEP_THRESHOLD) -> boo
 def state_text(cand: dict[str, Any], fetched: dict[str, Any] | None) -> str:
     """Context text for one candidate, identical for clef and for the blurb model."""
     lines = [f"URL: https://{cand['nurl']}", f"Host: {cand['host']}"]
+    if fetched and text.is_challenge_page(fetched.get("title"), fetched.get("snippet")):
+        lines.append("Fetch status: the site returned a bot-check page instead of content")
+        fetched = None
     if fetched:
         if fetched.get("title"):
             lines.append(f"Page title: {fetched['title']}")

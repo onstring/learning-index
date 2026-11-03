@@ -27,6 +27,8 @@ def render(resources_path: Path, out_dir: Path, *,
                       trim_blocks=True, lstrip_blocks=True)
     env.globals.update(site=model["site"], topics=model["topics"],
                        generated_at=model["generated_at"])
+    for stale in ("r", "topics"):  # resources dropped since the last build must disappear
+        shutil.rmtree(out_dir / stale, ignore_errors=True)
     out_dir.mkdir(parents=True, exist_ok=True)
     pages = 0
     pages += _write(env, "index.html", out_dir / "index.html", root="",

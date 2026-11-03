@@ -50,6 +50,21 @@ def test_slugify():
     assert len(text.slugify("y" * 200, maxlen=20)) == 20
 
 
+def test_is_junk_title():
+    for junk in ("One moment, please...", "Just a moment...", "Attention Required! | Cloudflare",
+                 "Home", "404", "x"):
+        assert text.is_junk_title(junk), junk
+    assert not text.is_junk_title("Homebrew documentation")
+    assert not text.is_junk_title("Eloquent JavaScript")
+
+
+def test_is_challenge_page():
+    assert text.is_challenge_page("Just a moment...", None)
+    assert text.is_challenge_page("Fine title", "Please enable JavaScript and cookies to continue")
+    assert not text.is_challenge_page("Fine title", "Chapter 1. Values, Types, and Operators")
+    assert not text.is_challenge_page(None, None)
+
+
 def test_is_http_url():
     assert text.is_http_url("https://a.com")
     assert text.is_http_url("http://a.com/x")

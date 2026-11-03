@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import hashlib
 import logging
-import re
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
@@ -99,25 +98,11 @@ def link_target(nurl: str, page: dict[str, Any]) -> str:
 
 
 def display_title(cand: dict[str, Any], page: dict[str, Any], blurb: dict[str, Any] | None) -> str:
-    page_title = page.get("title")
-    if page_title and is_junk_title(page_title):
-        page_title = None
-    for candidate in ((blurb or {}).get("title"), page_title, cand.get("story_title")):
-        if candidate and candidate.strip():
+    """First usable of: blurb-model title, fetched page title, HN story title, the URL."""
+    for candidate in ((blurb or {}).get("title"), page.get("title"), cand.get("story_title")):
+        if candidate and candidate.strip() and not text.is_junk_title(candidate):
             return text.truncate(candidate.strip(), 120)
     return cand["nurl"]
-
-
-JUNK_TITLES = ("one moment please", "just a moment", "attention required", "access denied",
-               "403 forbidden", "client challenge", "are you a robot", "captcha",
-               "page not found", "404", "untitled", "home", "index")
-_PUNCT = re.compile(r"[^a-z0-9 ]+")
-
-
-def is_junk_title(title: str) -> bool:
-    """True for bot-challenge, error and placeholder page titles."""
-    t = " ".join(_PUNCT.sub(" ", title.lower()).split())
-    return len(t) < 3 or any(t == j or t.startswith(j + " ") for j in JUNK_TITLES)
 
 
 def unique_slugs(nurls: list[str]) -> dict[str, str]:

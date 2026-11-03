@@ -90,13 +90,10 @@ def test_title_and_url_fallbacks(tmp_path):
 
 
 def test_junk_titles_fall_through():
-    for junk in ("One moment, please...", "Just a moment...", "Attention Required! | Cloudflare",
-                 "Home", "404", "x"):
-        assert assemble.is_junk_title(junk), junk
-    assert not assemble.is_junk_title("Homebrew documentation")
-    assert not assemble.is_junk_title("Eloquent JavaScript")
     c = cand("a.com", story=True)
     assert assemble.display_title(c, {"title": "One moment, please..."}, None) == "Story"
+    junk_blurb = {"title": "Just a moment..."}
+    assert assemble.display_title(c, {"title": "Real Page"}, junk_blurb) == "Real Page"
 
 
 def test_slug_collisions_get_suffix():

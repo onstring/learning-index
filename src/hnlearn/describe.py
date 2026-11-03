@@ -37,6 +37,8 @@ def run(candidates_path: Path, fetch_path: Path, clef_path: Path, out_path: Path
             continue
         if limit is not None and stats["described"] + stats["failed"] >= limit:
             break
+        if nurl not in cands:
+            raise ValueError(f"clef row for unknown candidate {nurl}; rerun candidates first")
         _describe_one(cands[nurl], fetched.get(nurl), model, out_path, transport, stats)
         if (stats["described"] + stats["failed"]) % 50 == 0:
             log.info("describe: %s", stats)

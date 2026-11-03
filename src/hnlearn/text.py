@@ -99,3 +99,26 @@ def slugify(s: str, maxlen: int = 80) -> str:
 def is_http_url(url: str) -> bool:
     """True for an absolute http or https URL with no whitespace or quote characters."""
     return bool(_HTTP_URL.match(url))
+
+
+JUNK_TITLES = ("one moment please", "just a moment", "attention required", "access denied",
+               "403 forbidden", "client challenge", "are you a robot", "captcha",
+               "page not found", "404", "untitled", "home", "index")
+CHALLENGE_PHRASES = ("enable javascript and cookies", "checking your browser",
+                     "verify you are human", "please turn javascript on",
+                     "performing a security check", "ray id")
+_PUNCT = re.compile(r"[^a-z0-9 ]+")
+
+
+def is_junk_title(title: str) -> bool:
+    """True for bot-challenge, error and placeholder page titles."""
+    t = " ".join(_PUNCT.sub(" ", title.lower()).split())
+    return len(t) < 3 or any(t == j or t.startswith(j + " ") for j in JUNK_TITLES)
+
+
+def is_challenge_page(title: str | None, snippet: str | None) -> bool:
+    """True when the fetched page is a bot wall or placeholder rather than the resource."""
+    if title and is_junk_title(title):
+        return True
+    s = (snippet or "").lower()
+    return any(p in s for p in CHALLENGE_PHRASES)

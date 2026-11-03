@@ -14,7 +14,8 @@ Feasibility study: `docs/feasibility.md`. Classifier evaluation: `docs/classifie
 uv sync
 uvx --from huggingface_hub hf download open-index/hacker-news --repo-type dataset \
     --include 'data/*' stats.csv README.md --local-dir dataset
-ollama pull clef-flash qwen3:30b-a3b
+ollama pull clef-flash
+ollama pull qwen3:30b-a3b
 ```
 
 ## Pipeline

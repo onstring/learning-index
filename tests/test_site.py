@@ -52,6 +52,16 @@ def test_render_writes_all_pages_and_escapes(tmp_path):
     assert search[0]["u"] == "r/a-com.html" and search[1]["k"] == "web"
 
 
+def test_render_removes_stale_pages(tmp_path):
+    src = tmp_path / "resources.json"
+    jsonl.write_json(src, model())
+    out = tmp_path / "site"
+    (out / "r").mkdir(parents=True)
+    (out / "r" / "gone.html").write_text("old")
+    site.render(src, out)
+    assert not (out / "r" / "gone.html").exists() and (out / "r" / "a-com.html").exists()
+
+
 def test_render_rejects_bad_model(tmp_path):
     src = tmp_path / "resources.json"
     jsonl.write_json(src, {"resources": []})

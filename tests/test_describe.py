@@ -66,6 +66,16 @@ def test_run_rejects_bad_reply_and_retries(tmp_path):
     assert ok["described"] == 1
 
 
+def test_run_rejects_clef_row_without_candidate(tmp_path):
+    c, f, k, o = _files(tmp_path, [], [FETCHED], [clef_row("a.com", 0.9)])
+    try:
+        describe.run(c, f, k, o, transport=Transport([{"title": "T", "blurb": "B"}]))
+    except ValueError as e:
+        assert "a.com" in str(e)
+    else:
+        raise AssertionError("expected ValueError")
+
+
 def test_clean_reply_trims_and_limits():
     out = describe.clean_reply({"title": "  My Title  ", "blurb": " Learn things.  "})
     assert out == {"title": "My Title", "blurb": "Learn things."}

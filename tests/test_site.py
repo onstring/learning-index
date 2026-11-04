@@ -42,9 +42,10 @@ def build(tmp_path):
 
 def test_render_writes_all_pages_and_escapes(tmp_path):
     stats, out = build(tmp_path)
-    # index, about, all, 2 topics, 2 types, 2 levels, 2 resources
-    assert stats == {"resources": 2, "topics": 2, "pages": 11}
-    for name in ("index.html", "about.html", "all.html", "topics/programming.html",
+    # index, about, all, favourites, 2 topics, 2 types, 2 levels, 2 resources
+    assert stats == {"resources": 2, "topics": 2, "pages": 12}
+    for name in ("index.html", "about.html", "all.html", "favourites.html",
+                 "topics/programming.html",
                  "topics/web.html", "types/course.html", "types/explainer.html",
                  "levels/beginner.html", "levels/advanced.html", "r/a-com.html",
                  "r/b-com-x.html", "search.json", "style.css", "site.js"):
@@ -55,6 +56,7 @@ def test_render_writes_all_pages_and_escapes(tmp_path):
     assert 'href="types/course.html"' in index and 'href="levels/advanced.html"' in index
     assert 'data-type="course"' in index and 'data-level="beginner"' in index
     assert '<select name="type">' in index and '<select name="level">' in index
+    assert "No videos" not in index and "often years apart" not in index
     page = (out / "r/a-com.html").read_text(encoding="utf-8")
     assert EVIL not in page and "Rec &lt;script&gt;" in page
     assert 'href="../topics/programming.html"' in page
@@ -79,6 +81,20 @@ def test_facet_pages_list_matching_resources_and_mark_active(tmp_path):
     assert 'href="../r/b-com-x.html"' in advanced and "1 resources" in advanced
     all_page = (out / "all.html").read_text(encoding="utf-8")
     assert all_page.count('<article class="card"') == 2
+
+
+def test_favourites_are_wired_for_client_side_storage(tmp_path):
+    _, out = build(tmp_path)
+    index = (out / "index.html").read_text(encoding="utf-8")
+    assert 'data-slug="a-com"' in index and 'data-fav="a-com"' in index
+    assert 'href="favourites.html"' in index and "data-fav-count" in index
+    page = (out / "r/a-com.html").read_text(encoding="utf-8")
+    assert 'data-fav="a-com"' in page
+    favs = (out / "favourites.html").read_text(encoding="utf-8")
+    assert favs.count('<article class="card"') == 2 and "data-favourites" in favs
+    assert "this browser" in favs
+    js = (out / "site.js").read_text(encoding="utf-8")
+    assert "localStorage" in js and "data-fav" in js
 
 
 def test_about_page_has_no_implementation_details(tmp_path):

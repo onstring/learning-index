@@ -1,6 +1,11 @@
+{% macro fav_button(slug) %}
+<button class="fav" type="button" data-fav="{{ slug }}" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+{% endmacro %}
+
 {% macro card(r, root) %}
-<article class="card" data-topic="{{ r.topic }}" data-type="{{ r.resource_type }}" data-level="{{ r.level }}">
-  <h3><a href="{{ root }}r/{{ r.slug }}.html">{{ r.title }}</a></h3>
+<article class="card" data-slug="{{ r.slug }}" data-topic="{{ r.topic }}" data-type="{{ r.resource_type }}" data-level="{{ r.level }}">
+  <h3>{{ fav_button(r.slug) }}<a href="{{ root }}r/{{ r.slug }}.html">{{ r.title }}</a></h3>
   {% if r.blurb %}<p class="blurb">{{ r.blurb }}</p>{% endif %}
   <p class="meta">
     <a class="topic" href="{{ root }}topics/{{ r.topic }}.html">{{ r.topic_label }}</a>

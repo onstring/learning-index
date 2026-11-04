@@ -75,6 +75,18 @@ h3 { font-size: 1.1rem; margin: 0 0 0.2rem; }
 .filters { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: end; margin: 0.4rem 0 0.8rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.85rem; color: var(--muted); }
 .filters label { display: flex; flex-direction: column; gap: 0.15rem; }
 .filters .shown { align-self: center; }
+.fav {
+  font: inherit;
+  font-size: 1.15em;
+  line-height: 1;
+  background: none;
+  border: 0;
+  padding: 0 0.35rem 0 0;
+  cursor: pointer;
+  color: var(--muted);
+  vertical-align: baseline;
+}
+.fav:hover, .fav[aria-pressed="true"] { color: var(--accent); }
 .card { padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
 .card .blurb { margin: 0.2rem 0 0.4rem; }
 .card .count, .meta .count { color: var(--muted); font-size: 0.85rem; }

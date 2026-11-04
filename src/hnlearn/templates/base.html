@@ -16,6 +16,7 @@
     <nav>
       <p class="navlinks">
         <a href="{{ root }}all.html">All resources <span class="count">{{ total }}</span></a>
+        <a href="{{ root }}favourites.html">Favourites <span class="count" data-fav-count></span></a>
         <a href="{{ root }}about.html">About</a>
       </p>
       {% for group, title, folder in (("topics", "Topics", "topics"), ("types", "Type", "types"), ("levels", "Level", "levels")) %}

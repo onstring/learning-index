@@ -3,6 +3,64 @@
 (function () {
   "use strict";
 
+  // ---- favourites: a set of resource slugs kept in this browser's localStorage ----
+  var FAV_KEY = "hnlearn:favourites";
+  var SLUG_OK = /^[a-z0-9-]{1,80}$/;
+
+  function loadFavs() {
+    try {
+      var raw = window.localStorage.getItem(FAV_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr.filter(function (s) {
+        return typeof s === "string" && SLUG_OK.test(s);
+      }) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveFavs(favs) {
+    try { window.localStorage.setItem(FAV_KEY, JSON.stringify(favs)); } catch (e) { /* private mode */ }
+  }
+
+  function paintFavs(favs) {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-fav]"));
+    buttons.forEach(function (b) {
+      var on = favs.indexOf(b.getAttribute("data-fav")) !== -1;
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.setAttribute("aria-label", on ? "Remove from favourites" : "Add to favourites");
+      b.textContent = on ? "★" : "☆";
+    });
+    var count = document.querySelector("[data-fav-count]");
+    if (count) { count.textContent = favs.length ? String(favs.length) : ""; }
+    var box = document.querySelector("[data-favourites]");
+    if (box) {
+      var any = false;
+      Array.prototype.slice.call(box.querySelectorAll(".card")).forEach(function (c) {
+        var keep = favs.indexOf(c.getAttribute("data-slug")) !== -1;
+        c.hidden = !keep;
+        any = any || keep;
+      });
+      box.hidden = !any;
+      var empty = document.querySelector("[data-fav-empty]");
+      if (empty) { empty.hidden = any; }
+    }
+  }
+
+  document.addEventListener("click", function (ev) {
+    var b = ev.target.closest ? ev.target.closest("[data-fav]") : null;
+    if (!b) { return; }
+    var slug = b.getAttribute("data-fav");
+    if (!SLUG_OK.test(slug)) { return; }
+    var favs = loadFavs();
+    var next = favs.indexOf(slug) === -1
+      ? favs.concat([slug])
+      : favs.filter(function (s) { return s !== slug; });
+    saveFavs(next);
+    paintFavs(next);
+  });
+  paintFavs(loadFavs());
+
   // ---- filters: narrow the cards already on the page by topic, type and level ----
   var form = document.querySelector("[data-filters]");
   if (form) {

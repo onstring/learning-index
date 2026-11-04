@@ -43,6 +43,9 @@ def render(resources_path: Path, out_dir: Path, *,
     pages += _write(env, "about.html", out_dir / "about.html", root="")
     pages += _write(env, "list.html", out_dir / "all.html", root="", heading="All resources",
                     intro="Every resource, most recommended first.", resources=resources)
+    # Every card is rendered; the browser shows only those starred in localStorage.
+    pages += _write(env, "favourites.html", out_dir / "favourites.html", root="",
+                    resources=resources)
     pages += _facet_pages(env, out_dir, "topics", facets["topics"], resources, "topic")
     pages += _facet_pages(env, out_dir, "types", facets["types"], resources, "resource_type")
     pages += _facet_pages(env, out_dir, "levels", facets["levels"], resources, "level")

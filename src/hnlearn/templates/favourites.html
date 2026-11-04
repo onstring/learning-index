@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "_card.html" import card %}
+{% block title %}Favourites · {{ site.name }}{% endblock %}
+{% block description %}Resources you starred.{% endblock %}
+{% block content %}
+<h1>Favourites</h1>
+<p>Resources you starred with ☆. They are saved in this browser only, so they will not follow
+you to another device.</p>
+<p class="note" data-fav-empty>Nothing starred yet. Click ☆ next to any resource to save it here.</p>
+<div data-favourites hidden>
+{% for r in resources %}
+{{ card(r, root) }}
+{% endfor %}
+</div>
+{% endblock %}

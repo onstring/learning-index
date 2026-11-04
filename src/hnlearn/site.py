@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 import shutil
@@ -33,7 +34,7 @@ def render(resources_path: Path, out_dir: Path, *,
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=True,
                       trim_blocks=True, lstrip_blocks=True)
     env.globals.update(site=model["site"], facets=facets, generated_at=model["generated_at"],
-                       total=len(resources), build_id=build_id(model["generated_at"]),
+                       total=len(resources), build_id=build_id(),
                        translate_url=translate_url)
     for stale in ("r", "topics", "types", "levels"):
         shutil.rmtree(out_dir / stale, ignore_errors=True)
@@ -90,9 +91,15 @@ def level_facet(resources: list[dict[str, Any]]) -> list[dict[str, Any]]:
             if counts.get(k)]
 
 
-def build_id(generated_at: str) -> str:
-    """Digits of the build timestamp, used to cache-bust the stylesheet and script."""
-    return "".join(ch for ch in generated_at if ch.isdigit())[:14]
+def build_id(assets: tuple[str, ...] = ASSETS) -> str:
+    """Hash of the static assets, used to cache-bust the stylesheet and script.
+
+    Content-based so a changed script is refetched even when resources.json is unchanged.
+    """
+    digest = hashlib.sha1()  # noqa: S324
+    for asset in assets:
+        digest.update((HERE / "static" / asset).read_bytes())
+    return digest.hexdigest()[:12]
 
 
 def translate_url(url: str, target: str = config.TRANSLATE_TARGET) -> str:

@@ -64,7 +64,8 @@ def test_render_writes_all_pages_and_escapes(tmp_path):
     assert "50 points" in page
     assert ("https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fa.com"
             in page)
-    assert 'href="../style.css?v=20261103' in page
+    assert f'href="../style.css?v={site.build_id()}"' in page
+    assert len(site.build_id()) == 12
     unverified = (out / "r/b-com-x.html").read_text(encoding="utf-8")
     assert "could not verify" in unverified.lower()
     search = json.loads((out / "search.json").read_text(encoding="utf-8"))

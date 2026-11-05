@@ -116,6 +116,27 @@ def test_render_removes_stale_pages(tmp_path):
     assert not (out / "r" / "gone.html").exists() and (out / "r" / "a-com.html").exists()
 
 
+def test_sidebar_links_to_hub_and_sibling_sections(tmp_path):
+    # The HN site is published under /hn/ beside /reddit/ and a hub /index.html.
+    _, out = build(tmp_path)
+    index = (out / "index.html").read_text(encoding="utf-8")
+    assert 'href="../index.html"' in index and 'href="../reddit/index.html"' in index
+    page = (out / "r/a-com.html").read_text(encoding="utf-8")
+    assert 'href="../../index.html"' in page and 'href="../../reddit/index.html"' in page
+
+
+def test_site_cli_writes_to_out_dir(tmp_path, monkeypatch):
+    from hnlearn import __main__ as cli
+    from hnlearn import config
+
+    src = tmp_path / "resources.json"
+    jsonl.write_json(src, model())
+    monkeypatch.setattr(config, "RESOURCES_PATH", src)
+    out = tmp_path / "published" / "hn"
+    assert cli.main(["site", "--out", str(out)]) == 0
+    assert (out / "index.html").exists() and (out / "style.css").exists()
+
+
 def test_render_rejects_bad_model(tmp_path):
     src = tmp_path / "resources.json"
     jsonl.write_json(src, {"resources": []})

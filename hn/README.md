@@ -20,7 +20,10 @@ ollama pull qwen3:30b-a3b
 
 ## Pipeline
 
-Every stage reads the previous stage's file under `data/` and resumes where it left off.
+Run these from this `hn/` folder; this project is one section of the Learning Index repo
+(see the [top-level README](../README.md)). Every stage reads the previous stage's file under
+`data/` and resumes where it left off. `make site` writes to `../site/hn/`, the published
+location; `python -m hnlearn site` without `--out` still writes to `site/` here.
 
 ```sh
 uv run python -I -m hnlearn build_db      # dataset/*.parquet -> data/hn.duckdb
@@ -39,10 +42,10 @@ uv run python -I -m hnlearn site          # -> site/
 ## Preview
 
 ```sh
-python3 -m http.server -d site 8000   # then open http://localhost:8000/
+python3 -m http.server -d ../site 8000   # then open http://localhost:8000/hn/
 ```
 
-Opening `site/index.html` straight from disk works for browsing, but search needs the
+Opening `../site/hn/index.html` straight from disk works for browsing, but search needs the
 http server because browsers refuse to load `search.json` over `file://`.
 
 ## First full run (2026-11-03, dataset through 2026-08, Apple Silicon 32 GB)

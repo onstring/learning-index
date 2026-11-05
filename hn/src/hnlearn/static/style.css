@@ -39,6 +39,9 @@ a:hover { text-decoration: underline; }
   font-size: 0.92rem;
 }
 .side .brand { display: block; font-weight: 700; color: var(--fg); font-size: 1.1rem; margin-bottom: 0.8rem; }
+.side .hub { margin: 0 0 0.2rem; font-size: 0.8rem; color: var(--muted); }
+.side .hub a { color: var(--muted); }
+.side .sections { margin: -0.4rem 0 0.8rem; font-size: 0.82rem; }
 .side summary { display: none; }
 .side h2 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 1.2rem 0 0.3rem; }
 .side ul { list-style: none; padding: 0; margin: 0; }

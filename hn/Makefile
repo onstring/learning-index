@@ -3,6 +3,8 @@
 # the two Ollama models do not fit in memory together on a 32 GB machine.
 
 PY := uv run python -I -m hnlearn
+# The site is published from the repo root's site/ folder, beside the Reddit section.
+OUT ?= ../site/hn
 
 .PHONY: all build_db candidates fetch classify describe assemble site test lint clean-site
 
@@ -29,7 +31,7 @@ assemble:
 	$(PY) assemble
 
 site:
-	$(PY) site
+	$(PY) site --out $(OUT)
 
 test:
 	uv run pytest --cov
@@ -38,4 +40,4 @@ lint:
 	uv run ruff check src tests
 
 clean-site:
-	rm -rf site
+	rm -rf $(OUT)

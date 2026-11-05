@@ -6,6 +6,7 @@ import argparse
 import logging
 import sys
 from collections.abc import Callable
+from pathlib import Path
 
 from hnlearn import assemble, build_db, candidates, classify, config, describe, fetch, site
 
@@ -48,9 +49,10 @@ def _assemble(_: argparse.Namespace) -> None:
     print(", ".join(f"{k}={v:,}" for k, v in stats.items()), f"-> {config.RESOURCES_PATH}")
 
 
-def _site(_: argparse.Namespace) -> None:
-    stats = site.render(config.RESOURCES_PATH, config.SITE_DIR)
-    print(", ".join(f"{k}={v:,}" for k, v in stats.items()), f"-> {config.SITE_DIR}/")
+def _site(args: argparse.Namespace) -> None:
+    out = args.out or config.SITE_DIR
+    stats = site.render(config.RESOURCES_PATH, out)
+    print(", ".join(f"{k}={v:,}" for k, v in stats.items()), f"-> {out}/")
 
 
 STAGES: dict[str, Stage] = {
@@ -70,6 +72,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit", type=int, default=None, help="process only the first N rows")
     parser.add_argument("--min-people", type=int, default=config.MIN_PEOPLE,
                         help="candidates: minimum distinct recommenders")
+    parser.add_argument("--out", type=Path, default=None,
+                        help="site: output directory (default: site/)")
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,

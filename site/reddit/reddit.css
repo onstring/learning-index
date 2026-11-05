@@ -1,5 +1,7 @@
 /* Reddit-only rules on top of the shared theme (style.css). Uses its variables. */
 .side li.active a { font-weight: 700; color: var(--fg); }
+.side .navlinks a[aria-current] { font-weight: 700; color: var(--fg); }
+.side .navlinks .count { margin-left: 0.2rem; }
 .score { font-weight: 700; }
 .score.s5 { background: var(--accent); color: var(--bg); }
 .score.s3 { color: var(--muted); }

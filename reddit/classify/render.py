@@ -39,7 +39,7 @@ def load(path: Path, tier: str, period: str) -> list[dict]:
     with open(path, newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     return [{
-        "period": period, "tier": tier, "sub": r["subreddit"],
+        "id": r["id"], "period": period, "tier": tier, "sub": r["subreddit"],
         "rank": int(r["rank"]), "score": int(r["learning_value"]),
         "cat": r["category"], "scope": r.get("scope") or "n/a",
         "topics": [t.strip() for t in r["topics"].split(";") if t.strip()],

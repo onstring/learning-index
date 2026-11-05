@@ -84,6 +84,18 @@ def test_periods_get_slug_keys_and_counts(sets, tmp_path):
     assert meta["periods"] == data["periods"]
 
 
+def test_favourites_are_wired_for_client_side_storage(sets, tmp_path):
+    out = tmp_path / "r"
+    render.render(sets, out)
+    html = (out / "index.html").read_text(encoding="utf-8")
+    data = data_of(html)
+    # every post carries its Reddit id, the key a favourite is stored under
+    assert [p["id"] for p in data["posts"]] == ["a", "b", "c", "a"]
+    assert "reddit:favourites" in html and "localStorage" in html
+    assert 'href="#fav"' in html and 'id="fav-count"' in html
+    assert "data-fav" in html and "this browser" in html
+
+
 def test_missing_period_data_fails_loudly(tmp_path):
     with pytest.raises(SystemExit, match="no posts"):
         render.render([["X", str(tmp_path / "a.csv"), str(tmp_path / "b.csv")]], tmp_path / "o")

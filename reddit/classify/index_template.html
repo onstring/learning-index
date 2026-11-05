@@ -17,6 +17,7 @@
   <details class="sidenav" open>
     <summary>Browse</summary>
     <nav>
+      <p class="navlinks"><a href="#fav" id="nav-fav">Favourites <span class="count" id="fav-count"></span></a></p>
       <h2>Period</h2>
       <ul id="nav-period"></ul>
       <h2>Subreddit</h2>
@@ -67,7 +68,35 @@
     { tier: "top", title: "Top picks", lead: "Scored 4 or 5: clear, specific lessons." },
     { tier: "more", title: "Worth a look", lead: "Scored 3: useful ideas, but thinner or more generic." }
   ];
-  var state = { period: PERIODS[0].key, sub: "", q: "", score: "", scope: "", sort: "group" };
+  var state = { view: "list", period: PERIODS[0].key, sub: "", q: "", score: "", scope: "",
+                sort: "group" };
+
+  // ---- favourites: a set of Reddit post ids kept in this browser's localStorage ----
+  // Separate key from the HN section, which shares this origin on GitHub Pages.
+  var FAV_KEY = "reddit:favourites";
+  var ID_OK = /^[A-Za-z0-9_]{1,24}$/;
+
+  function loadFavs() {
+    try {
+      var raw = window.localStorage.getItem(FAV_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr.filter(function (s) {
+        return typeof s === "string" && ID_OK.test(s);
+      }) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function saveFavs(favs) {
+    try { window.localStorage.setItem(FAV_KEY, JSON.stringify(favs)); } catch (e) { /* private mode */ }
+  }
+  var favs = loadFavs();
+  function isFav(id) { return favs.indexOf(id) !== -1; }
+  function toggleFav(id) {
+    if (!ID_OK.test(id)) return;
+    favs = isFav(id) ? favs.filter(function (s) { return s !== id; }) : favs.concat([id]);
+    saveFavs(favs);
+  }
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -91,6 +120,8 @@
     return "#p=" + encodeURIComponent(period) + (sub ? "&s=" + encodeURIComponent(sub) : "");
   }
   function readHash() {
+    state.view = location.hash === "#fav" ? "fav" : "list";
+    if (state.view === "fav") return;
     var h = {};
     location.hash.replace(/^#/, "").split("&").forEach(function (kv) {
       var i = kv.indexOf("=");
@@ -112,25 +143,44 @@
   }
 
   function renderNav() {
+    var list = state.view === "list";
+    var fav = document.getElementById("nav-fav");
+    if (list) fav.removeAttribute("aria-current"); else fav.setAttribute("aria-current", "page");
+    var nFav = favPosts().length;  // ignore stored ids that match no post on this page
+    document.getElementById("fav-count").textContent = nFav ? String(nFav) : "";
     var np = document.getElementById("nav-period");
     np.replaceChildren();
     PERIODS.forEach(function (p) {
       np.appendChild(navItem(p.label, hashFor(p.key, state.sub), p.top + p.more,
-                             p.key === state.period));
+                             list && p.key === state.period));
     });
     var ns = document.getElementById("nav-sub");
     ns.replaceChildren();
     var inPeriod = POSTS.filter(function (p) { return p.period === state.period; });
-    ns.appendChild(navItem("All", hashFor(state.period, ""), inPeriod.length, !state.sub));
+    ns.appendChild(navItem("All", hashFor(state.period, ""), inPeriod.length,
+                           list && !state.sub));
     subs.forEach(function (s) {
       var n = inPeriod.filter(function (p) { return p.sub === s; }).length;
-      if (n) ns.appendChild(navItem("r/" + s, hashFor(state.period, s), n, s === state.sub));
+      if (n) ns.appendChild(navItem("r/" + s, hashFor(state.period, s), n,
+                                    list && s === state.sub));
+    });
+  }
+
+  // One entry per starred post: a post in both periods is listed once (first period wins).
+  function favPosts() {
+    var seen = {};
+    return POSTS.filter(function (p) {
+      if (!isFav(p.id) || seen[p.id]) return false;
+      seen[p.id] = true;
+      return true;
     });
   }
 
   function matches(p) {
-    if (p.period !== state.period) return false;
-    if (state.sub && p.sub !== state.sub) return false;
+    if (state.view === "list") {
+      if (p.period !== state.period) return false;
+      if (state.sub && p.sub !== state.sub) return false;
+    }
     if (state.score && String(p.score) !== state.score) return false;
     if (state.scope && p.scope !== state.scope) return false;
     if (state.q) {
@@ -143,6 +193,14 @@
   function card(p, showSub) {
     var c = el("article", "card");
     var h = el("h3");
+    var on = isFav(p.id);
+    var star = el("button", "fav", on ? "★" : "☆");
+    star.type = "button";
+    star.setAttribute("data-fav", p.id);
+    star.setAttribute("aria-pressed", String(on));
+    star.setAttribute("aria-label", on ? "Remove from favourites" : "Add to favourites");
+    star.title = "Favourite";
+    h.appendChild(star);
     var a = el("a", "", p.title);
     a.href = p.url; a.rel = "noopener noreferrer";
     h.appendChild(a);
@@ -178,10 +236,28 @@
     });
   }
 
+  function renderFavourites(list) {
+    var starred = favPosts();
+    var shown = starred.filter(matches).sort(byBest);
+    document.getElementById("shown").textContent =
+      shown.length + " of " + starred.length + " shown";
+    list.appendChild(el("h2", "", "Favourites (" + starred.length + ")"));
+    list.appendChild(el("p", "section-lead",
+      "Posts you starred with ☆. They are saved in this browser only, so they will not " +
+      "follow you to another device."));
+    if (!starred.length) {
+      list.appendChild(el("p", "note", "Nothing starred yet. Click ☆ next to any post to save it here."));
+      return;
+    }
+    if (!shown.length) { list.appendChild(el("p", "empty", "No favourites match these filters.")); return; }
+    shown.forEach(function (p) { list.appendChild(card(p, true)); });
+  }
+
   function render() {
     renderNav();
     var list = document.getElementById("list");
     list.replaceChildren();
+    if (state.view === "fav") { renderFavourites(list); return; }
     var total = POSTS.filter(function (p) {
       return p.period === state.period && (!state.sub || p.sub === state.sub);
     }).length;
@@ -206,7 +282,17 @@
   document.getElementById("q").addEventListener("input", function (e) {
     state.q = e.target.value.trim().toLowerCase(); render();
   });
-  window.addEventListener("hashchange", function () { readHash(); render(); });
+  document.getElementById("list").addEventListener("click", function (ev) {
+    var b = ev.target.closest ? ev.target.closest("[data-fav]") : null;
+    if (!b) return;
+    toggleFav(b.getAttribute("data-fav"));
+    render();
+  });
+  // Another tab changed the favourites: pick them up.
+  window.addEventListener("storage", function (ev) {
+    if (ev.key === FAV_KEY) { favs = loadFavs(); render(); }
+  });
+  window.addEventListener("hashchange", function () { readHash(); render(); window.scrollTo(0, 0); });
   readHash();
   render();
 })();

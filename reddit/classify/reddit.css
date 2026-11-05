@@ -1,0 +1,12 @@
+/* Reddit-only rules on top of the shared theme (style.css). Uses its variables. */
+.side li.active a { font-weight: 700; color: var(--fg); }
+.score { font-weight: 700; }
+.score.s5 { background: var(--accent); color: var(--bg); }
+.score.s3 { color: var(--muted); }
+.also { color: var(--accent); }
+.section-lead { color: var(--muted); margin: -0.4rem 0 0.4rem; font-size: 0.95rem; }
+.subhead {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.85rem; color: var(--muted); margin: 1.4rem 0 0; font-weight: 600;
+}
+.empty { color: var(--muted); padding: 1.5rem 0; }

@@ -1,9 +1,22 @@
+# --- HN pipeline ---
 # downloaded dataset (12 GB, untrusted data)
-dataset/
-# pipeline outputs
-data/
-site/
-# python
+hn/dataset/
+# pipeline outputs (the built site under /site is committed and published)
+hn/data/
+hn/site/
+
+# --- Reddit pipeline ---
+# raw scrapes hold full post bodies and usernames: never commit
+reddit/reddit_top*/
+# classifier inputs repeat post bodies; labels_*.jsonl and auto_labels.jsonl are safe
+reddit/classify/work*/chunk_*.jsonl
+reddit/classify/work*/union_*.jsonl
+reddit/classify/work*/pass2_input.jsonl
+# local snapshots and superseded single-file pages
+reddit/*.html
+reddit/results*/index.html
+
+# --- python ---
 .venv/
 __pycache__/
 *.pyc
@@ -13,4 +26,7 @@ __pycache__/
 htmlcov/
 *.duckdb
 *.duckdb.wal
+
+# --- local ---
+.claude/
 .DS_Store

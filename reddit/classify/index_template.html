@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<meta name="description" content="Top Reddit investing posts worth learning from, picked and summarised with an LLM.">
+<link rel="stylesheet" href="style.css?v=__BUILD__">
+<link rel="stylesheet" href="reddit.css?v=__BUILD__">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../index.html">Learning Index</a> /</p>
+  <a class="brand" href="index.html">__TITLE__</a>
+  <p class="sections"><a href="../hn/index.html">HN learning index →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <h2>Period</h2>
+      <ul id="nav-period"></ul>
+      <h2>Subreddit</h2>
+      <ul id="nav-sub"></ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<section class="hero">
+  <h1>Investing posts worth learning from</h1>
+  <p>__SUMMARY__. Picked from Reddit's top posts for knowledge, skills or analysis;
+  news, current affairs, jokes and brag posts are left out.</p>
+  <form class="search" role="search" onsubmit="return false">
+    <label for="q" class="visually-hidden">Search posts</label>
+    <input id="q" type="search" placeholder="Search titles, takeaways and topics" autocomplete="off">
+  </form>
+</section>
+<form class="filters" onsubmit="return false">
+  <label>Score
+    <select id="f-score"><option value="">All</option><option value="5">5</option>
+      <option value="4">4</option><option value="3">3</option></select></label>
+  <label>Scope
+    <select id="f-scope"><option value="">All</option><option value="investing">Investing</option>
+      <option value="personal_finance">Personal finance</option><option value="career">Career</option></select></label>
+  <label>Sort
+    <select id="f-sort"><option value="group">By subreddit</option><option value="best">Best first</option></select></label>
+  <span class="shown" id="shown" aria-live="polite"></span>
+</form>
+<div id="list"></div>
+<footer>
+  <p>Score: 5 = deep and bookmark-worthy; 4 = a clear, useful lesson; 3 = useful but thinner.
+  #N is the post's place in its subreddit's top list for the period. Only the post was
+  assessed, not its comments, so open the link for the discussion. Scores come from separate
+  LLM runs per period and can differ by 1 for the same post. Not financial advice.
+  Built __DATE__.</p>
+</footer>
+</main>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+// DOM is built with textContent only; no HTML is injected from data.
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("data").textContent);
+  var PERIODS = DATA.periods, POSTS = DATA.posts;
+  var SECTIONS = [
+    { tier: "top", title: "Top picks", lead: "Scored 4 or 5: clear, specific lessons." },
+    { tier: "more", title: "Worth a look", lead: "Scored 3: useful ideas, but thinner or more generic." }
+  ];
+  var state = { period: PERIODS[0].key, sub: "", q: "", score: "", scope: "", sort: "group" };
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+  function uniq(a) { return a.filter(function (v, i) { return a.indexOf(v) === i; }); }
+  function labelOf(key) {
+    for (var i = 0; i < PERIODS.length; i++) if (PERIODS[i].key === key) return PERIODS[i].label;
+    return key;
+  }
+
+  var subs = uniq(POSTS.map(function (p) { return p.sub; }))
+    .sort(function (a, b) { return a.toLowerCase() < b.toLowerCase() ? -1 : 1; });
+  var periodsByUrl = {};
+  POSTS.forEach(function (p) { (periodsByUrl[p.url] = periodsByUrl[p.url] || []).push(p.period); });
+
+  // ---- state <-> URL hash, so a filtered view can be bookmarked or shared ----
+  function hashFor(period, sub) {
+    return "#p=" + encodeURIComponent(period) + (sub ? "&s=" + encodeURIComponent(sub) : "");
+  }
+  function readHash() {
+    var h = {};
+    location.hash.replace(/^#/, "").split("&").forEach(function (kv) {
+      var i = kv.indexOf("=");
+      if (i > 0) h[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1));
+    });
+    var okPeriod = PERIODS.some(function (p) { return p.key === h.p; });
+    state.period = okPeriod ? h.p : PERIODS[0].key;
+    state.sub = subs.indexOf(h.s) !== -1 ? h.s : "";
+  }
+
+  function navItem(label, href, count, active) {
+    var li = el("li", active ? "active" : "");
+    var a = el("a", "", label);
+    a.href = href;
+    if (active) a.setAttribute("aria-current", "page");
+    li.appendChild(a);
+    li.appendChild(el("span", "count", String(count)));
+    return li;
+  }
+
+  function renderNav() {
+    var np = document.getElementById("nav-period");
+    np.replaceChildren();
+    PERIODS.forEach(function (p) {
+      np.appendChild(navItem(p.label, hashFor(p.key, state.sub), p.top + p.more,
+                             p.key === state.period));
+    });
+    var ns = document.getElementById("nav-sub");
+    ns.replaceChildren();
+    var inPeriod = POSTS.filter(function (p) { return p.period === state.period; });
+    ns.appendChild(navItem("All", hashFor(state.period, ""), inPeriod.length, !state.sub));
+    subs.forEach(function (s) {
+      var n = inPeriod.filter(function (p) { return p.sub === s; }).length;
+      if (n) ns.appendChild(navItem("r/" + s, hashFor(state.period, s), n, s === state.sub));
+    });
+  }
+
+  function matches(p) {
+    if (p.period !== state.period) return false;
+    if (state.sub && p.sub !== state.sub) return false;
+    if (state.score && String(p.score) !== state.score) return false;
+    if (state.scope && p.scope !== state.scope) return false;
+    if (state.q) {
+      var hay = (p.title + " " + p.takeaway + " " + p.topics.join(" ")).toLowerCase();
+      if (hay.indexOf(state.q) === -1) return false;
+    }
+    return true;
+  }
+
+  function card(p, showSub) {
+    var c = el("article", "card");
+    var h = el("h3");
+    var a = el("a", "", p.title);
+    a.href = p.url; a.rel = "noopener noreferrer";
+    h.appendChild(a);
+    c.appendChild(h);
+    if (p.takeaway) c.appendChild(el("p", "blurb", p.takeaway));
+    var m = el("p", "meta");
+    var sc = p.score === 5 ? " s5" : p.score <= 3 ? " s3" : "";
+    m.appendChild(el("span", "badge score" + sc, p.score + "/5"));
+    if (showSub) m.appendChild(el("span", "topic", "r/" + p.sub));
+    m.appendChild(el("span", "badge", p.cat.replace(/_/g, " ")));
+    if (p.scope !== "investing") m.appendChild(el("span", "badge", p.scope.replace(/_/g, " ")));
+    p.topics.forEach(function (t) { m.appendChild(el("span", "host", t)); });
+    uniq(periodsByUrl[p.url]).forEach(function (other) {
+      if (other !== p.period) m.appendChild(el("span", "also", "also in " + labelOf(other).toLowerCase()));
+    });
+    m.appendChild(el("span", "count", "#" + p.rank));
+    c.appendChild(m);
+    return c;
+  }
+
+  function byBest(a, b) { return b.score - a.score || a.rank - b.rank; }
+
+  function renderSection(list, posts) {
+    if (state.sort === "best" || state.sub) {
+      posts.slice().sort(byBest).forEach(function (p) { list.appendChild(card(p, !state.sub)); });
+      return;
+    }
+    subs.forEach(function (s) {
+      var group = posts.filter(function (p) { return p.sub === s; }).sort(byBest);
+      if (!group.length) return;
+      list.appendChild(el("p", "subhead", "r/" + s + " (" + group.length + ")"));
+      group.forEach(function (p) { list.appendChild(card(p, false)); });
+    });
+  }
+
+  function render() {
+    renderNav();
+    var list = document.getElementById("list");
+    list.replaceChildren();
+    var total = POSTS.filter(function (p) {
+      return p.period === state.period && (!state.sub || p.sub === state.sub);
+    }).length;
+    var shown = POSTS.filter(matches);
+    document.getElementById("shown").textContent = shown.length + " of " + total + " shown";
+    if (!shown.length) { list.appendChild(el("p", "empty", "No posts match these filters.")); return; }
+    SECTIONS.forEach(function (sec) {
+      var inSec = shown.filter(function (p) { return p.tier === sec.tier; });
+      if (!inSec.length) return;
+      list.appendChild(el("h2", "", sec.title + " (" + inSec.length + ")"));
+      list.appendChild(el("p", "section-lead", sec.lead));
+      renderSection(list, inSec);
+    });
+  }
+
+  function bind(id, key) {
+    document.getElementById(id).addEventListener("change", function (e) {
+      state[key] = e.target.value; render();
+    });
+  }
+  bind("f-score", "score"); bind("f-scope", "scope"); bind("f-sort", "sort");
+  document.getElementById("q").addEventListener("input", function (e) {
+    state.q = e.target.value.trim().toLowerCase(); render();
+  });
+  window.addEventListener("hashchange", function () { readHash(); render(); });
+  readHash();
+  render();
+})();
+</script>
+</body>
+</html>

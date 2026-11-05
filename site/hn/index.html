@@ -1,0 +1,1678 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN Learning Index</title>
+<meta name="description" content="Free online learning resources that Hacker News keeps recommending">
+<link rel="stylesheet" href="style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../index.html">Learning Index</a> /</p>
+  <a class="brand" href="index.html">HN Learning Index</a>
+  <p class="sections"><a href="../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="all.html">All resources <span class="count">1186</span></a>
+        <a href="favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<section class="hero">
+  <h1>Free online learning resources that Hacker News keeps recommending</h1>
+  <p>1186 free tutorials, courses, books and explainers. Browse by topic, type or
+  level, or search.</p>
+  <form class="search" role="search" onsubmit="return false">
+    <label for="q" class="visually-hidden">Search resources</label>
+    <input id="q" type="search" placeholder="Search titles, descriptions and sites" autocomplete="off">
+  </form>
+  <ul id="results" class="results" hidden></ul>
+</section>
+<section>
+  <h2>Most recommended</h2>
+  <form class="filters" onsubmit="return false" data-filters>
+  <label>Topic
+    <select name="topic"><option value="">All</option>
+<option value="programming">Programming</option><option value="computer_science">Computer science</option><option value="systems">Systems</option><option value="web">Web development</option><option value="data">Data and databases</option><option value="ml_ai">Machine learning and AI</option><option value="mathematics">Mathematics</option><option value="science">Science</option><option value="hardware">Hardware and electronics</option><option value="design">Design</option><option value="writing">Writing and communication</option><option value="business">Business and economics</option><option value="humanities">Humanities</option><option value="self_improvement">Learning and self-improvement</option><option value="other">Other</option>    </select></label>
+  <label>Type
+    <select name="type"><option value="">All</option>
+<option value="course">Course</option><option value="tutorial">Tutorial</option><option value="free_book">Free book</option><option value="reference">Reference</option><option value="explainer">Explainer</option><option value="interactive">Interactive</option><option value="collection">Collection</option><option value="other">Other</option>    </select></label>
+  <label>Level
+    <select name="level"><option value="">All</option>
+<option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option>    </select></label>
+  <span class="shown" data-shown></span>
+</form>
+
+  <article class="card" data-slug="nand2tetris-org" data-topic="hardware" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="nand2tetris-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/nand2tetris-org.html">Nand to Tetris</a></h3>
+<p class="blurb">Students learn computer architecture and programming by building a computer from basic logic gates to a working system.</p>  <p class="meta">
+    <a class="topic" href="topics/hardware.html">Hardware and electronics</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">nand2tetris.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.nand2tetris.org%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">47 recommenders, 2012–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="eloquentjavascript-net" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="eloquentjavascript-net" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/eloquentjavascript-net.html">Eloquent JavaScript</a></h3>
+<p class="blurb">Learn JavaScript programming fundamentals, including syntax, data structures, and functional programming concepts through practical examples and exercises.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">eloquentjavascript.net</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Feloquentjavascript.net" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">46 recommenders, 2009–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="craftinginterpreters-com" data-topic="computer_science" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="craftinginterpreters-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/craftinginterpreters-com.html">Crafting Interpreters</a></h3>
+<p class="blurb">Learn to build interpreters for programming languages through practical implementation examples and explanations.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">craftinginterpreters.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcraftinginterpreters.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">38 recommenders, 2017–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="learnpythonthehardway-org" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="learnpythonthehardway-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/learnpythonthehardway-org.html">Learn Python the Hard Way</a></h3>
+<p class="blurb">A beginner-friendly guide teaching Python programming fundamentals through practical exercises and clear explanations.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">learnpythonthehardway.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Flearnpythonthehardway.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">37 recommenders, 2010–2018</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="gigamonkeys-com-book" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="gigamonkeys-com-book" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/gigamonkeys-com-book.html">Practical Common Lisp</a></h3>
+<p class="blurb">Learn Common Lisp programming through a comprehensive, free online book with practical examples and exercises.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">gigamonkeys.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fgigamonkeys.com%2Fbook%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">34 recommenders, 2007–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="coursera-org-learn-machine-learning" data-topic="ml_ai" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="coursera-org-learn-machine-learning" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/coursera-org-learn-machine-learning.html">Supervised Machine Learning: Regression and Classification</a></h3>
+<p class="blurb">Learn regression and classification techniques in machine learning using Python and popular libraries.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">coursera.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fmachine-learning" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">33 recommenders, 2015–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="scratch-mit-edu" data-topic="programming" data-type="interactive" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="scratch-mit-edu" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/scratch-mit-edu.html">Scratch</a></h3>
+<p class="blurb">Learn programming concepts like variables, loops, and events through creating interactive stories, games, and animations.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/interactive.html">Interactive</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">scratch.mit.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fscratch.mit.edu" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">31 recommenders, 2009–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="coursera-org-learn-learning-how-to-learn" data-topic="self_improvement" data-type="course" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="coursera-org-learn-learning-how-to-learn" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/coursera-org-learn-learning-how-to-learn.html">Learning How to Learn</a></h3>
+<p class="blurb">Learn mental techniques to master tough subjects and improve study efficiency through neuroscience-based strategies.</p>  <p class="meta">
+    <a class="topic" href="topics/self_improvement.html">Learning and self-improvement</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">coursera.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Flearning-how-to-learn" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">30 recommenders, 2015–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="course-fast-ai" data-topic="ml_ai" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="course-fast-ai" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/course-fast-ai.html">Practical Deep Learning for Coders</a></h3>
+<p class="blurb">Learn to build and train deep learning models for computer vision, natural language processing, and more using PyTorch and fastai.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">course.fast.ai</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcourse.fast.ai" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">30 recommenders, 2017–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="htdp-org" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="htdp-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/htdp-org.html">How to Design Programs</a></h3>
+<p class="blurb">Learn systematic program design principles using the Racket programming language.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">htdp.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fhtdp.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">29 recommenders, 2009–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="teachyourselfcs-com" data-topic="computer_science" data-type="collection" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="teachyourselfcs-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/teachyourselfcs-com.html">Teach Yourself Computer Science</a></h3>
+<p class="blurb">Learn computer science fundamentals through curated resources covering key topics like algorithms, data structures, and operating systems.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/collection.html">Collection</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">teachyourselfcs.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fteachyourselfcs.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">29 recommenders, 2017–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="withouthotair-com" data-topic="science" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="withouthotair-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/withouthotair-com.html">Sustainable Energy without the Hot Air</a></h3>
+<p class="blurb">Learn about sustainable energy sources and their practical applications through data-driven analysis of energy consumption and production.</p>  <p class="meta">
+    <a class="topic" href="topics/science.html">Science</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">withouthotair.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwithouthotair.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">27 recommenders, 2009–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="railstutorial-org" data-topic="programming" data-type="tutorial" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="railstutorial-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/railstutorial-org.html">Ruby on Rails Tutorial</a></h3>
+<p class="blurb">Learn professional web application development using Ruby on Rails, including Git, testing, and deployment.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">railstutorial.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.railstutorial.org%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">27 recommenders, 2010–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="use-the-index-luke-com" data-topic="data" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="use-the-index-luke-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/use-the-index-luke-com.html">SQL Indexing and Tuning</a></h3>
+<p class="blurb">Learn effective SQL indexing techniques for optimizing database performance across multiple database systems.</p>  <p class="meta">
+    <a class="topic" href="topics/data.html">Data and databases</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">use-the-index-luke.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fuse-the-index-luke.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">26 recommenders, 2011–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="projecteuler-net" data-topic="programming" data-type="interactive" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="projecteuler-net" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/projecteuler-net.html">Project Euler</a></h3>
+<p class="blurb">Solve mathematical and programming problems to develop problem-solving skills and learn new concepts in a recreational context.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/interactive.html">Interactive</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">projecteuler.net</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fprojecteuler.net" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">26 recommenders, 2009–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="deeplearningbook-org" data-topic="ml_ai" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="deeplearningbook-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/deeplearningbook-org.html">Deep Learning</a></h3>
+<p class="blurb">Covers foundational concepts and mathematical principles of machine learning and deep learning for students entering the field.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">deeplearningbook.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.deeplearningbook.org%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">26 recommenders, 2016–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="norvig-com-21-days-html" data-topic="programming" data-type="tutorial" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="norvig-com-21-days-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/norvig-com-21-days-html.html">Teach Yourself Programming in Ten Years</a></h3>
+<p class="blurb">Learn timeless computer science fundamentals including C, Lisp, and Python through practical, long-term study.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">norvig.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fnorvig.com%2F21-days.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">24 recommenders, 2009–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="neuralnetworksanddeeplearning-com" data-topic="ml_ai" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="neuralnetworksanddeeplearning-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/neuralnetworksanddeeplearning-com.html">Neural networks and deep learning</a></h3>
+<p class="blurb">Learn the principles of neural networks and deep learning through mathematical explanations and practical examples.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">neuralnetworksanddeeplearning.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=http%3A%2F%2Fneuralnetworksanddeeplearning.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">24 recommenders, 2014–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="wiki-c2-com" data-topic="programming" data-type="reference" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="wiki-c2-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/wiki-c2-com.html">C2 Wiki</a></h3>
+<p class="blurb">Learn about software design patterns, iterative development, and programming idioms through community-contributed knowledge and historical discussions.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/reference.html">Reference</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">wiki.c2.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwiki.c2.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">24 recommenders, 2016–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="aosabook-org-en-index-html" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="aosabook-org-en-index-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/aosabook-org-en-index-html.html">The Architecture of Open Source Applications</a></h3>
+<p class="blurb">Students learn how open source applications are structured through detailed case studies of major software components and design decisions.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">aosabook.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Faosabook.org%2Fen%2Findex.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">22 recommenders, 2013–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="codecademy-com" data-topic="programming" data-type="course" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="codecademy-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/codecademy-com.html">Codecademy</a></h3>
+<p class="blurb">Learn foundational coding skills in HTML, CSS, JavaScript, and more through interactive, beginner-friendly lessons.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">codecademy.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.codecademy.com%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">22 recommenders, 2011–2021</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="khanacademy-org" data-topic="mathematics" data-type="course" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="khanacademy-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/khanacademy-org.html">Khan Academy</a></h3>
+<p class="blurb">Learn math, science, and other subjects through free video lessons and practice exercises.</p>  <p class="meta">
+    <a class="topic" href="topics/mathematics.html">Mathematics</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">khanacademy.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.khanacademy.org%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">20 recommenders, 2009–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="slatestarcodex-com-2014-07-30-meditations-on-moloch" data-topic="humanities" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="slatestarcodex-com-2014-07-30-meditations-on-moloch" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/slatestarcodex-com-2014-07-30-meditations-on-moloch.html">Meditations on Moloch</a></h3>
+<p class="blurb">Explores how competitive systems can lead to harmful outcomes despite individual intentions, using game theory and societal examples.</p>  <p class="meta">
+    <a class="topic" href="topics/humanities.html">Humanities</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">slatestarcodex.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fslatestarcodex.com%2F2014%2F07%2F30%2Fmeditations-on-moloch%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">20 recommenders, 2014–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="doc-rust-lang-org-book" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="doc-rust-lang-org-book" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/doc-rust-lang-org-book.html">The Rust Programming Language</a></h3>
+<p class="blurb">Learn Rust programming with the official book covering syntax, memory safety, and modern language features for building reliable software.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">doc.rust-lang.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fdoc.rust-lang.org%2Fstable%2Fbook%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">20 recommenders, 2016–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="kalzumeus-com-2012-01-23-salary-negotiation" data-topic="self_improvement" data-type="explainer" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="kalzumeus-com-2012-01-23-salary-negotiation" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/kalzumeus-com-2012-01-23-salary-negotiation.html">Salary Negotiation</a></h3>
+<p class="blurb">Learn practical strategies for negotiating salary and compensation as a professional, focusing on value demonstration and mutual benefit.</p>  <p class="meta">
+    <a class="topic" href="topics/self_improvement.html">Learning and self-improvement</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">kalzumeus.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.kalzumeus.com%2F2012%2F01%2F23%2Fsalary-negotiation%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">19 recommenders, 2013–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="cryptopals-com" data-topic="systems" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="cryptopals-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/cryptopals-com.html">The Cryptopals Crypto Challenges</a></h3>
+<p class="blurb">Students learn practical cryptography by solving real-world attack challenges through hands-on coding exercises.</p>  <p class="meta">
+    <a class="topic" href="topics/systems.html">Systems</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">cryptopals.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcryptopals.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">18 recommenders, 2015–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="scottaaronson-com-blog" data-topic="computer_science" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="scottaaronson-com-blog" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/scottaaronson-com-blog.html">Shtetl-Optimized</a></h3>
+<p class="blurb">Explores quantum computing, complexity theory, and AI through blog posts and podcasts, with a focus on theoretical computer science and its implications.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">scottaaronson.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fscottaaronson.com%2Fblog" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">18 recommenders, 2009–2021</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="fast-ai" data-topic="ml_ai" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="fast-ai" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/fast-ai.html">fast.ai</a></h3>
+<p class="blurb">Learn practical deep learning through hands-on coding with the fast.ai framework and PyTorch.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">fast.ai</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.fast.ai%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">18 recommenders, 2017–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="railstutorial-org-book" data-topic="programming" data-type="tutorial" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="railstutorial-org-book" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/railstutorial-org-book.html">Ruby on Rails Tutorial</a></h3>
+<p class="blurb">Learn to build web applications using Ruby on Rails, including testing, version control, and deployment to Heroku.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">railstutorial.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.railstutorial.org%2Fbook" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">18 recommenders, 2010–2020</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="caniuse-com" data-topic="web" data-type="reference" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="caniuse-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/caniuse-com.html">Can I Use</a></h3>
+<p class="blurb">Learn browser compatibility for HTML5, CSS3, and modern web technologies with up-to-date support tables.</p>  <p class="meta">
+    <a class="topic" href="topics/web.html">Web development</a>
+    <a class="badge" href="types/reference.html">Reference</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">caniuse.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcaniuse.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">17 recommenders, 2011–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="bitcoin-org-bitcoin-pdf" data-topic="systems" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="bitcoin-org-bitcoin-pdf" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/bitcoin-org-bitcoin-pdf.html">Bitcoin Whitepaper</a></h3>
+<p class="blurb">Learn the foundational principles of Bitcoin&#39;s peer-to-peer electronic cash system and its proof-of-work consensus mechanism.</p>  <p class="meta">
+    <a class="topic" href="topics/systems.html">Systems</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">bitcoin.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fbitcoin.org%2Fbitcoin.pdf" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">17 recommenders, 2012–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="braveclojure-com" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="braveclojure-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/braveclojure-com.html">Clojure for the Brave and True</a></h3>
+<p class="blurb">Learn Clojure programming through practical examples and functional programming concepts in a free online book.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">braveclojure.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.braveclojure.com%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">17 recommenders, 2014–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="softwarefoundations-cis-upenn-edu" data-topic="computer_science" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="softwarefoundations-cis-upenn-edu" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/softwarefoundations-cis-upenn-edu.html">Software Foundations</a></h3>
+<p class="blurb">Learn formal verification and mathematical logic through interactive proof exercises using the Coq proof assistant.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">softwarefoundations.cis.upenn.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fsoftwarefoundations.cis.upenn.edu" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">17 recommenders, 2017–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="c2-com-cgi-wiki" data-topic="computer_science" data-type="collection" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="c2-com-cgi-wiki" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/c2-com-cgi-wiki.html">c2 wiki</a></h3>
+<p class="blurb">A wiki for computer science concepts, programming, and software engineering, featuring discussions and resources from experts.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/collection.html">Collection</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">c2.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=http%3A%2F%2Fwiki.c2.com%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">17 recommenders, 2008–2016</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="80000hours-org" data-topic="ml_ai" data-type="other" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="80000hours-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/80000hours-org.html">80,000 Hours</a></h3>
+<p class="blurb">Learn how to choose a career that addresses the world&#39;s most pressing problems through evidence-based research and practical guidance.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/other.html">Other</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">80000hours.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2F80000hours.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">17 recommenders, 2013–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="erlang-org-download-armstrong-thesis-2003-pdf" data-topic="systems" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="erlang-org-download-armstrong-thesis-2003-pdf" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/erlang-org-download-armstrong-thesis-2003-pdf.html">Making reliable distributed systems in the presence of software errors</a></h3>
+<p class="blurb">Learn how to build reliable distributed systems using Erlang&#39;s actor model and concurrency principles for error-resistant software design.</p>  <p class="meta">
+    <a class="topic" href="topics/systems.html">Systems</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">erlang.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Ferlang.org%2Fdownload%2Farmstrong_thesis_2003.pdf" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">16 recommenders, 2013–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="fsharpforfunandprofit-com" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="fsharpforfunandprofit-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/fsharpforfunandprofit-com.html">F# for fun and profit</a></h3>
+<p class="blurb">Learn functional programming concepts and practical F# applications for business software development.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">fsharpforfunandprofit.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Ffsharpforfunandprofit.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">16 recommenders, 2015–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="phptherightway-com" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="phptherightway-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/phptherightway-com.html">PHP: The Right Way</a></h3>
+<p class="blurb">Learn PHP best practices, coding standards, and secure development techniques for modern PHP programming.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">phptherightway.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fphptherightway.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">16 recommenders, 2013–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="mrmoneymustache-com" data-topic="business" data-type="explainer" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="mrmoneymustache-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/mrmoneymustache-com.html">Mr. Money Mustache</a></h3>
+<p class="blurb">Learn practical strategies for achieving early retirement through frugality, budgeting, and mindful spending habits.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">mrmoneymustache.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fmrmoneymustache.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">16 recommenders, 2012–2020</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="ruby-railstutorial-org-ruby-on-rails-tutorial-book" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="ruby-railstutorial-org-ruby-on-rails-tutorial-book" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/ruby-railstutorial-org-ruby-on-rails-tutorial-book.html">Ruby on Rails Tutorial</a></h3>
+<p class="blurb">Learn to build web applications using Ruby on Rails from scratch to deployment.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">ruby.railstutorial.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.railstutorial.org%2Fbook" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">16 recommenders, 2011–2013</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="landoflisp-com" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="landoflisp-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/landoflisp-com.html">Land of Lisp</a></h3>
+<p class="blurb">Learn Lisp programming through an interactive comic and practical examples, exploring its unique features and functional programming concepts.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">landoflisp.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=http%3A%2F%2Flandoflisp.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">15 recommenders, 2010–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="learnyousomeerlang-com" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="learnyousomeerlang-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/learnyousomeerlang-com.html">Learn You Some Erlang</a></h3>
+<p class="blurb">A beginner-friendly tutorial teaching functional programming concepts using Erlang, covering concurrency and fault tolerance.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">learnyousomeerlang.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Flearnyousomeerlang.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">15 recommenders, 2012–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="highscalability-com" data-topic="systems" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="highscalability-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/highscalability-com.html">High Scalability</a></h3>
+<p class="blurb">Learn about building scalable, high-performance websites through case studies and technical insights from major tech companies.</p>  <p class="meta">
+    <a class="topic" href="topics/systems.html">Systems</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">highscalability.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fhighscalability.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">15 recommenders, 2009–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="guides-rubyonrails-org" data-topic="programming" data-type="tutorial" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="guides-rubyonrails-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/guides-rubyonrails-org.html">Ruby on Rails Guides</a></h3>
+<p class="blurb">Learn to build web applications using Ruby on Rails, covering models, migrations, validations, and database interactions.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">guides.rubyonrails.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fguides.rubyonrails.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">15 recommenders, 2009–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="practicaltypography-com" data-topic="design" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="practicaltypography-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/practicaltypography-com.html">Practical Typography</a></h3>
+<p class="blurb">Learn the fundamentals of typography, including spacing, punctuation, and font selection, through clear, practical guidelines.</p>  <p class="meta">
+    <a class="topic" href="topics/design.html">Design</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">practicaltypography.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fpracticaltypography.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">15 recommenders, 2013–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="joelonsoftware-com-2000-04-06-things-you-should-never-do-part-i" data-topic="programming" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="joelonsoftware-com-2000-04-06-things-you-should-never-do-part-i" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/joelonsoftware-com-2000-04-06-things-you-should-never-do-part-i.html">Things You Should Never Do, Part I</a></h3>
+<p class="blurb">Learn why rewriting software from scratch is a strategic mistake that can lead to market failure and wasted resources.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">joelonsoftware.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.joelonsoftware.com%2F2000%2F04%2F06%2Fthings-you-should-never-do-part-i%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">15 recommenders, 2017–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="developer-mozilla-org-en-us" data-topic="web" data-type="reference" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="developer-mozilla-org-en-us" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/developer-mozilla-org-en-us.html">MDN Web Docs</a></h3>
+<p class="blurb">Learn web development with comprehensive documentation on HTML, CSS, JavaScript, and APIs for building websites and progressive web apps.</p>  <p class="meta">
+    <a class="topic" href="topics/web.html">Web development</a>
+    <a class="badge" href="types/reference.html">Reference</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">developer.mozilla.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">14 recommenders, 2010–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="processing-org" data-topic="programming" data-type="interactive" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="processing-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/processing-org.html">Processing</a></h3>
+<p class="blurb">Learn to code with a visual programming language focused on creating interactive graphics and animations.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/interactive.html">Interactive</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">processing.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fprocessing.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">14 recommenders, 2009–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="jofreeman-com-joreen-tyranny-htm" data-topic="humanities" data-type="explainer" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="jofreeman-com-joreen-tyranny-htm" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/jofreeman-com-joreen-tyranny-htm.html">The Tyranny of Structurelessness</a></h3>
+<p class="blurb">Explores how decentralized movements often create hidden hierarchies and fail to scale effectively due to lack of structure.</p>  <p class="meta">
+    <a class="topic" href="topics/humanities.html">Humanities</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">jofreeman.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fjofreeman.com%2Fjoreen%2Ftyranny.htm" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">14 recommenders, 2013–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="plato-stanford-edu" data-topic="humanities" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="plato-stanford-edu" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/plato-stanford-edu.html">Stanford Encyclopedia of Philosophy</a></h3>
+<p class="blurb">Learn about philosophical concepts, historical context, and key arguments through scholarly entries written by experts in the field.</p>  <p class="meta">
+    <a class="topic" href="topics/humanities.html">Humanities</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">plato.stanford.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fplato.stanford.edu" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">14 recommenders, 2011–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="paulgraham-com-onlisp-html" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="paulgraham-com-onlisp-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/paulgraham-com-onlisp-html.html">On Lisp</a></h3>
+<p class="blurb">Learn advanced Lisp techniques including macros, functional programming, and object-oriented programming through practical examples and a bottom-up approach.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">paulgraham.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fpaulgraham.com%2Fonlisp.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2007–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="ribbonfarm-com-2009-10-07-the-gervais-principle-or-the-office-according" data-topic="business" data-type="explainer" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="ribbonfarm-com-2009-10-07-the-gervais-principle-or-the-office-according" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/ribbonfarm-com-2009-10-07-the-gervais-principle-or-the-office-according.html">The Gervais Principle</a></h3>
+<p class="blurb">Explores management theory through the lens of the TV show &#39;The Office&#39;, analyzing organizational dynamics and inefficiencies in workplace hierarchies.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">ribbonfarm.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fribbonfarm.com%2F2009%2F10%2F07%2Fthe-gervais-principle-or-the-office-according-to-the-office%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2009–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="thinking-forth-sourceforge-net" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="thinking-forth-sourceforge-net" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/thinking-forth-sourceforge-net.html">Thinking Forth</a></h3>
+<p class="blurb">Learn problem-solving philosophy and programming style through the Forth language, emphasizing readability and maintainability in software development.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">thinking-forth.sourceforge.net</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fthinking-forth.sourceforge.net" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2009–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="ansuz-sooke-bc-ca-entry-23" data-topic="humanities" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="ansuz-sooke-bc-ca-entry-23" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/ansuz-sooke-bc-ca-entry-23.html">What Colour are your bits</a></h3>
+<p class="blurb">Explores the relationship between copyright law and digital content, clarifying how legal concepts apply to creative expression in technology.</p>  <p class="meta">
+    <a class="topic" href="topics/humanities.html">Humanities</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">ansuz.sooke.bc.ca</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fansuz.sooke.bc.ca%2Fentry%2F23" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2011–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="catb-org-esr-faqs-hacker-howto-html" data-topic="programming" data-type="explainer" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="catb-org-esr-faqs-hacker-howto-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/catb-org-esr-faqs-hacker-howto-html.html">How To Become A Hacker</a></h3>
+<p class="blurb">Learn the mindset and skills of hackers, including problem-solving, avoiding redundant work, and mastering programming languages like C and Lisp.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">catb.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=http%3A%2F%2Fcatb.org%2F~esr%2Ffaqs%2Fhacker-howto.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2008–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="w3schools-com" data-topic="web" data-type="tutorial" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="w3schools-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/w3schools-com.html">W3Schools</a></h3>
+<p class="blurb">Learn web development fundamentals including HTML, CSS, JavaScript, and more through interactive examples and tutorials.</p>  <p class="meta">
+    <a class="topic" href="topics/web.html">Web development</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">w3schools.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fw3schools.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2007–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="flexboxfroggy-com" data-topic="web" data-type="interactive" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="flexboxfroggy-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/flexboxfroggy-com.html">Flexbox Froggy</a></h3>
+<p class="blurb">Learn CSS flexbox through an interactive game that teaches layout principles with frog-themed puzzles.</p>  <p class="meta">
+    <a class="topic" href="topics/web.html">Web development</a>
+    <a class="badge" href="types/interactive.html">Interactive</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">flexboxfroggy.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fflexboxfroggy.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2016–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="stronglifts-com-5x5" data-topic="self_improvement" data-type="tutorial" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="stronglifts-com-5x5" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/stronglifts-com-5x5.html">Stronglifts 5x5</a></h3>
+<p class="blurb">Learn a strength training program focused on building muscle and strength through three full-body workouts weekly using compound lifts.</p>  <p class="meta">
+    <a class="topic" href="topics/self_improvement.html">Learning and self-improvement</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">stronglifts.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fstronglifts.com%2Fstronglifts-5x5%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2015–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="worrydream-com" data-topic="design" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="worrydream-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/worrydream-com.html">Bret Victor</a></h3>
+<p class="blurb">Explores dynamic media and interactive design principles through real-time feedback and creative tool development.</p>  <p class="meta">
+    <a class="topic" href="topics/design.html">Design</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">worrydream.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fworrydream.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2011–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="handmadehero-org" data-topic="programming" data-type="tutorial" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="handmadehero-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/handmadehero-org.html">Handmade Hero</a></h3>
+<p class="blurb">Learn game development by watching a developer create a game from scratch in C, with detailed explanations of each step.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">handmadehero.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fhandmadehero.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2014–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="languagelog-ldc-upenn-edu-nll" data-topic="writing" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="languagelog-ldc-upenn-edu-nll" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/languagelog-ldc-upenn-edu-nll.html">Language Log</a></h3>
+<p class="blurb">Explores linguistic phenomena, language evolution, and pronunciation through academic analysis and commentary.</p>  <p class="meta">
+    <a class="topic" href="topics/writing.html">Writing and communication</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">languagelog.ldc.upenn.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Flanguagelog.ldc.upenn.edu%2Fnll%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2010–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="metalevel-at-prolog" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="metalevel-at-prolog" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/metalevel-at-prolog.html">The Power of Prolog</a></h3>
+<p class="blurb">Learn modern Prolog programming concepts including logical foundations, data structures, and declarative debugging techniques.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">metalevel.at</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.metalevel.at%2Fprolog" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2020–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="pbrt-org" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="pbrt-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/pbrt-org.html">Physically Based Rendering</a></h3>
+<p class="blurb">Learn the theory and implementation of physically based rendering for computer graphics through a comprehensive textbook and codebase.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">pbrt.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fpbrt.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2015–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="thebookofshaders-com" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="thebookofshaders-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/thebookofshaders-com.html">The Book of Shaders</a></h3>
+<p class="blurb">Learn to create real-time graphics using fragment shaders through step-by-step examples and explanations.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">thebookofshaders.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fthebookofshaders.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2017–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="karpathy-github-io-2015-05-21-rnn-effectiveness" data-topic="ml_ai" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="karpathy-github-io-2015-05-21-rnn-effectiveness" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/karpathy-github-io-2015-05-21-rnn-effectiveness.html">The Unreasonable Effectiveness of Recurrent Neural Networks</a></h3>
+<p class="blurb">Learn to train recurrent neural networks for character-level text generation and understand their surprising effectiveness in natural language processing.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">karpathy.github.io</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fkarpathy.github.io%2F2015%2F05%2F21%2Frnn-effectiveness%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2015–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="learncodethehardway-org" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="learncodethehardway-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/learncodethehardway-org.html">Learn Code the Hard Way</a></h3>
+<p class="blurb">Learn programming basics through structured courses designed for complete beginners with no prior experience.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">learncodethehardway.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Flearncodethehardway.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2010–2015</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="r4ds-had-co-nz" data-topic="data" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="r4ds-had-co-nz" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/r4ds-had-co-nz.html">R for Data Science</a></h3>
+<p class="blurb">Learn data science with R, including data cleaning, visualization, and modeling using the tidyverse framework.</p>  <p class="meta">
+    <a class="topic" href="topics/data.html">Data and databases</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">r4ds.had.co.nz</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fr4ds.had.co.nz" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2016–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="diveintopython-org" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="diveintopython-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/diveintopython-org.html">Dive into Python</a></h3>
+<p class="blurb">Learn Python programming through free tutorials and a book covering basics, data handling, and AI projects.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">diveintopython.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fdiveintopython.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">13 recommenders, 2008–2011</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="compilers-iecc-com-crenshaw" data-topic="computer_science" data-type="tutorial" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="compilers-iecc-com-crenshaw" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/compilers-iecc-com-crenshaw.html">Let&#39;s Build a Compiler</a></h3>
+<p class="blurb">A fifteen-part series teaching compiler construction through practical examples, covering parsing, lexical scanning, and code generation.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">compilers.iecc.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcompilers.iecc.com%2Fcrenshaw%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2008–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="dhamma-org" data-topic="self_improvement" data-type="course" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="dhamma-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/dhamma-org.html">Vipassana Meditation</a></h3>
+<p class="blurb">Learn the ancient technique of Vipassana meditation, focusing on observing thoughts and sensations to see reality clearly through a structured ten-day course.</p>  <p class="meta">
+    <a class="topic" href="topics/self_improvement.html">Learning and self-improvement</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">dhamma.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.dhamma.org%2Fen%2Findex" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2009–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="beej-us-guide-bgnet" data-topic="systems" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="beej-us-guide-bgnet" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/beej-us-guide-bgnet.html">Beej&#39;s Guide to Network Programming</a></h3>
+<p class="blurb">Learn network programming using Internet sockets with this free, comprehensive guide for C and C++ developers.</p>  <p class="meta">
+    <a class="topic" href="topics/systems.html">Systems</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">beej.us</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fbeej.us%2Fguide%2Fbgnet%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2013–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="kalzumeus-com-2011-10-28-dont-call-yourself-a-programmer" data-topic="self_improvement" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="kalzumeus-com-2011-10-28-dont-call-yourself-a-programmer" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/kalzumeus-com-2011-10-28-dont-call-yourself-a-programmer.html">Don&#39;t Call Yourself a Programmer</a></h3>
+<p class="blurb">Learn career advice for software engineers on industry realities, business economics, and avoiding self-labeling pitfalls.</p>  <p class="meta">
+    <a class="topic" href="topics/self_improvement.html">Learning and self-improvement</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">kalzumeus.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.kalzumeus.com%2F2011%2F10%2F28%2Fdont-call-yourself-a-programmer%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2014–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="startupschool-org" data-topic="business" data-type="course" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="startupschool-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/startupschool-org.html">Startup School</a></h3>
+<p class="blurb">Learn startup fundamentals from Y Combinator, including MVP planning, funding, growth, and leadership strategies through a 7-week course.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">startupschool.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.startupschool.org%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2017–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="agner-org-optimize" data-topic="programming" data-type="collection" data-level="advanced">
+  <h3><button class="fav" type="button" data-fav="agner-org-optimize" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/agner-org-optimize.html">Software optimization resources</a></h3>
+<p class="blurb">Learn to optimize C++ and assembly code for x86/x86-64 processors across multiple operating systems and architectures.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/collection.html">Collection</a>
+    <a class="badge" href="levels/advanced.html">Advanced</a>
+    <span class="host">agner.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fagner.org%2Foptimize%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2014–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="blog-sigfpe-com-2006-08-you-could-have-invented-monads-and-html" data-topic="programming" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="blog-sigfpe-com-2006-08-you-could-have-invented-monads-and-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/blog-sigfpe-com-2006-08-you-could-have-invented-monads-and-html.html">You Could Have Invented Monads</a></h3>
+<p class="blurb">Learn how monads in functional programming emerge naturally from solving common problems, without abstract theory.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">blog.sigfpe.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fblog.sigfpe.com%2F2006%2F08%2Fyou-could-have-invented-monads-and.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2010–2020</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="historyofenglishpodcast-com" data-topic="writing" data-type="other" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="historyofenglishpodcast-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/historyofenglishpodcast-com.html">The History of English Podcast</a></h3>
+<p class="blurb">Explores the evolution of the English language through historical events, dialects, and linguistic developments from Proto-Indo-European to modern times.</p>  <p class="meta">
+    <a class="topic" href="topics/writing.html">Writing and communication</a>
+    <a class="badge" href="types/other.html">Other</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">historyofenglishpodcast.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fhistoryofenglishpodcast.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2015–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="learnpythonthehardway-org-book" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="learnpythonthehardway-org-book" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/learnpythonthehardway-org-book.html">Learn Python the Hard Way</a></h3>
+<p class="blurb">Learn Python through 60 hands-on exercises covering basic syntax, variables, functions, and file handling.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">learnpythonthehardway.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Flearnpythonthehardway.org%2Fbook%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2011–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="ocw-mit-edu-courses-mathematics-18-06-linear-algebra-spring-2010" data-topic="mathematics" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="ocw-mit-edu-courses-mathematics-18-06-linear-algebra-spring-2010" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/ocw-mit-edu-courses-mathematics-18-06-linear-algebra-spring-2010.html">Linear Algebra</a></h3>
+<p class="blurb">Learn matrix theory, vector spaces, determinants, eigenvalues, and positive definite matrices for applications in various disciplines.</p>  <p class="meta">
+    <a class="topic" href="topics/mathematics.html">Mathematics</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">ocw.mit.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Focw.mit.edu%2Fcourses%2F18-06-linear-algebra-spring-2010%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2011–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="paulgraham-com-startupideas-html" data-topic="business" data-type="explainer" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="paulgraham-com-startupideas-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/paulgraham-com-startupideas-html.html">How to Get Startup Ideas</a></h3>
+<p class="blurb">Learn to identify genuine problems worth solving by focusing on personal needs and market realities, avoiding common startup pitfalls.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">paulgraham.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fpaulgraham.com%2Fstartupideas.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2013–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="plaintextaccounting-org" data-topic="business" data-type="collection" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="plaintextaccounting-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/plaintextaccounting-org.html">Plain Text Accounting</a></h3>
+<p class="blurb">Learn to manage personal finances using plain text files and command-line tools like Ledger, hledger, or Beancount for efficient bookkeeping.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/collection.html">Collection</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">plaintextaccounting.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fplaintextaccounting.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2016–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="privacytools-io" data-topic="systems" data-type="collection" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="privacytools-io" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/privacytools-io.html">Privacy Tools</a></h3>
+<p class="blurb">Learn about private alternatives to common apps and services that respect user data and privacy.</p>  <p class="meta">
+    <a class="topic" href="topics/systems.html">Systems</a>
+    <a class="badge" href="types/collection.html">Collection</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">privacytools.io</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fprivacytools.io" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2015–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="htmx-org" data-topic="web" data-type="reference" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="htmx-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/htmx-org.html">htmx</a></h3>
+<p class="blurb">Learn to build modern web interfaces using HTML attributes for AJAX, CSS transitions, and server events without JavaScript frameworks.</p>  <p class="meta">
+    <a class="topic" href="topics/web.html">Web development</a>
+    <a class="badge" href="types/reference.html">Reference</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">htmx.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fhtmx.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2020–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="karpathy-ai-zero-to-hero-html" data-topic="ml_ai" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="karpathy-ai-zero-to-hero-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/karpathy-ai-zero-to-hero-html.html">Neural Networks: Zero To Hero</a></h3>
+<p class="blurb">Learn to build neural networks from scratch, focusing on backpropagation and language models like GPT with Python and basic math.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">karpathy.ai</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fkarpathy.ai%2Fzero-to-hero.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">12 recommenders, 2023–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="randsinrepose-com" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="randsinrepose-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/randsinrepose-com.html">Rands in Repose</a></h3>
+<p class="blurb">Stories about the humans who build software, focusing on engineering management and team dynamics.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">randsinrepose.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Frandsinrepose.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2008–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="kalzumeus-com-2010-06-17-falsehoods-programmers-believe-about-names" data-topic="programming" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="kalzumeus-com-2010-06-17-falsehoods-programmers-believe-about-names" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/kalzumeus-com-2010-06-17-falsehoods-programmers-believe-about-names.html">Falsehoods Programmers Believe About Names</a></h3>
+<p class="blurb">Explores common misconceptions about human names in software systems, highlighting how they often fail to handle diverse naming conventions correctly.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">kalzumeus.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.kalzumeus.com%2F2010%2F06%2F17%2Ffalsehoods-programmers-believe-about-names%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2016–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="masteringemacs-org" data-topic="programming" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="masteringemacs-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/masteringemacs-org.html">Mastering Emacs</a></h3>
+<p class="blurb">Learn to use Emacs, a powerful text editor, with practical tips and insights for mastering its features and philosophy.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">masteringemacs.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.masteringemacs.org%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2011–2026</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="cssgridgarden-com" data-topic="web" data-type="interactive" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="cssgridgarden-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/cssgridgarden-com.html">Grid Garden</a></h3>
+<p class="blurb">Learn CSS grid layout through an interactive game that teaches grid placement and properties.</p>  <p class="meta">
+    <a class="topic" href="topics/web.html">Web development</a>
+    <a class="badge" href="types/interactive.html">Interactive</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">cssgridgarden.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcssgridgarden.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2017–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="automatetheboringstuff-com" data-topic="programming" data-type="free_book" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="automatetheboringstuff-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/automatetheboringstuff-com.html">Automate the Boring Stuff with Python</a></h3>
+<p class="blurb">Learn to write Python scripts that automate repetitive tasks like file management and spreadsheet updates.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">automatetheboringstuff.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fautomatetheboringstuff.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2015–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="learngitbranching-js-org" data-topic="programming" data-type="interactive" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="learngitbranching-js-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/learngitbranching-js-org.html">Learn Git Branching</a></h3>
+<p class="blurb">An interactive tool for visualizing and practicing Git branching concepts through hands-on exercises.</p>  <p class="meta">
+    <a class="topic" href="topics/programming.html">Programming</a>
+    <a class="badge" href="types/interactive.html">Interactive</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">learngitbranching.js.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Flearngitbranching.js.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2018–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="paulgraham-com-wealth-html" data-topic="business" data-type="explainer" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="paulgraham-com-wealth-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/paulgraham-com-wealth-html.html">How to Make Wealth</a></h3>
+<p class="blurb">Learn how startups and technology can compress a working life into a few years, offering high rewards for fast, hard work in tech fields.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">paulgraham.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fpaulgraham.com%2Fwealth.html" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2011–2021</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="cs231n-github-io" data-topic="ml_ai" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="cs231n-github-io" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/cs231n-github-io.html">CS231n Deep Learning for Computer Vision</a></h3>
+<p class="blurb">Learn deep learning for computer vision through Stanford&#39;s course materials, covering neural networks, convolutional networks, and practical implementation.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">cs231n.github.io</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcs231n.github.io" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">11 recommenders, 2015–2020</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="scheme2006-cs-uchicago-edu-11-ghuloum-pdf" data-topic="computer_science" data-type="tutorial" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="scheme2006-cs-uchicago-edu-11-ghuloum-pdf" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/scheme2006-cs-uchicago-edu-11-ghuloum-pdf.html">An Incremental Approach to Compiler Construction</a></h3>
+<p class="blurb">Learn compiler construction through an incremental approach, building a simple compiler step-by-step without prior knowledge of automata or parsing algorithms.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/tutorial.html">Tutorial</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">scheme2006.cs.uchicago.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=http%3A%2F%2Fscheme2006.cs.uchicago.edu%2F11-ghuloum.pdf" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2010–2025</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="betterexplained-com" data-topic="mathematics" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="betterexplained-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/betterexplained-com.html">BetterExplained</a></h3>
+<p class="blurb">Learn intuitive math concepts through clear, visual explanations of topics like calculus, trigonometry, and imaginary numbers.</p>  <p class="meta">
+    <a class="topic" href="topics/mathematics.html">Mathematics</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">betterexplained.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fbetterexplained.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2010–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="csapp-cs-cmu-edu" data-topic="computer_science" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="csapp-cs-cmu-edu" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/csapp-cs-cmu-edu.html">Computer Systems: A Programmer&#39;s Perspective</a></h3>
+<p class="blurb">Learn computer systems from a programmer&#39;s perspective, covering hardware, operating systems, compilers, and networking.</p>  <p class="meta">
+    <a class="topic" href="topics/computer_science.html">Computer science</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">csapp.cs.cmu.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fcsapp.cs.cmu.edu" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2011–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="dspguide-com" data-topic="hardware" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="dspguide-com" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/dspguide-com.html">The Scientist and Engineer&#39;s Guide to Digital Signal Processing</a></h3>
+<p class="blurb">Learn digital signal processing techniques including convolution, Fourier analysis, and filter design with practical examples and minimal math.</p>  <p class="meta">
+    <a class="topic" href="topics/hardware.html">Hardware and electronics</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">dspguide.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fdspguide.com" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2014–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="ribbonfarm-com-the-gervais-principle" data-topic="business" data-type="explainer" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="ribbonfarm-com-the-gervais-principle" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/ribbonfarm-com-the-gervais-principle.html">The Gervais Principle</a></h3>
+<p class="blurb">Explores organizational dynamics through the lens of The Office, categorizing employees into sociopaths, clueless middle managers, and bottom-tier workers.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/explainer.html">Explainer</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">ribbonfarm.com</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fribbonfarm.com%2Fseries%2Fthe-gervais-principle%2F" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2011–2022</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="aima-cs-berkeley-edu" data-topic="ml_ai" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="aima-cs-berkeley-edu" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/aima-cs-berkeley-edu.html">Artificial Intelligence: A Modern Approach</a></h3>
+<p class="blurb">Learn foundational AI concepts, algorithms, and applications through a comprehensive textbook used in over 1500 universities.</p>  <p class="meta">
+    <a class="topic" href="topics/ml_ai.html">Machine learning and AI</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">aima.cs.berkeley.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Faima.cs.berkeley.edu" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2007–2024</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="bogleheads-org" data-topic="business" data-type="other" data-level="beginner">
+  <h3><button class="fav" type="button" data-fav="bogleheads-org" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/bogleheads-org.html">Bogleheads</a></h3>
+<p class="blurb">Learn about index fund investing, asset allocation, and long-term financial planning through community-driven advice and resources.</p>  <p class="meta">
+    <a class="topic" href="topics/business.html">Business and economics</a>
+    <a class="badge" href="types/other.html">Other</a>
+    <a class="badge" href="levels/beginner.html">Beginner</a>
+    <span class="host">bogleheads.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fbogleheads.org" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2008–2021</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="coursera-org-learn-build-a-computer" data-topic="hardware" data-type="course" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="coursera-org-learn-build-a-computer" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/coursera-org-learn-build-a-computer.html">Build a Modern Computer from First Principles</a></h3>
+<p class="blurb">Students learn to build a functional CPU from basic logic gates, progressing through hardware design to a complete computer system.</p>  <p class="meta">
+    <a class="topic" href="topics/hardware.html">Hardware and electronics</a>
+    <a class="badge" href="types/course.html">Course</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">coursera.org</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fbuild-a-computer" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2017–2023</span>
+  </p>
+</article>
+
+  <article class="card" data-slug="feynmanlectures-caltech-edu" data-topic="science" data-type="free_book" data-level="intermediate">
+  <h3><button class="fav" type="button" data-fav="feynmanlectures-caltech-edu" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="r/feynmanlectures-caltech-edu.html">Feynman Lectures on Physics</a></h3>
+<p class="blurb">Students learn physics through Richard Feynman&#39;s lectures, covering fundamental concepts with clarity and insight.</p>  <p class="meta">
+    <a class="topic" href="topics/science.html">Science</a>
+    <a class="badge" href="types/free_book.html">Free book</a>
+    <a class="badge" href="levels/intermediate.html">Intermediate</a>
+    <span class="host">feynmanlectures.caltech.edu</span>
+    <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Ffeynmanlectures.caltech.edu" rel="noopener" hreflang="zh-CN"
+       title="Google Translate, Simplified Chinese">中文</a>
+    <span class="count">10 recommenders, 2016–2026</span>
+  </p>
+</article>
+
+  <p class="more"><a href="all.html">All 1186 resources</a></p>
+</section>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

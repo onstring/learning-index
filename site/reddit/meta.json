@@ -1,0 +1,16 @@
+{
+ "periods": [
+  {
+   "key": "all-time",
+   "label": "All time",
+   "top": 70,
+   "more": 85
+  },
+  {
+   "key": "past-year",
+   "label": "Past year",
+   "top": 11,
+   "more": 21
+  }
+ ]
+}

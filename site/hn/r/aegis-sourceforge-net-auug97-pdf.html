@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recursive Make Considered Harmful · HN Learning Index</title>
+<meta name="description" content="Learn about the pitfalls of recursive make and how to use make effectively for complex build systems.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/programming.html">Programming</a></p>
+  <h1><button class="fav" type="button" data-fav="aegis-sourceforge-net-auug97-pdf" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://aegis.sourceforge.net/auug97.pdf" rel="noopener">Recursive Make Considered Harmful</a></h1>
+  <p class="url"><a href="https://aegis.sourceforge.net/auug97.pdf" rel="noopener">https://aegis.sourceforge.net/auug97.pdf</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Faegis.sourceforge.net%2Fauug97.pdf" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn about the pitfalls of recursive make and how to use make effectively for complex build systems.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 4 different commenters across 4
+      years (2012–2023)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=20014348" rel="noopener">Recursive Make Considered Harmful (1997) [pdf]</a>
+(54 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>Taskfile looks worse than make to me in every possible dimension (except maybe windows compatibility, but I don&#39;t believe that it meaningfully supports that). You should at least read and understand the paper &#34;Recursive Make Considered Harmful&#34; before attempting to replace make with something &#34;better&#34;: https://aegis.sourceforge.net/auug97.pdf Most people use make incorrectly (and it sounds like the system you describe makes most of the classic mistakes). The paper I linked explains how to use Make&#39;s templating language to help it scale to complicated setups. Here are a few critiques of taskfile (from skimming their documentation): - The syntax is incredibly verbose and weird. For instance, y</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=hedora" rel="noopener">hedora</a>, 2023        · <a href="https://news.ycombinator.com/item?id=37487426" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=37481513" rel="noopener">We built the fastest CI in the world and it failed</a>      </p>
+    </li>
+    <li>
+      <blockquote>Here&#39;s a makefile: http://code.google.com/p/min-game/source/browse/makefile Here&#39;s the dependency script: http://code.google.com/p/min-game/source/browse/dep.sh Both inspired by code in &#34;Recursive Make Considered Harmful&#34;, always worth a read: http://aegis.sourceforge.net/auug97.pdf The built-in rules and variables for gnu make are worthless for anything but the most trivial project; don&#39;t bother with them. I&#39;d be so happy if there was a makefile directive that forced make to run in &#34;make -rR&#34; mode.</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=mccoyst" rel="noopener">mccoyst</a>, 2012        · <a href="https://news.ycombinator.com/item?id=4188846" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=4187628" rel="noopener">GNU Make in Detail for Beginners</a>      </p>
+    </li>
+    <li>
+      <blockquote>One should start with, &#34;Recursive Make Considered Harmful&#34; [0] to know where this is coming from. The best architected use of make is in the FreeBSD build system [1,2] If you want to experience &#34;a system&#34; please give FreeBSD a try. [0] http://aegis.sourceforge.net/auug97.pdf [1] https://www.freebsd.org/doc/handbook/makeworld.html [2] https://www.freebsd.org/doc/en/books/porters-handbook/portin...</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=sitkack" rel="noopener">sitkack</a>, 2018        · <a href="https://news.ycombinator.com/item?id=17088784" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=17088328" rel="noopener">Non-Recursive Make Considered Harmful: Build Systems at Scale (2016) [pdf]</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

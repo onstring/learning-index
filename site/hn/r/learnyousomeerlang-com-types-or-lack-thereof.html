@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Types (or lack thereof) · HN Learning Index</title>
+<meta name="description" content="Learn about Erlang&#39;s dynamic typing system, type guards, conversions, and static type inference without static type systems.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/programming.html">Programming</a></p>
+  <h1><button class="fav" type="button" data-fav="learnyousomeerlang-com-types-or-lack-thereof" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://learnyousomeerlang.com/types-or-lack-thereof" rel="noopener">Types (or lack thereof)</a></h1>
+  <p class="url"><a href="https://learnyousomeerlang.com/types-or-lack-thereof" rel="noopener">https://learnyousomeerlang.com/types-or-lack-thereof</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Flearnyousomeerlang.com%2Ftypes-or-lack-thereof" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn about Erlang&#39;s dynamic typing system, type guards, conversions, and static type inference without static type systems.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 3 different commenters across 3
+      years (2015–2021)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=9810365" rel="noopener">Erlang for Type Junkies</a>
+(5 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>Agreed on the typing, however. Have you guys looked into Dialyzer? Dialyzer is a static analysis tool for Erlang and other languages that compile to BEAM bytecode for the Erlang VM. It can analyze the BEAM files and provide warnings about problems in your code including type mismatches and other issues that are commonly detected by static language compilers. The analysis can be improved by inclusion of type hints (called specs) but it can be useful even without those. For more information I highly recommend the Success Typings paper that describes the theory behind the tool. That&#39;s from the Dialyxir (for using Dialyzer w/Elixir) github page: https://github.com/jeremyjh/dialyxir More: http://</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=qohen" rel="noopener">qohen</a>, 2017        · <a href="https://news.ycombinator.com/item?id=13432514" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=13431137" rel="noopener">Ask HN: Most productive functional languages?</a>      </p>
+    </li>
+    <li>
+      <blockquote>I don&#39;t think he ever said such a thing. Do you have the source of this claim? Some back story: &#34;Through the years, there were some attempts to build type systems on top of Erlang. One such attempt happened back in 1997, conducted by Simon Marlow, one of the lead developers of the Glasgow Haskell Compiler, and Philip Wadler, who worked on Haskell&#39;s design and has contributed to the theory behind monads (Read the paper on said type system). Joe Armstrong later commented on the paper: One day Phil phoned me up and announced that a) Erlang needed a type system, b) he had written a small prototype of a type system and c) he had a one year’s sabbatical and was going to write a type system for Erl</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=StreamBright" rel="noopener">StreamBright</a>, 2021        · <a href="https://news.ycombinator.com/item?id=26360681" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=26354017" rel="noopener">Caramel: An OCaml for the Erlang VM</a>      </p>
+    </li>
+    <li>
+      <blockquote>I haven&#39;t used erlang - that said, one reason might be that it&#39;s dynamically typed by default, and that the extensions for a type system have had mixed success: &#34;Phil Wadler and Simon Marlow worked on a type system for over a year and the results were published in [20]. The results of the project were somewhat disappointing. To start with, only a subset of the language was type-checkable, the major omission being the lack of process types and of type checking inter-process messages.&#34; http://learnyousomeerlang.com/types-or-lack-thereof#for-type...</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=dmeb" rel="noopener">dmeb</a>, 2015        · <a href="https://news.ycombinator.com/item?id=9505935" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=9503832" rel="noopener">Reactive Streams for the JVM hits 1.0.0</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

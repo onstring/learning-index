@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Functors, Applicatives, and Monads in Pictures · HN Learning Index</title>
+<meta name="description" content="Learn the concepts of functors, applicatives, and monads through visual explanations in Haskell programming.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/programming.html">Programming</a></p>
+  <h1><button class="fav" type="button" data-fav="adit-io-posts-2013-04-17-functors-applicatives-and-monads-in-pictures-ht" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html" rel="noopener">Functors, Applicatives, and Monads in Pictures</a></h1>
+  <p class="url"><a href="https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html" rel="noopener">https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.adit.io%2Fposts%2F2013-04-17-functors%2C_applicatives%2C_and_monads_in_pictures.html" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn the concepts of functors, applicatives, and monads through visual explanations in Haskell programming.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 8 different commenters across 9
+      years (2013–2023)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=5731164" rel="noopener">Functors, applicatives, and monads in pictures</a>
+(200 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>The Haskell introductory landscape has definitely changed. Learn You A Haskell for great good ( http://learnyouahaskell.com ) is an excellent introductory book to read to get started with Haskell. A drier but more in-depth read is http://book.realworldhaskell.org/ Also, when you hit monads again, the best advice I can give you to understanding them (99% of Haskell guides out there seem to be about monads) is to take this path: Functors -&gt; Applicatives -&gt; Monads And check out this link: http://adit.io/posts/2013-04-17-functors,_applicatives,_and_... I&#39;m not sure those resources were around when last you tried haskell, but they&#39;re worth giving a read. Haskell has M:N threading, and a strictnes</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=hardwaresofton" rel="noopener">hardwaresofton</a>, 2017        · <a href="https://news.ycombinator.com/item?id=14857753" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=14854418" rel="noopener">Why I’m Learning Perl 6</a>      </p>
+    </li>
+    <li>
+      <blockquote>The best way is to try and build a web app and learn along the way. Here&#39;s the stack I use for all my Haskell web apps: - Stack to manage the project and dependencies. - WAI and Warp to construct your own bare bones web app (see https://broch.io/posts/build-your-own-wai-framework/ ). I don&#39;t like frameworks like Yesod or Spock because I like to keep it simple. - blaze-html ( https://hackage.haskell.org/package/blaze-html ) for constructing HTML. - selda ( https://selda.link ) for PostgreSQL/SQLite interface (it might be too much for beginners, but there&#39;s other modules like postgres-simple). - wai-extra for form/file upload parsing, gzip, and other basic middleware. - wai-middleware-static f</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=alexmingoia" rel="noopener">alexmingoia</a>, 2019        · <a href="https://news.ycombinator.com/item?id=21697982" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=21692046" rel="noopener">Ask HN: What is the best way to learn Haskell for “real world use&#34; (in 2019)?</a>      </p>
+    </li>
+    <li>
+      <blockquote>Well, HtDP uses Racket, a flavor of Scheme/Lisp. So HtDP teaches with a functional language. But the contents seem to be about general program/algorithm design. (Like SICP, I started but never finished HtDP.) I don&#39;t think HtDP/SICP explicitly cover topics from my short list of best introductions to practical FP. For example they don&#39;t seem to cover &#34;monads&#34; and &#34;functional composition,&#34; which are a big part of practical FP programming. &#34;Monad&#34; is a fancy mathematical term for a concept that allows you to write programs without worrying about exceptions/errors/IO cases until the very last moment. So you can keep your &#34;happy&#34; path code completely separate from the &#34;sad&#34; path code. Explained g</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=Leftium" rel="noopener">Leftium</a>, 2023        · <a href="https://news.ycombinator.com/item?id=34683164" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=34680306" rel="noopener">Ask HN: Just Finished Stroustrup&#39;s &#39;Practice and Principles&#39;. What Next?</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

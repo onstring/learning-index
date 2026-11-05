@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Complete Guide to useEffect · HN Learning Index</title>
+<meta name="description" content="Learn to effectively use useEffect in React for managing side effects and understanding its nuances in component lifecycle.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/web.html">Web development</a></p>
+  <h1><button class="fav" type="button" data-fav="overreacted-io-a-complete-guide-to-useeffect" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://overreacted.io/a-complete-guide-to-useeffect/" rel="noopener">A Complete Guide to useEffect</a></h1>
+  <p class="url"><a href="https://overreacted.io/a-complete-guide-to-useeffect/" rel="noopener">https://overreacted.io/a-complete-guide-to-useeffect/</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Foverreacted.io%2Fa-complete-guide-to-useeffect%2F" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn to effectively use useEffect in React for managing side effects and understanding its nuances in component lifecycle.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 6 different commenters across 3
+      years (2020–2022)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=19356806" rel="noopener">A guide to useEffect in React</a>
+(97 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>I don&#39;t think it&#39;s becoming a black box at all. Classes were more intuitive, sure. But, they really allowed you to write some gnarly and inefficient code. I&#39;ve always felt that React lets people get away with not fully understanding JS fundamentals. It&#39;s very apparent when dealing with some bootcamp devs who never had to write production vanilla JS. One example is that you can get away with not fully understanding that with classes you&#39;re dealing with different instances of objects. Understanding hooks did take effort. Only after I read Dan Abramov&#39;s article a few times was I able to write hooks w/ deterministic results. It is a MUST read. Don&#39;t let these Medium authors you&#39;ve never heard of</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=kin" rel="noopener">kin</a>, 2020        · <a href="https://news.ycombinator.com/item?id=24364036" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=24363261" rel="noopener">React is becoming a black box</a>      </p>
+    </li>
+    <li>
+      <blockquote>I am _so_ very excited about this! This is going to be a huge help for the community. These new docs are an incredible improvement over the old docs. In-depth tutorial and concept explanations, live editable sandboxes, coverage of key concepts and common gotchas, and much more! See the docs repo PR [0] for background on what content is currently included, plans for further content and site improvements, and feedback on the new docs. For why this is a big deal: the old docs were good in some ways, but very weak in others. By far the biggest issue is that hooks were announced in Oct 2018 and released live in early 2019, but the tutorials and explanations were all still written with class compo</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=acemarke" rel="noopener">acemarke</a>, 2021        · <a href="https://news.ycombinator.com/item?id=28969981" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=28969194" rel="noopener">React Docs Beta – rewritten with hooks and interactive examples</a>      </p>
+    </li>
+    <li>
+      <blockquote>To understand React, it is important to understand the difference between imperative and declarative coding. [0] React is a way to write declarative code that use life cycle hooks or effects to do imperative &#34;stuff&#34;. The best explanation oh how useEffect works is by Dan Abramov [1] It is also worth reading his article on React as a UI Runtime as it is a good explanation of React conceptually under the hood. [0] https://courses.reacttraining.com/courses/250055/lectures/38... (Can sign in for free to watch this one video.) [1] https://overreacted.io/a-complete-guide-to-useeffect/</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=zappo2938" rel="noopener">zappo2938</a>, 2020        · <a href="https://news.ycombinator.com/item?id=23016166" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=23005929" rel="noopener">What I wish I knew about React</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

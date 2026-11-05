@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPT in 60 Lines of NumPy · HN Learning Index</title>
+<meta name="description" content="Learn to implement a GPT model from scratch using NumPy, covering key components like embeddings, attention, and decoding.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/ml_ai.html">Machine learning and AI</a></p>
+  <h1><button class="fav" type="button" data-fav="jaykmody-com-blog-gpt-from-scratch" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://jaykmody.com/blog/gpt-from-scratch" rel="noopener">GPT in 60 Lines of NumPy</a></h1>
+  <p class="url"><a href="https://jaykmody.com/blog/gpt-from-scratch" rel="noopener">https://jaykmody.com/blog/gpt-from-scratch</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fjaykmody.com%2Fblog%2Fgpt-from-scratch" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn to implement a GPT model from scratch using NumPy, covering key components like embeddings, attention, and decoding.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 4 different commenters across 2
+      years (2023–2024)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=34726115" rel="noopener">GPT in 60 Lines of NumPy</a>
+(3 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>Here are some high level answers: &#34;7B&#34; refers to the number of parameters or weights for a model. For a specific model, the versions with more parameters take more compute power to train and perform better. A foundational model is the part of a ML model that is &#34;pretrained&#34; on a massive data set (and usually is the bulk of the compute cost). This is usually considered the &#34;raw&#34; model after which it is fine-tuned for specific tasks (turned into a chatbot). &#34;8K length&#34; refers to the Context Window length (in tokens). This is basically an LLM&#39;s short term memory - you can think of it as its attention span and what it can generate reasonable output for. &#34;1.5T tokens&#34; refers to the size of the co</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=lhl" rel="noopener">lhl</a>, 2023        · <a href="https://news.ycombinator.com/item?id=36517524" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=36514936" rel="noopener">XGen-7B, a new 7B foundational model trained on up to 8K length for 1.5T tokens</a>      </p>
+    </li>
+    <li>
+      <blockquote>The transformer figures out that wants and cash are both verbs (both words can also be nouns). We’ve represented this added context as red text in parentheses, but in reality, the model would store it by modifying the word vectors in ways that are difficult for humans to interpret. These new vectors, known as a hidden state, are passed to the next transformer in the stack. This isn&#39;t really true, it&#39;s like when we say that initial layers in CNNs detect big features, it&#39;s an oversimplification that gives the wrong impression. I understand the objective of trying to explain a technical subject to a nontechnical audience but I don&#39;t think it works at this deep a level. If you want to learn how </blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=version_five" rel="noopener">version_five</a>, 2023        · <a href="https://news.ycombinator.com/item?id=36941972" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=36941705" rel="noopener">A jargon-free explanation of how AI large language models work</a>      </p>
+    </li>
+    <li>
+      <blockquote>Some other good resources: [0]: The original paper: https://arxiv.org/abs/1706.03762 [1]: Full walkthrough for building a GPT from Scratch: https://www.youtube.com/watch?v=kCc8FmEb1nY [2]: A simple inference only implementation in just NumPy, that&#39;s only 60 lines: https://jaykmody.com/blog/gpt-from-scratch/ [3]: Some great visualizations and high-level explanations: http://jalammar.github.io/illustrated-transformer/ [4]: An implementation that is presented side-by-side with the original paper: https://nlp.seas.harvard.edu/2018/04/03/attention.html</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=techbruv" rel="noopener">techbruv</a>, 2023        · <a href="https://news.ycombinator.com/item?id=36450844" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=36449788" rel="noopener">What Is a Transformer Model?</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

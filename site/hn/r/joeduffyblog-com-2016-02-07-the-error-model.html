@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Error Model · HN Learning Index</title>
+<meta name="description" content="Learn about error handling in programming languages, focusing on distinguishing between recoverable errors and bugs in system design.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/programming.html">Programming</a></p>
+  <h1><button class="fav" type="button" data-fav="joeduffyblog-com-2016-02-07-the-error-model" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://joeduffyblog.com/2016/02/07/the-error-model/" rel="noopener">The Error Model</a></h1>
+  <p class="url"><a href="https://joeduffyblog.com/2016/02/07/the-error-model/" rel="noopener">https://joeduffyblog.com/2016/02/07/the-error-model/</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fjoeduffyblog.com%2F2016%2F02%2F07%2Fthe-error-model%2F" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn about error handling in programming languages, focusing on distinguishing between recoverable errors and bugs in system design.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 4 different commenters across 4
+      years (2016–2021)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=11054912" rel="noopener">The Error Model in Midori</a>
+(146 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>These uses of panic look a lot like the canonical use of unchecked exceptions in Java: the programmer has made an error, which they could have avoided. It&#39;s a bug. There&#39;s no point returning an error and letting the program try to recover, just blow up with as much information as you can, so the bug can be fixed. The canonical use of checked exceptions in Java is for unpredictable events - almost always related to interaction with the outside world, like IO, networking, parsing, etc. These are things the programmer can&#39;t prevent, and must defend against, so the type system allows, and in fact forces, the programmer to explicitly address them. This is all explained beautifully, and at length,</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=twic" rel="noopener">twic</a>, 2017        · <a href="https://news.ycombinator.com/item?id=13574579" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=13572416" rel="noopener">The State of Go</a>      </p>
+    </li>
+    <li>
+      <blockquote>I highly recommend reading The Little Typer if you want a great book that bridges math and code. It starts out describing Pi, a Lisp with some interesting restrictions (limited recursion, types can have values, etc.). They build up some cool stuff like vectors with the size encoded in the type. All of a sudden, they explain that equality is a type, and any value of said type is a proof! Turns out you can think of many proofs as manipulating data structures to get a value of a certain type. I wonder how long until we get a somewhat mainstream language with pi types. I know Rust considered adding them. And I recently learned that Rust does allow for quantification over lifetimes^[1]. I could c</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=_hardwaregeek" rel="noopener">_hardwaregeek</a>, 2020        · <a href="https://news.ycombinator.com/item?id=23513388" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=23507764" rel="noopener">Math-as-Code (2015)</a>      </p>
+    </li>
+    <li>
+      <blockquote>It&#39;s good to see so much focus on errors. They are essential when trying to build resilient systems. But our approaches are still very immature. First, to make it clear, this article appropriately points out that exceptions are still necessary and relevant. I disagree with some of the use-cases given, but it&#39;s important to recognize that exceptions should still exist in programming languages. Joe Duffy&#39;s article about Midori&#39;s error model [0] is in my opinion the best reference to actually understand the difference between exceptions and errors and why it&#39;s so important to get right. It&#39;s a very good article, and it has been posted here before; if you are interested in error handling it&#39;s a </blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=slx26" rel="noopener">slx26</a>, 2021        · <a href="https://news.ycombinator.com/item?id=28354214" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=28337112" rel="noopener">Away from Exceptions: Errors as Values</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

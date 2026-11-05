@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQLite Bytecode Engine · HN Learning Index</title>
+<meta name="description" content="Learn how SQLite&#39;s virtual machine executes SQL statements through bytecode, including opcode details and internal operations.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/data.html">Data and databases</a></p>
+  <h1><button class="fav" type="button" data-fav="sqlite-org-opcode-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://sqlite.org/opcode.html" rel="noopener">SQLite Bytecode Engine</a></h1>
+  <p class="url"><a href="https://sqlite.org/opcode.html" rel="noopener">https://sqlite.org/opcode.html</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fsqlite.org%2Fopcode.html" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn how SQLite&#39;s virtual machine executes SQL statements through bytecode, including opcode details and internal operations.</p>  <p class="meta">
+    <a class="badge" href="../types/reference.html">Reference</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 3 different commenters across 2
+      years (2018–2024)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=30476624" rel="noopener">The SQLite Bytecode Engine</a>
+(3 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>Unrelated to window functions, but I finally took the time to start digging into SQLite&#39;s internals. People always sing its praises, so it was time to see what all the fuss was about. Someone else already mentioned that the vast majority of SQLite&#39;s codebase are tests. Well, on top of that, of the real &#34;working&#34; codebase I&#39;d say the majority of it is comments. It&#39;s incredible. The source is more book than code. If you have any when, why, or how question about SQLite, I guarantee it&#39;s answered in the code comments (or at least one of the hundreds of superb documents on their website). Another surprise I discovered: SQLite has a virtual machine and its own bytecode. All queries you execute aga</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=fpgaminer" rel="noopener">fpgaminer</a>, 2018        · <a href="https://news.ycombinator.com/item?id=17767274" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=17764340" rel="noopener">SQLite Release 3.25.0 adds support for window functions</a>      </p>
+    </li>
+    <li>
+      <blockquote>The problem, broadly defined: You&#39;d like to learn how modern SQL databases (SQL Server, Oracle, MySQL, Postgres, etc., etc.) work, &#34;under the hood&#34;... ...but most modern SQL databases, even if they are open source, comprise tens of thousands, hundreds of thousands, millions of lines of code, usually in C or C++ -- and you either don&#39;t understand C or C++ and/or are not a C or C++ expert... What to do? Well, one approach would be to attempt to study the simplest (in terms of LOC) working open source SQL database, of which an early version of SQLite would be a reasonably good candidate: https://stackoverflow.com/questions/55791432/how-to-compile-... But this approach has some problems! Most no</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=peter_d_sherman" rel="noopener">peter_d_sherman</a>, 2024        · <a href="https://news.ycombinator.com/item?id=40017238" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=40016977" rel="noopener">Mini-SQL-Engine – A Simple Educational SQL Engine in 297 LOC in Python</a>      </p>
+    </li>
+    <li>
+      <blockquote>This was the question I was going to ask! I&#39;ve recently been diving into Lua 5.x internals and have been extremely impressed with Lua&#39;s register-based bytecode implementation. Lua has a stable byte code interface between patch releases (5.4.0 -&gt; 5.4.1, etc) but not between major/minor revisions (5.3 -&gt; 5.4). SQLite on the other hand does not consider this a public interface at all! &gt; &#34;Remember: The VDBE opcodes are not part of the interface definition for SQLite. The number of opcodes and their names and meanings change from one release of SQLite to the next.&#34; https://www.sqlite.org/opcode.html#the_opcodes For anyone interested in understanding how a register-based VM operates I highly recom</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=notpeter" rel="noopener">notpeter</a>, 2024        · <a href="https://news.ycombinator.com/item?id=40211224" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=40206752" rel="noopener">Why SQLite Uses Bytecode</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

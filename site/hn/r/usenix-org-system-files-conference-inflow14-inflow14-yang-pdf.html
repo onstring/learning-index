@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Don&#39;t Stack Your Log on My Log · HN Learning Index</title>
+<meta name="description" content="Learn about log-structured storage systems and the inefficiencies of layering multiple logs on top of each other in database and file systems.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/systems.html">Systems</a></p>
+  <h1><button class="fav" type="button" data-fav="usenix-org-system-files-conference-inflow14-inflow14-yang-pdf" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://www.usenix.org/system/files/conference/inflow14/inflow14-yang.pdf" rel="noopener">Don&#39;t Stack Your Log on My Log</a></h1>
+  <p class="url"><a href="https://www.usenix.org/system/files/conference/inflow14/inflow14-yang.pdf" rel="noopener">https://www.usenix.org/system/files/conference/inflow14/inflow14-yang.pdf</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.usenix.org%2Fsystem%2Ffiles%2Fconference%2Finflow14%2Finflow14-yang.pdf" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn about log-structured storage systems and the inefficiencies of layering multiple logs on top of each other in database and file systems.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 3 different commenters across 3
+      years (2016–2023)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=43199418" rel="noopener">Don&#39;t Stack your Log on my Log (2014) [pdf]</a>
+(1 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>There&#39;s overlap, and the papers that cite that one are a good place to start running things down. There&#39;s plenty of recently published stuff about ssd specific database engine approaches, and I&#39;d specifically suggest the &#34;don&#39;t stack your log on my log&#34; paper for a really basic intro [1]. Andrew can speak for himself but I&#39;ll say I&#39;ve not found anything substantial that is similar to the marketing claims of SpaceCurve in open published work. Some of the comments about memory sharding cut against the grain of what I see as the trend in high performance published work, which generally obeys single writer via CoW and or log structure but leverages shared reading of memory heavily. It may perhap</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=jasonwatkinspdx" rel="noopener">jasonwatkinspdx</a>, 2016        · <a href="https://news.ycombinator.com/item?id=11811999" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=11803299" rel="noopener">Design and Implementation of Modern Column-Oriented Databases (2012) [pdf]</a>      </p>
+    </li>
+    <li>
+      <blockquote>At this point, we are in logs three levels deep—we have a database with a log-structured merge tree, we have a journaling filesystem like ext4, and we have an SSD controller which uses log structures internally for wear leveling. I recommend the paper, “Don’t stack your Log on my Log”: https://www.usenix.org/system/files/conference/inflow14/infl... Basically, the beautiful thing about log structures is that they work well on “dumb” storage. Paradoxically, when you put logs on top of logs, you can make things worse. This is unintuitive, but it reminds me of the fact that if you tunnel a TCP connection over another TCP connection, the result is something which is much less reliable than an ord</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=dietrichepp" rel="noopener">dietrichepp</a>, 2023        · <a href="https://news.ycombinator.com/item?id=35641029" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=35634673" rel="noopener">How RocksDB Works</a>      </p>
+    </li>
+    <li>
+      <blockquote>Our existing file APIs already provide abstractions that are both expensive and have no clear best design. There’s a lot that these APIs hide from you in order to make it so you can pretend that this is the 1970s and your file is essentially a piece of tape. We’ve then built filesystems and directory structures on top of this piecemeal. The abstraction covers all these fancy journaling structures and a whole page cache. For something that dives into the consequences, the classic paper “Don’t stack your log on my log” https://www.usenix.org/system/files/conference/inflow14/infl...</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=klodolph" rel="noopener">klodolph</a>, 2022        · <a href="https://news.ycombinator.com/item?id=32200740" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=32200007" rel="noopener">Ask HN: Why don&#39;t file systems and OS&#39;s provide file system transactions?</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

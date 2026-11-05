@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Things You Should Never Do, Part I · HN Learning Index</title>
+<meta name="description" content="Learn about the pitfalls of rewriting software from scratch, using historical examples from Netscape and Microsoft.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/programming.html">Programming</a></p>
+  <h1><button class="fav" type="button" data-fav="joelonsoftware-com-articles-fog0000000069-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/" rel="noopener">Things You Should Never Do, Part I</a></h1>
+  <p class="url"><a href="https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/" rel="noopener">https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.joelonsoftware.com%2F2000%2F04%2F06%2Fthings-you-should-never-do-part-i%2F" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn about the pitfalls of rewriting software from scratch, using historical examples from Netscape and Microsoft.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 6 different commenters across 3
+      years (2012–2015)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=6327021" rel="noopener">Things You Should Never Do, Part I (2000)</a>
+(174 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>&gt; I remember reading one of the Windows programmers&#39; hero&#39;s writing about some massive document of several hundred pages he wrote while on the Excel team at Microsoft and being overjoyed when he learned Bill Gates had actually looked at it. When you have a spreadsheet programme you start with something relatively simple. You then add functionality. You add pivot tables and charting and macros and etc. At what point do you stop and say &#34;We need to re-write the entire code from scratch to make sure this stuff is all tightly integrated and bug-free?&#34; or &#34;We need to split some of this functionality off into separate by integratable softs to protect the core product and provide split pricing for </blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=DanBC" rel="noopener">DanBC</a>, 2012        · <a href="https://news.ycombinator.com/item?id=3995810" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=3995185" rel="noopener">We Who Value Simplicity Have Built Incomprehensible Machines</a>      </p>
+    </li>
+    <li>
+      <blockquote>&#34;It seems there&#39;s an assumption here that building your product again means throwing out all of your experience. What I thought would have been self evident is that by starting again, you bring to the table all your experience and you harness that to build a better product&#34; Ideally, yes! Realistically, there&#39;s always some hairy, gnarly wisdom &#34;baked into&#34; the code. The definitive article is Joel Sposky&#39;s article on the perils of writing from scratch. If you only want to read a few paragraphs: &#34;Back to that two page function. Yes, I know, it&#39;s just a simple function to display a window, but it has grown little hairs and stuff on it and nobody knows why. Well, I&#39;ll tell you why: those are bug </blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=JohnBooty" rel="noopener">JohnBooty</a>, 2013        · <a href="https://news.ycombinator.com/item?id=5235987" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=5234843" rel="noopener">LibreOffice: cleaning and re-factoring a giant code-base [video]</a>      </p>
+    </li>
+    <li>
+      <blockquote>Well, we have a scenario rather close to the one described in the article on mobile: Browsers for text content and apps for specialized stuff, that can incorporate web views, if needed, and access the net. (Yes, I’ve read the second-to-last sentence.) In a nutshell, it sucks. To start with, I don’t buy the premise “Okay, so web browsers are awful for applications.” The statements before are way to generic to prove anything. “[...]resource hungry beasts with millions of lines of code” falsely connects those two properties. “[...]use several gigabytes of RAM, even when just displaying document-like content” might also be rooted in advertisers packing megabytes of rubbish in an iframe or web de</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=Boldewyn" rel="noopener">Boldewyn</a>, 2015        · <a href="https://news.ycombinator.com/item?id=9914598" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=9913746" rel="noopener">Do we need browsers?</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

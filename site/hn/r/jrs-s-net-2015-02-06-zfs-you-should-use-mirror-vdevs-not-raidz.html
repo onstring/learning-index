@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZFS mirror vdevs · HN Learning Index</title>
+<meta name="description" content="Learn why ZFS mirror vdevs are preferable to RAIDZ for pool topology, including flexibility and expansion benefits.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/systems.html">Systems</a></p>
+  <h1><button class="fav" type="button" data-fav="jrs-s-net-2015-02-06-zfs-you-should-use-mirror-vdevs-not-raidz" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://jrs-s.net/2015/02/06/zfs-you-should-use-mirror-vdevs-not-raidz/" rel="noopener">ZFS mirror vdevs</a></h1>
+  <p class="url"><a href="https://jrs-s.net/2015/02/06/zfs-you-should-use-mirror-vdevs-not-raidz/" rel="noopener">https://jrs-s.net/2015/02/06/zfs-you-should-use-mirror-vdevs-not-raidz/</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fjrs-s.net%2F2015%2F02%2F06%2Fzfs-you-should-use-mirror-vdevs-not-raidz%2F" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn why ZFS mirror vdevs are preferable to RAIDZ for pool topology, including flexibility and expansion benefits.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 3 different commenters across 2
+      years (2016–2017)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=25358268" rel="noopener">ZFS: Use mirror vdevs, not RAIDZ</a>
+(115 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>&gt; To add to the downsides, you can&#39;t expand RAIDZ vdevs. &gt; If you start with a 6 disk RAIDZ2 and want to add a couple more drives, you can&#39;t. The only way to add capacity to the pool is to add an entire new vdev. This is mostly true, and in many situations for all practical purposes is true. Not fully understanding this recently cost me a few hundred dollars (2x 8TB external drives) when I needed to expand my 4 disk raidz2 to a 6 disk raidz2. However, what _is_ possible is expanding a pool by incrementally replacing drives with larger capacity equivalents. This wouldn&#39;t work in my situation as I already was using the largest consumer drives available - but the next time I need to expand in a</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=nmjohn" rel="noopener">nmjohn</a>, 2016        · <a href="https://news.ycombinator.com/item?id=12283956" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=12282810" rel="noopener">ZFS High-Availability NAS</a>      </p>
+    </li>
+    <li>
+      <blockquote>&gt; Other software RAID solutions like Linux MDADM lets you grow an existing RAID array with one disk at a time. His issue isn&#39;t with ZFS, it&#39;s that most parity raid (raidz, raidz2, raid5, raid6, etc) doesn&#39;t support safely rebalancing an array to a different number of disks. With mirrors, the things he describes aren&#39;t an issue, especially in a home server. You can start with one disk, mirror it when you&#39;re ready; then add additional vdevs of mirrored pairs extending your pool as necessary. Or upgrade two disks to grow a vdev. http://jrs-s.net/2015/02/06/zfs-you-should-use-mirror-vdevs-...</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=notpeter" rel="noopener">notpeter</a>, 2016        · <a href="https://news.ycombinator.com/item?id=10886336" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=10886068" rel="noopener">The &#39;hidden&#39; cost of using ZFS for your home NAS</a>      </p>
+    </li>
+    <li>
+      <blockquote>It&#39;s much easier to grow if you use stripe of mirrors instead of raidz. You waste more space, but gain more flexibility and performance. More details here: http://jrs-s.net/2015/02/06/zfs-you-should-use-mirror-vdevs-... For example, you can start with 1 mirrored vdev, then add another mirrored vdev. You can upgrade vdevs separately, so you&#39;ll need to replace just 2 disks to grow your pool. The only thing you have to keep in mind is that data is striped across vdevs only when written, so if you add another vdev, you won&#39;t get performance gains for data which was written just to one vdev.</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=hks12" rel="noopener">hks12</a>, 2017        · <a href="https://news.ycombinator.com/item?id=14863568" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=14861593" rel="noopener">ZFS on Linux v0.7.0 released</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

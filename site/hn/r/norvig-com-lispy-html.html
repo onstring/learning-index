@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Write a (Lisp) Interpreter (in Python) · HN Learning Index</title>
+<meta name="description" content="Learn to implement a Lisp interpreter in Python, covering parsing, evaluation, and basic language design principles.">
+<link rel="stylesheet" href="../style.css?v=6aa63ac111c6">
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <p class="hub"><a href="../../index.html">Learning Index</a> /</p>
+  <a class="brand" href="../index.html">HN Learning Index</a>
+  <p class="sections"><a href="../../reddit/index.html">Reddit investing reading list →</a></p>
+  <details class="sidenav" open>
+    <summary>Browse</summary>
+    <nav>
+      <p class="navlinks">
+        <a href="../all.html">All resources <span class="count">1186</span></a>
+        <a href="../favourites.html">Favourites <span class="count" data-fav-count></span></a>
+        <a href="../about.html">About</a>
+      </p>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <a href="../topics/programming.html">Programming</a>
+          <span class="count">400</span>
+        </li>
+        <li>
+          <a href="../topics/computer_science.html">Computer science</a>
+          <span class="count">93</span>
+        </li>
+        <li>
+          <a href="../topics/systems.html">Systems</a>
+          <span class="count">105</span>
+        </li>
+        <li>
+          <a href="../topics/web.html">Web development</a>
+          <span class="count">106</span>
+        </li>
+        <li>
+          <a href="../topics/data.html">Data and databases</a>
+          <span class="count">20</span>
+        </li>
+        <li>
+          <a href="../topics/ml_ai.html">Machine learning and AI</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/mathematics.html">Mathematics</a>
+          <span class="count">54</span>
+        </li>
+        <li>
+          <a href="../topics/science.html">Science</a>
+          <span class="count">39</span>
+        </li>
+        <li>
+          <a href="../topics/hardware.html">Hardware and electronics</a>
+          <span class="count">37</span>
+        </li>
+        <li>
+          <a href="../topics/design.html">Design</a>
+          <span class="count">19</span>
+        </li>
+        <li>
+          <a href="../topics/writing.html">Writing and communication</a>
+          <span class="count">15</span>
+        </li>
+        <li>
+          <a href="../topics/business.html">Business and economics</a>
+          <span class="count">91</span>
+        </li>
+        <li>
+          <a href="../topics/humanities.html">Humanities</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../topics/self_improvement.html">Learning and self-improvement</a>
+          <span class="count">63</span>
+        </li>
+        <li>
+          <a href="../topics/other.html">Other</a>
+          <span class="count">34</span>
+        </li>
+      </ul>
+      <h2>Type</h2>
+      <ul>
+        <li>
+          <a href="../types/course.html">Course</a>
+          <span class="count">98</span>
+        </li>
+        <li>
+          <a href="../types/tutorial.html">Tutorial</a>
+          <span class="count">122</span>
+        </li>
+        <li>
+          <a href="../types/free_book.html">Free book</a>
+          <span class="count">258</span>
+        </li>
+        <li>
+          <a href="../types/reference.html">Reference</a>
+          <span class="count">121</span>
+        </li>
+        <li>
+          <a href="../types/explainer.html">Explainer</a>
+          <span class="count">404</span>
+        </li>
+        <li>
+          <a href="../types/interactive.html">Interactive</a>
+          <span class="count">56</span>
+        </li>
+        <li>
+          <a href="../types/collection.html">Collection</a>
+          <span class="count">70</span>
+        </li>
+        <li>
+          <a href="../types/other.html">Other</a>
+          <span class="count">57</span>
+        </li>
+      </ul>
+      <h2>Level</h2>
+      <ul>
+        <li>
+          <a href="../levels/beginner.html">Beginner</a>
+          <span class="count">310</span>
+        </li>
+        <li>
+          <a href="../levels/intermediate.html">Intermediate</a>
+          <span class="count">861</span>
+        </li>
+        <li>
+          <a href="../levels/advanced.html">Advanced</a>
+          <span class="count">15</span>
+        </li>
+      </ul>
+    </nav>
+  </details>
+</aside>
+<main>
+<article class="resource">
+  <p class="crumbs"><a href="../index.html">Home</a> ›
+    <a href="../topics/programming.html">Programming</a></p>
+  <h1><button class="fav" type="button" data-fav="norvig-com-lispy-html" aria-pressed="false"
+        aria-label="Add to favourites" title="Favourite">☆</button>
+<a href="https://norvig.com/lispy.html" rel="noopener">How to Write a (Lisp) Interpreter (in Python)</a></h1>
+  <p class="url"><a href="https://norvig.com/lispy.html" rel="noopener">https://norvig.com/lispy.html</a>
+    · <a class="translate" href="https://translate.google.com/translate?sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Fnorvig.com%2Flispy.html" rel="noopener" hreflang="zh-CN"
+         title="Google Translate, Simplified Chinese">中文 (Google 翻译)</a></p>
+<p class="blurb lead">Learn to implement a Lisp interpreter in Python, covering parsing, evaluation, and basic language design principles.</p>  <p class="meta">
+    <a class="badge" href="../types/explainer.html">Explainer</a>
+    <a class="badge" href="../levels/intermediate.html">Intermediate</a>
+    <span class="count">Recommended by 7 different commenters across 7
+      years (2012–2024)</span>
+  </p>
+  <p class="story">Discussed on Hacker News:
+    <a href="https://news.ycombinator.com/item?id=1745322" rel="noopener">(How to Write a (Lisp) Interpreter (in Python))</a>
+(222 points)</p>
+  <h2>What Hacker News says</h2>
+  <ul class="evidence">
+    <li>
+      <blockquote>Pat Shaughnessy&#39;s Ruby Under a Microscope [1] is a fantastic resource for looking at Ruby&#39;s internals, especially concerning parsing, Ruby&#39;s class structure, and the YARV virtual machine. It&#39;s probably easiest to begin with a Lisp dialect, since a basic one needs only two data types (singly-linked lists and symbols) and its eval function is so simple. Peter Norvig has a great tutorial[2] on implementing a Lisp in Python. Beyond that, it can be helpful to look at the source code for other languages similar to what you&#39;re looking to create, to get a sense of how they do things. That&#39;s more or less what I found helpful, in any case. Good luck! [1] http://patshaughnessy.net/ruby-under-a-microsco</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=jeorgun" rel="noopener">jeorgun</a>, 2015        · <a href="https://news.ycombinator.com/item?id=9054268" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=9053694" rel="noopener">Show HN: Vivaldi programming language</a>      </p>
+    </li>
+    <li>
+      <blockquote>The Little Schemer would be a good resource. Some here may disagree, though. It uses a Socratic dialogue style that rubs some people the wrong way. But here is Norvig&#39;s Python eval for a Lisp: def eval(x, env=global_env): &#34;Evaluate an expression in an environment.&#34; if isinstance(x, Symbol): # variable reference return env.find(x)[x] elif not isinstance(x, List):# constant return x op, *args = x if op == &#39;quote&#39;: # quotation return args[0] elif op == &#39;if&#39;: # conditional (test, conseq, alt) = args exp = (conseq if eval(test, env) else alt) return eval(exp, env) elif op == &#39;define&#39;: # definition (symbol, exp) = args env[symbol] = eval(exp, env) elif op == &#39;set!&#39;: # assignment (symbol, exp) = ar</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=Jtsummers" rel="noopener">Jtsummers</a>, 2022        · <a href="https://news.ycombinator.com/item?id=33606160" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=33600941" rel="noopener">Lisp-stick on a Python</a>      </p>
+    </li>
+    <li>
+      <blockquote>Seconding the Make-A-Lisp and Crafting Interpreters recommendations. TFA is also pretty good, it contains a hard written parser that you may learn from. Lisp grammar is regarded as simple enough that full parser generators need not be used. There are also the Lis.py articles which are incredibly good: https://norvig.com/lispy.html https://norvig.com/lispy2.html You mentioned you want to write your lisp in javascript so you&#39;ll be getting quite a lot of functionality for free: memory allocation and garbage collection. That alone solves an enormous amount of problems. Just in case anyone reading is going to write in C, here&#39;s an excellent introduction to the topic: https://journal.stuffwithstuf</blockquote>
+      <p class="attrib">
+        <a href="https://news.ycombinator.com/user?id=matheusmoreira" rel="noopener">matheusmoreira</a>, 2024        · <a href="https://news.ycombinator.com/item?id=40334801" rel="noopener">comment</a>
+· in <a href="https://news.ycombinator.com/item?id=40333330" rel="noopener">Roll A Lisp In C – Reading (2020)</a>      </p>
+    </li>
+  </ul>
+</article>
+<footer>
+  <p>HN Learning Index: free learning resources recommended by at least 3
+  different Hacker News commenters. Built 2026-11-03. Comment excerpts belong to
+  their authors and link to the original threads. Contains information from the
+  open-index/hacker-news dataset (ODC-By 1.0). <a href="../about.html">About</a>.</p>
+</footer>
+</main>
+</div>
+<script src="../site.js?v=6aa63ac111c6" defer></script>
+</body>
+</html>

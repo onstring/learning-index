@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reddit Investing Reading List</title>
 <meta name="description" content="Top Reddit investing posts worth learning from, picked and summarised with an LLM.">
-<link rel="stylesheet" href="style.css?v=c577585e66a1">
-<link rel="stylesheet" href="reddit.css?v=c577585e66a1">
+<link rel="stylesheet" href="style.css?v=ffa48f3131d9">
+<link rel="stylesheet" href="reddit.css?v=ffa48f3131d9">
 </head>
 <body>
 <div class="layout">
@@ -74,6 +74,8 @@
   // ---- favourites: a set of Reddit post ids kept in this browser's localStorage ----
   // Separate key from the HN section, which shares this origin on GitHub Pages.
   var FAV_KEY = "reddit:favourites";
+  // Reddit serves its own machine translation of a post when ?tl=<lang> is added.
+  var TL_LANG = "zh-hans", TL_LABEL = "中文";
   var ID_OK = /^[A-Za-z0-9_]{1,24}$/;
 
   function loadFavs() {
@@ -103,6 +105,13 @@
     if (cls) n.className = cls;
     if (text !== undefined) n.textContent = text;
     return n;
+  }
+  function translated(url) {
+    try {
+      var u = new URL(url);
+      u.searchParams.set("tl", TL_LANG);
+      return u.href;
+    } catch (e) { return ""; }
   }
   function uniq(a) { return a.filter(function (v, i) { return a.indexOf(v) === i; }); }
   function labelOf(key) {
@@ -216,6 +225,13 @@
     uniq(periodsByUrl[p.url]).forEach(function (other) {
       if (other !== p.period) m.appendChild(el("span", "also", "also in " + labelOf(other).toLowerCase()));
     });
+    var tl = translated(p.url);
+    if (tl) {
+      var t = el("a", "tl", TL_LABEL);
+      t.href = tl; t.rel = "noopener noreferrer"; t.lang = "zh-Hans";
+      t.title = "Reddit's Chinese translation of this post";
+      m.appendChild(t);
+    }
     m.appendChild(el("span", "count", "#" + p.rank));
     c.appendChild(m);
     return c;

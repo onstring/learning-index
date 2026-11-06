@@ -96,6 +96,15 @@ def test_favourites_are_wired_for_client_side_storage(sets, tmp_path):
     assert "data-fav" in html and "this browser" in html
 
 
+def test_cards_link_to_reddit_chinese_translation(sets, tmp_path):
+    out = tmp_path / "r"
+    render.render(sets, out)
+    html = (out / "index.html").read_text(encoding="utf-8")
+    # Reddit serves its own machine translation when ?tl=<lang> is added to a post URL
+    assert 'TL_LANG = "zh-hans"' in html
+    assert 'searchParams.set("tl", TL_LANG)' in html
+
+
 def test_missing_period_data_fails_loudly(tmp_path):
     with pytest.raises(SystemExit, match="no posts"):
         render.render([["X", str(tmp_path / "a.csv"), str(tmp_path / "b.csv")]], tmp_path / "o")
